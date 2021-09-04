@@ -17,6 +17,12 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: Hello World
+  examples: |
+    - Hello world
+    - Programming
+    - first program
+
 - intent: goodbye
   examples: |
     - good afternoon
@@ -83,6 +89,10 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+- intent: get_covid_data
+  examples: |
+    - can you get me the latest covid data ?
+    - give me statistics on covid.
 
 - intent: bot_challenge
   examples: |
@@ -90,3 +100,80 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: corona_intro
+  examples: |
+    - what is corona?
+    - what is covid-19?
+    - what is novel corona virus?
+    - tell me about corona
+    - can you tell me about corona
+    - can you tell me about covid-19
+
+- intent: corona_symptoms
+  examples: |
+    - What are the symptoms of novel coronavirus?
+    - What are the symptoms of novel corona virus?
+    - What are the symptoms of novel covid-19 virus?
+    - What are the symptoms of corona virus?
+    - symptoms of corona virus?
+    - symptoms of covid19 virus?
+
+- intent: corona_vaccine
+  examples: |
+    - Are there any vaccines available for prevention of corona virus?
+    - Are there any vaccines available for prevention of covid19 virus?
+    - what about vaccines available for prevention of corona virus?
+    - vaccines available for prevention of corona virus?
+    - Have the vaccines been developed for corona virus?
+    - is there any vaccine for corona virus?
+    - is there any vaccine for covid19 virus?
+
+- intent: corona_prevent
+  examples: |
+    - how can i prevent covid19?
+    - how can i prevent corona virus?
+    - how can i prevent covid-19?
+    - prevent covid19?
+    - prevent corona
+    - how once can prevent himself/herself from getting infected from covid19?
+    - how once can prevent himself/herself from getting infected from corona?
+
+- intent: corona_states_stat
+  examples : |
+    - give me stats for [Pubjab](state)
+
+  # examples: |
+  #   - [India](state)
+  #   - [Gujarat](state)
+  #   - [Andhra Pradesh](state)
+  #   - [Arunachal Pradesh](state)
+  #   - [Assam](state)
+  #   - [Bihar](state)
+  #   - [Goa](state)
+  #   - [Chhattisgarh](state)
+  #   - [Haryana](state)
+  #   - [Himachal Pradesh](state)
+  #   - [Jharkhand](state)
+  #   - [Karnataka](state)
+  #   - [Madhya Pradesh](state)
+  #   - [Kerala](state)
+  #   - [Maharashtra](state)
+  #   - [Manipur](state)
+  #   - [Meghalaya](state)
+  #   - [Mizoram](state)
+  #   - [Nagaland](state)
+  #   - [Odisha](state)
+  #   - [Punjab](state)
+  #   - [Rajasthan](state)
+  #   - [Sikkim](state)
+  #   - [Tamil Nadu](state)
+  #   - [Telangana](state)
+  #   - [Tripura](state)
+  #   - [Uttar Pradesh](state)
+  #   - [Uttarakhand](state)
+  #   - [West Bengal](state)
+
+# - intent: corona_datewise_stat
+#   example: |
+    # -

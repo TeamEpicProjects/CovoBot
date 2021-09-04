@@ -8,6 +8,13 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - get_covid_data
+  - Hello World
+  - corona_states_stat
+
+actions:
+  - action_hello_world
+  - action_corona_stat
 
 responses:
   utter_greet:
@@ -23,12 +30,19 @@ responses:
   utter_happy:
   - text: "Great, carry on!"
 
+  utter_data :
+   - text : "Here you go!"
+
   utter_goodbye:
   - text: "Bye"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
-
+nlu:
+- synonym: state
+  examples: |
+    - Gujrat
+    - Punjab
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
