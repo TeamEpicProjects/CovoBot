@@ -49,30 +49,23 @@ class Action_corona_stat(Action):
 
     def name(self) -> Text:
         return "action_corona_stat"
-
     def flatten_json(self , y):
         out = {}
-
         def flatten(x, name=''):
-
             # If the Nested key-value
             # pair is of dict type
-
             if type(x) is dict:
                 for a in x:
                     flatten(x[a], name + a + '_')
             elif type(x) is list:
-
             # If the Nested key-value
             # pair is of list type
-
                 i = 0
                 for a in x:
                     flatten(a, name + str(i) + '_')
                     i += 1
             else:
                 out[name[:-1]] = x
-
         flatten(y)
         return out
 
@@ -82,13 +75,8 @@ class Action_corona_stat(Action):
         
             if ( len (re.findall(r"(.+?){fname}(.+?)".format(fname=name),i)) != 0 ):
                 print ( "Match OFund")
-    #         print ( re.findall(r"(.+?)Pathankot(.+?)",i), i )
-                res += str(i) + " " + str(a[i])
-    
-                # return ( i , a[i])
-        return res
-
-    
+                res += str(i) + " " + str(a[i]) + "\n" 
+        return res.replace("_" , " " )
 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         url= "https://data.covid19india.org/v4/min/data.min.json"
@@ -99,17 +87,12 @@ class Action_corona_stat(Action):
         dispatcher.utter_message(message)
         return [] 
 
-
-
 # class Action_corona_stat(Action):
-
 #      def name(self) -> Text:
 #          return "action_corona_stat"
-
 #      def run(self, dispatcher: CollectingDispatcher,
 #              tracker: Tracker,
 #              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-         
 #          api_res = requests.get("https://data.covid19india.org/data.json").json()
 
 #          entities = tracker.latest_message['entities']
@@ -119,16 +102,11 @@ class Action_corona_stat(Action):
 #          for e in entities:
 #              if e['entity'] == "date":
 #                  date = e['value']
-         
 #          message = "Please correct State name"
-         
-                  
 #          for data in api_res["cases_time_series"]:
 #              if data["date"] == date.title():
 #                  print(data)
 #                  message = "Active:"+ data["active"]+"\n"+ "Confirmed:"+ data["confirmed"]+"\n"+"Deaths:"+ data["deaths"]+"\n"+"Deltaconfirmed:"+ data["deltaconfirmed"]+"\n"+"Deltadeaths:"+ data["deltadeaths"]+"\n"+"Deltarecovered:"+ data["deltarecovered"]+"\n"+"Last Updated Time:"+ data["lastupdatedtime"]+"\n"+"Migrated Other:"+ data["migratedother"]+"\n"+"Recovered:"+ data["recovered"]+"\n"+"State:"+ data["state"]+"\n"+"State Code:"+ data["statecode"]+"\n"+"State Notes:"+ data["statenotes"]		
-
-
 #          print(message)
 #          dispatcher.utter_message(message)
 
