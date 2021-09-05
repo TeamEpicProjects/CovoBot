@@ -49,6 +49,8 @@ class Action_corona_stat(Action):
 
     def name(self) -> Text:
         return "action_corona_stat"
+
+    ## Custom function for json preprocessing. This will flattend the json for further steps
     def flatten_json(self , y):
         out = {}
         def flatten(x, name=''):
@@ -69,45 +71,54 @@ class Action_corona_stat(Action):
         flatten(y)
         return out
 
-    def get_sats(self , name , a):
+    ## This will fetch the given state or districts data provided an input
+    def get_sats(self , entity_from_chatbot , flattedDict , state = False):
         res = ""
-        for i in a.keys ():
+        for i in flattedDict.keys ():
+            if (state == False and len (re.findall(r"(.+?){fname}(.+?)".format(fname=entity_from_chatbot),i)) != 0 ):
+                res += str(i) + " " + str(flattedDict[i]) + "\n" 
+            if ( state == True and len (re.findall(r"{fname}_total.+?".format(fname=entity_from_chatbot),i)) != 0):
+                res += str(i) + " " + str(flattedDict[i]) + "\n" 
         
-            if ( len (re.findall(r"(.+?){fname}(.+?)".format(fname=name),i)) != 0 ):
-                print ( "Match OFund")
-                res += str(i) + " " + str(a[i]) + "\n" 
         return res.replace("_" , " " )
 
-    def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+
+    def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        ## For better output formatting
+        def get_key(val , dict_to_search_from):
+            for key, value in dict_to_search_from.items():
+                if val == value:
+                    return key
+            return "key doesn't exist" 
+
+        ## To get the slot value from chatbot context. ie: fetching entites
+        entity_from_chatbot = next(tracker.get_latest_entity_values('States'), None)
+        print ("State to be processed : ", entity_from_chatbot.title() )
+        
+        ## API URL and the API call we need to do 
         url= "https://data.covid19india.org/v4/min/data.min.json"
         r= requests.get(url = url).json()
+
+        ## Preprocessing of data. Flattening the dict so that it will work with regex
         flattedDict = self.flatten_json(r)
-        message = self.get_sats("Pathankot" , flattedDict)
+
+        ## Preprocessing: defining the state codes for states and UT
+        st = {'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR', 'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 
+                'Haryana': 'HR', 'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL', 'Madhya Pradesh': 'MP', 'Maharashtra': 'MH',
+                'Manipur': 'MN', 'Meghalaya': 'ML', 'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ', 'Sikkim': 'SK', 'Tamil Nadu': 'TN',
+                'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UL', 'Uttar Pradesh': 'UP', 'West Bengal': 'WB', 'Andaman and Nicobar Islands': 'AN', 'Chandigarh': 'CH',
+                'Dadra and Nagar Haveli': 'DN', 'Daman and Diu': 'DD', 'Delhi': 'DL', 'Jammu and Kashmir': 'JK', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY', 
+                'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
+        
+        ## The main code that is responsible for serching through the data
+        ## This if computes  if the given input is a state or not and searches accordingly
+        if ( entity_from_chatbot.title() in st):
+            message = self.get_sats(st[entity_from_chatbot.title().strip()] , flattedDict , True).replace( st[entity_from_chatbot.title()] , entity_from_chatbot.title() )
+        else:
+            message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
+            message = message.replace( message[0:2] , get_key(message[0:2] , st))
+
+        ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
         return [] 
-
-# class Action_corona_stat(Action):
-#      def name(self) -> Text:
-#          return "action_corona_stat"
-#      def run(self, dispatcher: CollectingDispatcher,
-#              tracker: Tracker,
-#              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-#          api_res = requests.get("https://data.covid19india.org/data.json").json()
-
-#          entities = tracker.latest_message['entities']
-#          print("Last message now", entities)
-#          state = None
-
-#          for e in entities:
-#              if e['entity'] == "date":
-#                  date = e['value']
-#          message = "Please correct State name"
-#          for data in api_res["cases_time_series"]:
-#              if data["date"] == date.title():
-#                  print(data)
-#                  message = "Active:"+ data["active"]+"\n"+ "Confirmed:"+ data["confirmed"]+"\n"+"Deaths:"+ data["deaths"]+"\n"+"Deltaconfirmed:"+ data["deltaconfirmed"]+"\n"+"Deltadeaths:"+ data["deltadeaths"]+"\n"+"Deltarecovered:"+ data["deltarecovered"]+"\n"+"Last Updated Time:"+ data["lastupdatedtime"]+"\n"+"Migrated Other:"+ data["migratedother"]+"\n"+"Recovered:"+ data["recovered"]+"\n"+"State:"+ data["state"]+"\n"+"State Code:"+ data["statecode"]+"\n"+"State Notes:"+ data["statenotes"]		
-#          print(message)
-#          dispatcher.utter_message(message)
-
-#          return []         

@@ -12,6 +12,13 @@ intents:
   - Hello World
   - corona_states_stat
 
+entities: 
+  - States
+
+slots:
+  States:
+    type: text
+
 actions:
   - action_hello_world
   - action_corona_stat
@@ -39,12 +46,11 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+
+
+
+  # nlu:
   
-nlu:
-- synonym: state
-  examples: |
-    - Gujrat
-    - Punjab
 
 
 session_config:

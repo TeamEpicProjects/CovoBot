@@ -141,7 +141,51 @@ nlu:
 
 - intent: corona_states_stat
   examples : |
-    - give me stats for [Pubjab](state)
+    - give me stats for [Pubjab](States)
+
+## Need to add more lookup regex examples 
+- lookup : States
+  examples : |
+    - India
+    - Gujarat  
+    - Andhra Pradesh  
+    - Arunachal Pradesh  
+    - Assam  
+    - Bihar  
+    - Goa  
+    - Chhattisgarh  
+    - Haryana  
+    - Himachal Pradesh  
+    - Jharkhand  
+    - Karnataka  
+    - Madhya Pradesh  
+    - Kerala  
+    - Maharashtra  
+    - Manipur  
+    - Meghalaya  
+    - Mizoram  
+    - Nagaland  
+    - Odisha  
+    - Punjab  
+    - Rajasthan  
+    - Sikkim  
+    - Tamil Nadu  
+    - Telangana  
+    - Tripura  
+    - Uttar Pradesh  
+    - Uttarakhand  
+    - West Bengal  
+    - Pathankot
+    - Srinagar
+    - Anantanag
+    - Vizianagaram
+    - Kurung Kumey
+    - Namsai
+
+# - synonym: States
+#   examples : |
+#     - Gujrat
+#     - Punjab
 
   # examples: |
   #   - [India](state)
