@@ -93,9 +93,12 @@ class Action_corona_stat(Action):
             return "key doesn't exist" 
 
         ## To get the slot value from chatbot context. ie: fetching entites
-        entity_from_chatbot = next(tracker.get_latest_entity_values('States'), None)
-        print ("State to be processed : ", entity_from_chatbot.title() )
-        
+        try:
+            # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
+            entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+            print ("State to be processed : ", entity_from_chatbot )
+        except Exception as e:
+            print ( "did not got anything")
         ## API URL and the API call we need to do 
         url= "https://data.covid19india.org/v4/min/data.min.json"
         r= requests.get(url = url).json()
@@ -106,19 +109,23 @@ class Action_corona_stat(Action):
         ## Preprocessing: defining the state codes for states and UT
         st = {'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR', 'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 
                 'Haryana': 'HR', 'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL', 'Madhya Pradesh': 'MP', 'Maharashtra': 'MH',
-                'Manipur': 'MN', 'Meghalaya': 'ML', 'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ', 'Sikkim': 'SK', 'Tamil Nadu': 'TN',
+                'Manipur': 'MN', 'Meghalaya': 'ML', 'Mizoram': 'MZ', 'Nagaland': 'NL', 'Odisha': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ', 'Sikkim': 'SK', 'Tamil Nadu': 'TN',
                 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UL', 'Uttar Pradesh': 'UP', 'West Bengal': 'WB', 'Andaman and Nicobar Islands': 'AN', 'Chandigarh': 'CH',
                 'Dadra and Nagar Haveli': 'DN', 'Daman and Diu': 'DD', 'Delhi': 'DL', 'Jammu and Kashmir': 'JK', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY', 
                 'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
         
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
-        if ( entity_from_chatbot.title() in st):
-            message = self.get_sats(st[entity_from_chatbot.title().strip()] , flattedDict , True).replace( st[entity_from_chatbot.title()] , entity_from_chatbot.title() )
-        else:
-            message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
-            message = message.replace( message[0:2] , get_key(message[0:2] , st))
-
+        try:
+            if ( entity_from_chatbot.title() in st):
+                message = self.get_sats(st[entity_from_chatbot.title().strip()] , flattedDict , True).replace( st[entity_from_chatbot.title()] , entity_from_chatbot.title() )
+            else:
+                message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
+                message = message.replace( message[0:2] , get_key(message[0:2] , st))
+        except Exception as e:
+            print ( e)
+            dispatcher.utter_message("Sorry we don't have information regarding that place")
+            return []
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)

@@ -14,9 +14,12 @@ intents:
 
 entities: 
   - States
+  - RState
 
 slots:
   States:
+    type: text
+  RState: 
     type: text
 
 actions:
