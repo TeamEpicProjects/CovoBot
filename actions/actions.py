@@ -77,6 +77,7 @@ class Action_corona_stat(Action):
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}(.+?)".format(fname=entity_from_chatbot),i)) != 0 ):
                 res += str(i) + " " + str(flattedDict[i]) + "\n" 
+            ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total.+?".format(fname=entity_from_chatbot),i)) != 0):
                 res += str(i) + " " + str(flattedDict[i]) + "\n" 
         
