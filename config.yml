@@ -6,7 +6,18 @@ pipeline:
 # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # If you'd like to customize it, uncomment and adjust the pipeline.
 # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-  - name: WhitespaceTokenizer
+
+  - name: SpacyNLP
+    model: "en_core_web_md"
+  - name: SpacyTokenizer
+  - name: SpacyEntityExtractor
+  - name: SpacyFeaturizer
+    pooling: mean
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 2
+  # - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
     ##CountVectorsFeaturizer- Creates features for intent classification and response selection. 
@@ -30,16 +41,16 @@ pipeline:
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
-    ##RegexEntityExtractor: Extracts entities using the lookup tables and/or regexes defined in the training data
-  - name: RegexEntityExtractor
-    # text will be processed with case insensitive as default
-    case_sensitive: False
-    # use lookup tables to extract entities
-    use_lookup_tables: True
-    # use regexes to extract entities
-    use_regexes: True
-    # use match word boundaries for lookup table
-    "use_word_boundaries": True
+  #   ##RegexEntityExtractor: Extracts entities using the lookup tables and/or regexes defined in the training data
+  # - name: RegexEntityExtractor
+  #   # text will be processed with case insensitive as default
+  #   case_sensitive: False
+  #   # use lookup tables to extract entities
+  #   use_lookup_tables: True
+  #   # use regexes to extract entities
+  #   use_regexes: True
+  #   # use match word boundaries for lookup table
+  #   "use_word_boundaries": True
     
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
