@@ -8,7 +8,7 @@ pipeline:
 # See https://rasa.com/docs/rasa/tuning-your-model for more information.
 
   - name: SpacyNLP
-    model: "en_core_web_md"
+    model: "en_core_web_md" 
   - name: SpacyTokenizer
   - name: SpacyEntityExtractor
   - name: SpacyFeaturizer

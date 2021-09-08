@@ -128,6 +128,19 @@ nlu:
     - Have the vaccines been developed for corona virus?
     - is there any vaccine for corona virus?
     - is there any vaccine for covid19 virus?
+  
+intent: corona_vaccine_stats
+  examples: |
+    - i am looking for the number of vaccines done in [{name}](RState)
+    - i need number of vaccines done in [{name}](RState)
+    - please show me number of vaccines done in [{name}](RState)
+    - can you show me the details of number of vaccines done in [{name}](RState)
+    - do you know the number of vaccine done in [{name}](RState)
+    - can i get the details of vaccines done in [{name}](RState)
+    - umm what about the number of vaccines done in [{name}](RState)
+    - yeah so i am looking for the details of vaccines done in [{name}](RState)
+    - can you please give a brief of vaccines done in [{name}](RState)
+
 
 - intent: corona_prevent
   examples: |
@@ -167,6 +180,7 @@ nlu:
     - number of cases in [{name}](RState)
     - so i want you to give me the total cases in [{name}](RState)
     - in [{name}](RState) how many cases have been registered
+
     - ok how about number of delta cases in [{name}](RState)
     - do you know the number of delta cases in [{name}](RState)
     - can i get the details of delta cases in [{name}](RState)
@@ -175,6 +189,7 @@ nlu:
     - can you please give a brief of delta cases in [{name}](RState)
     - tell me the number of delta cases in [{name}](RState)
     - in [{name}](RState) how many are delta cases
+
     - i would like to know about the number of deaths in [{name}](RState)
     - do you know the number of deaths in [{name}](RState)
     - give me the total number of death cases in [{name}](RState)
@@ -186,6 +201,7 @@ nlu:
     - deaths in [{name}](RState)
     - in [{name}](RState) how many are deaths
     - umm what about the number of deaths in [{name}](RState)
+
     - can i get the details of recovered in [{name}](RState)
     - do you know the number of recovered in [{name}](RState)
     - so i want you to give me the total recovered in [{name}](RState)
@@ -195,21 +211,14 @@ nlu:
     - umm what about the number of recovered in [{name}](RState)
     - recovered in [{name}](RState)
     - in [{name}](RState) how many are recovered
-    - i am looking for the number of vaccines done in [{name}](RState)
-    - i need number of vaccines done in [{name}](RState)
-    - please show me number of vaccines done in [{name}](RState)
-    - can you show me the details of number of vaccines done in [{name}](RState)
-    - do you know the number of vaccine done in [{name}](RState)
-    - can i get the details of vaccines done in [{name}](RState)
-    - umm what about the number of vaccines done in [{name}](RState)
-    - yeah so i am looking for the details of vaccines done in [{name}](RState)
-    - can you please give a brief of vaccines done in [{name}](RState)
+
+
 
 ## Using Regex to match all the possible states 
-- regex: RState
-  examples : |
-    - (?:^|)(?<=for\s).*|$
-    - (?:^|)(?<=in\s).*|$
+# - regex: RState
+#   examples : |
+#     - (?:^|)(?<=for\s).*|$
+#     - (?:^|)(?<=in\s).*|$
 
 #  TEST regex didn't worked properly because of lookahead issues
 # - /(?m)(?<=\bfor\s|in\s).*$/gm

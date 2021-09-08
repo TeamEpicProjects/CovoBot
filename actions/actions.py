@@ -28,7 +28,33 @@ import re
 #
 #         return []
 
+def getdataFromAPI():
+    ## API URL and the API call we need to do 
+    url= "https://data.covid19india.org/v4/min/data.min.json"
+    r= requests.get(url = url).json()
+    return r
 
+## Custom function for json preprocessing. This will flattend the json for further steps
+def flatten_json( y):
+    out = {}
+    def flatten(x, name=''):
+        # If the Nested key-value
+        # pair is of dict type
+        if type(x) is dict:
+            for a in x:
+                flatten(x[a], name + a + '_')
+        elif type(x) is list:
+        # If the Nested key-value
+        # pair is of list type
+            i = 0
+            for a in x:
+                flatten(a, name + str(i) + '_')
+                i += 1
+        else:
+            out[name[:-1]] = x
+    flatten(y)
+    return out
+     
 
 class ActionHelloWorld(Action):
 
@@ -45,31 +71,17 @@ class ActionHelloWorld(Action):
         return []
 
 
+# class Action_corona_stat(Action):
+
+#     def name(self) -> Text:
+#         return "action_corona_stat"
+
 class Action_corona_stat(Action):
 
     def name(self) -> Text:
         return "action_corona_stat"
 
-    ## Custom function for json preprocessing. This will flattend the json for further steps
-    def flatten_json(self , y):
-        out = {}
-        def flatten(x, name=''):
-            # If the Nested key-value
-            # pair is of dict type
-            if type(x) is dict:
-                for a in x:
-                    flatten(x[a], name + a + '_')
-            elif type(x) is list:
-            # If the Nested key-value
-            # pair is of list type
-                i = 0
-                for a in x:
-                    flatten(a, name + str(i) + '_')
-                    i += 1
-            else:
-                out[name[:-1]] = x
-        flatten(y)
-        return out
+    
 
     ## This will fetch the given state or districts data provided an input
     def get_sats(self , entity_from_chatbot , flattedDict , state = False):
@@ -105,27 +117,30 @@ class Action_corona_stat(Action):
         except Exception as e:
             print ( "did not got anything")
         ## API URL and the API call we need to do 
-        url= "https://data.covid19india.org/v4/min/data.min.json"
-        r= requests.get(url = url).json()
-
+        # url= "https://data.covid19india.org/v4/min/data.min.json"
+        # r= requests.get(url = url).json()
+        r = getdataFromAPI()
         ## Preprocessing of data. Flattening the dict so that it will work with regex
-        flattedDict = self.flatten_json(r)
+        flattedDict = flatten_json(r)
 
         ## Preprocessing: defining the state codes for states and UT
-        st = {'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR', 'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 
-                'Haryana': 'HR', 'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL', 'Madhya Pradesh': 'MP', 'Maharashtra': 'MH',
-                'Manipur': 'MN', 'Meghalaya': 'ML', 'Mizoram': 'MZ', 'Nagaland': 'NL', 'Odisha': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ', 'Sikkim': 'SK', 'Tamil Nadu': 'TN',
-                'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UL', 'Uttar Pradesh': 'UP', 'West Bengal': 'WB', 'Andaman and Nicobar Islands': 'AN', 'Chandigarh': 'CH',
-                'Dadra and Nagar Haveli': 'DN', 'Daman and Diu': 'DD', 'Delhi': 'DL', 'Jammu and Kashmir': 'JK', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY', 
-                'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
+        final_states = {'India' : 'TT' , 'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR',
+                        'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 'Haryana': 'HR',
+                        'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL',
+                        'Madhya Pradesh': 'MP', 'Maharashtra': 'MH', 'Manipur': 'MN', 'Meghalaya': 'ML',
+                        'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ',
+                        'Sikkim': 'SK', 'Tamil Nadu': 'TN', 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UT',
+                        'Uttar Pradesh': 'UP', 'West Bengal': 'WB','Chandigarh': 'CH', 'Dadra and Nagar Haveli': 'DN',
+                        'Delhi': 'DL', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY',
+                        'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
         try:
-            if ( entity_from_chatbot.title() in st):
-                message = self.get_sats(st[entity_from_chatbot.title().strip()] , flattedDict , True).replace( st[entity_from_chatbot.title()] , entity_from_chatbot.title() )
+            if ( entity_from_chatbot.title() in final_states):
+                message = self.get_sats(final_states[entity_from_chatbot.title().strip()] , flattedDict , True).replace( final_states[entity_from_chatbot.title()] , entity_from_chatbot.title() )
             else:
                 message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
-                message = message.replace( message[0:2] , get_key(message[0:2] , st))
+                message = message.replace( message[0:2] , get_key(message[0:2] , final_states))
         except Exception as e:
             print ( e)
             dispatcher.utter_message("Sorry we don't have information regarding that place")

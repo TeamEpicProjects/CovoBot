@@ -11,6 +11,7 @@ intents:
   - get_covid_data
   - Hello World
   - corona_states_stat
+  - corona_vaccine_stats
 
 entities: 
   - States
@@ -24,10 +25,13 @@ slots:
     type: text
   LOC:
     type: text
+  GPE:
+    type: text
 
 actions:
   - action_hello_world
   - action_corona_stat
+  - action_vaccine_stat
 
 responses:
   utter_greet:
