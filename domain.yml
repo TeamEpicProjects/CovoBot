@@ -15,11 +15,14 @@ intents:
 entities: 
   - States
   - RState
+  - LOC
 
 slots:
   States:
     type: text
   RState: 
+    type: text
+  LOC:
     type: text
 
 actions:

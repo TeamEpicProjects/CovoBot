@@ -95,7 +95,12 @@ class Action_corona_stat(Action):
         ## To get the slot value from chatbot context. ie: fetching entites
         try:
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
-            entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+            if ( next(tracker.get_latest_entity_values('RState'), None) != None):
+                entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+            elif ( next(tracker.get_latest_entity_values('LOC'), None) != None):
+                entity_from_chatbot = next(tracker.get_latest_entity_values('LOC'), None)
+            elif ( next(tracker.get_latest_entity_values('GPE'), None) != None):
+                entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
             print ("State to be processed : ", entity_from_chatbot )
         except Exception as e:
             print ( "did not got anything")
@@ -113,7 +118,6 @@ class Action_corona_stat(Action):
                 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UL', 'Uttar Pradesh': 'UP', 'West Bengal': 'WB', 'Andaman and Nicobar Islands': 'AN', 'Chandigarh': 'CH',
                 'Dadra and Nagar Haveli': 'DN', 'Daman and Diu': 'DD', 'Delhi': 'DL', 'Jammu and Kashmir': 'JK', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY', 
                 'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
-        
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
         try:

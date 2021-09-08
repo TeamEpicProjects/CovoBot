@@ -36,14 +36,14 @@ stories:
 
 - story : covid story
   steps:
-   - intent : get_covid_data
-   - action : utter_data
-   - intent : affirm
-   - action: utter_happy
+  - intent : get_covid_data
+  - action : utter_data
+  - intent : affirm
+  - action: utter_happy
   
 - story : corona stat path
   steps:
-   - intent : corona_states_stat
-   - action : action_corona_stat
-   - intent : affirm
-   - action: utter_happy
+  - intent : corona_states_stat
+  - action : action_corona_stat
+  - intent : affirm
+  - action: utter_happy
