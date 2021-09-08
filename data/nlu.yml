@@ -89,10 +89,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-- intent: get_covid_data
-  examples: |
-    - can you get me the latest covid data ?
-    - give me statistics on covid.
+
 
 - intent: bot_challenge
   examples: |
@@ -129,7 +126,7 @@ nlu:
     - is there any vaccine for corona virus?
     - is there any vaccine for covid19 virus?
   
-intent: corona_vaccine_stats
+- intent: corona_vaccine_stats
   examples: |
     - i am looking for the number of vaccines done in [{name}](RState)
     - i need number of vaccines done in [{name}](RState)
@@ -141,6 +138,26 @@ intent: corona_vaccine_stats
     - yeah so i am looking for the details of vaccines done in [{name}](RState)
     - can you please give a brief of vaccines done in [{name}](RState)
 
+- intent: covobot_help
+  examples: |
+    - what is this bot about ?
+    - what can this bot do ?
+    - help 
+    - what should i do now ?
+    
+
+- intent: covobot_purpose
+  examples: |
+    - what is the purposr of this bot?
+    - why do we need this bot ?
+
+- intent: covobot_who_made_this
+  examples: |
+    - who made this covobot ?
+    - who made this chatbot ?
+    - who made you ?
+    - who created you ? 
+    - who are your masters ?
 
 - intent: corona_prevent
   examples: |

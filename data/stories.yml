@@ -34,13 +34,13 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story : covid story
-  steps:
-  - intent : get_covid_data
-  - action : utter_data
-  - intent : affirm
-  - action: utter_happy
-  
+# - story : covid story
+#   steps:
+#   - intent : get_covid_data
+#   - action : utter_data
+#   - intent : affirm
+#   - action: utter_happy
+
 - story : corona stat path
   steps:
   - intent : corona_states_stat
@@ -54,3 +54,10 @@ stories:
   - action : action_vaccine_stat
   - intent : affirm
   - action: utter_happy
+
+
+- story : help story
+  steps:
+  - intent: covobot_help
+  - action : utter_help
+

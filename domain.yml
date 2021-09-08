@@ -8,10 +8,12 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - get_covid_data
   - Hello World
   - corona_states_stat
   - corona_vaccine_stats
+  - covobot_help
+  - covobot_purpose
+  - covobot_who_made_this
 
 entities: 
   - States
@@ -48,20 +50,19 @@ responses:
   - text: "Great, carry on!"
 
   utter_data :
-   - text : "Here you go!"
+    - text : "Here you go!"
 
   utter_goodbye:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, powered by Rasa." 
 
-
-
+  utter_help:
+    - text: "I am a Covid Chatbot which can give you information related to covid situation
+              in india. Feel free to ask me anything regarding C/R/D"
 
   # nlu:
-  
-
 
 session_config:
   session_expiration_time: 60
