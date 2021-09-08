@@ -48,9 +48,37 @@ stories:
   - intent : affirm
   - action: utter_happy
 
+- story : corona confirmed stat
+  steps:
+  - intent : corona_confirmed_stats
+  - action : action_confirmed_stat
+  - intent : affirm
+  - action: utter_happy
+
 - story : corona vaccine stat
   steps:
   - intent : corona_vaccine_stats
-  - action : action_vaccine_stat
+  - action : action_vaccine_stat 
+  - intent : affirm
+  - action: utter_happy
+
+- story : corona delta stat
+  steps:
+  - intent : corona_deltacase_stats
+  - action : action_delta_stat 
+  - intent : affirm
+  - action: utter_happy
+
+- story : corona recovered stat
+  steps:
+  - intent : corona_recovered_stats
+  - action : action_recovered_stat
+  - intent : affirm
+  - action: utter_happy
+
+- story : corona death stat
+  steps:
+  - intent : corona_deathcase_stats
+  - action : action_death_stat
   - intent : affirm
   - action: utter_happy

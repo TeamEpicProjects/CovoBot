@@ -10,8 +10,11 @@ intents:
   - bot_challenge
   - get_covid_data
   - Hello World
-  - corona_states_stat
+  - corona_confirmed_stats
   - corona_vaccine_stats
+  - corona_deltacase_stats
+  - corona_deathcase_stats
+  - corona_recovered_stats
 
 entities: 
   - States
@@ -31,7 +34,11 @@ slots:
 actions:
   - action_hello_world
   - action_corona_stat
+  - action_confirmed_stat
   - action_vaccine_stat
+  - action_delta_stat 
+  - action_death_stat 
+  - action_recovered_stat
 
 responses:
   utter_greet:
