@@ -4,30 +4,26 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
 # This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 import re
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
 
+
+## Preprocessing: defining the state codes for states and UT
+final_states = {'India' : 'TT' , 'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR',
+                'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 'Haryana': 'HR',
+                'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL',
+                'Madhya Pradesh': 'MP', 'Maharashtra': 'MH', 'Manipur': 'MN', 'Meghalaya': 'ML',
+                'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ',
+                'Sikkim': 'SK', 'Tamil Nadu': 'TN', 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UT',
+                'Uttar Pradesh': 'UP', 'West Bengal': 'WB','Chandigarh': 'CH', 'Dadra and Nagar Haveli': 'DN',
+                'Delhi': 'DL', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY',
+                'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
+                
 def getdataFromAPI():
     ## API URL and the API call we need to do 
     url= "https://data.covid19india.org/v4/min/data.min.json"
@@ -54,7 +50,6 @@ def flatten_json( y):
             out[name[:-1]] = x
     flatten(y)
     return out
-     
 
 class ActionHelloWorld(Action):
 
@@ -76,13 +71,6 @@ class Action_corona_stat(Action):
     def name(self) -> Text:
         return "action_corona_stat"
 
-class Action_corona_stat(Action):
-
-    def name(self) -> Text:
-        return "action_corona_stat"
-
-    
-
     ## This will fetch the given state or districts data provided an input
     def get_sats(self , entity_from_chatbot , flattedDict , state = False):
         res = ""
@@ -92,9 +80,7 @@ class Action_corona_stat(Action):
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total.+?".format(fname=entity_from_chatbot),i)) != 0):
                 res += str(i) + " " + str(flattedDict[i]) + "\n" 
-        
         return res.replace("_" , " " )
-
 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
@@ -103,7 +89,6 @@ class Action_corona_stat(Action):
                 if val == value:
                     return key
             return "key doesn't exist" 
-
         ## To get the slot value from chatbot context. ie: fetching entites
         try:
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
@@ -122,17 +107,6 @@ class Action_corona_stat(Action):
         r = getdataFromAPI()
         ## Preprocessing of data. Flattening the dict so that it will work with regex
         flattedDict = flatten_json(r)
-
-        ## Preprocessing: defining the state codes for states and UT
-        final_states = {'India' : 'TT' , 'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR',
-                        'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 'Haryana': 'HR',
-                        'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL',
-                        'Madhya Pradesh': 'MP', 'Maharashtra': 'MH', 'Manipur': 'MN', 'Meghalaya': 'ML',
-                        'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ',
-                        'Sikkim': 'SK', 'Tamil Nadu': 'TN', 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UT',
-                        'Uttar Pradesh': 'UP', 'West Bengal': 'WB','Chandigarh': 'CH', 'Dadra and Nagar Haveli': 'DN',
-                        'Delhi': 'DL', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY',
-                        'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
         try:
@@ -144,35 +118,30 @@ class Action_corona_stat(Action):
         except Exception as e:
             print ( e)
             dispatcher.utter_message("Sorry we don't have information regarding that place")
-            return []
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
-        return [] 
-
-
 
 
 class Action_Vaccine_stat(Action):
-
     def name(self) -> Text:
         return "action_vaccine_stat"
-
-    
-
     ## This will fetch the given state or districts data provided an input
     def get_sats(self , entity_from_chatbot , flattedDict , state = False):
         res = ""
+        count = 0
         for i in flattedDict.keys ():
-            if (state == False and len (re.findall(r"(.+?){fname}(.+?)".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += str(i) + " " + str(flattedDict[i]) + "\n" 
+            if (state == False and len (re.findall(r"(.+?){fname}_total_vaccinated(.+?)".format(fname=entity_from_chatbot),i)) != 0 ):
+                count += 1
+                # print ( "This is the str[i] value ", str(i) )
+                # print( "\nTHis is the str[flattedDict[i]] value :" , str(flattedDict[i]))
+                # res += str(i[2:]) + ": " + str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + " Total Vaccinated " + str(count) + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_vaccinated".format(fname=entity_from_chatbot),i)) != 0):
-                res += str(i) + " " + str(flattedDict[i]) + "\n" 
-        
-        return res.replace("_" , " " ) #{fname}_total_vaccinated1.+?
-
-
+                count += 1
+                res += entity_from_chatbot + " Total Vaccinated " + str(count) + " : "  + str(flattedDict[i]) + "\n" 
+        return res.replace("_" , " " ) 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
         def get_key(val , dict_to_search_from):
@@ -180,7 +149,6 @@ class Action_Vaccine_stat(Action):
                 if val == value:
                     return key
             return "key doesn't exist" 
-
         ## To get the slot value from chatbot context. ie: fetching entites
         try:
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
@@ -199,17 +167,6 @@ class Action_Vaccine_stat(Action):
         r = getdataFromAPI()
         ## Preprocessing of data. Flattening the dict so that it will work with regex
         flattedDict = flatten_json(r)
-
-        ## Preprocessing: defining the state codes for states and UT
-        final_states = {'India' : 'TT' , 'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR',
-                        'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 'Haryana': 'HR',
-                        'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL',
-                        'Madhya Pradesh': 'MP', 'Maharashtra': 'MH', 'Manipur': 'MN', 'Meghalaya': 'ML',
-                        'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ',
-                        'Sikkim': 'SK', 'Tamil Nadu': 'TN', 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UT',
-                        'Uttar Pradesh': 'UP', 'West Bengal': 'WB','Chandigarh': 'CH', 'Dadra and Nagar Haveli': 'DN',
-                        'Delhi': 'DL', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY',
-                        'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
         try:
@@ -217,26 +174,17 @@ class Action_Vaccine_stat(Action):
                 message = self.get_sats(final_states[entity_from_chatbot.title().strip()] , flattedDict , True).replace( final_states[entity_from_chatbot.title()] , entity_from_chatbot.title() )
             else:
                 message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
-                message = message.replace( message[0:2] , get_key(message[0:2] , final_states))
+                message = message.replace("districts" , "")
         except Exception as e:
             print ( e)
             dispatcher.utter_message("Sorry we don't have information regarding that place")
-            return []
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
-        return [] 
-
-
-
 
 class Action_Delta_stat(Action):
-
     def name(self) -> Text:
         return "action_delta_stat"
-
-    
-
     ## This will fetch the given state or districts data provided an input
     def get_sats(self , entity_from_chatbot , flattedDict , state = False):
         res = ""
@@ -246,10 +194,7 @@ class Action_Delta_stat(Action):
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"(.+?)delta".format(fname=entity_from_chatbot),i)) != 0):
                 res += str(i) + " " + str(flattedDict[i]) + "\n" 
-        
         return res.replace("_" , " " ) #{fname}_total_vaccinated1.+?
-
-
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
         def get_key(val , dict_to_search_from):
@@ -257,7 +202,6 @@ class Action_Delta_stat(Action):
                 if val == value:
                     return key
             return "key doesn't exist" 
-
         ## To get the slot value from chatbot context. ie: fetching entites
         try:
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
@@ -276,17 +220,6 @@ class Action_Delta_stat(Action):
         r = getdataFromAPI()
         ## Preprocessing of data. Flattening the dict so that it will work with regex
         flattedDict = flatten_json(r)
-
-        ## Preprocessing: defining the state codes for states and UT
-        final_states = {'India' : 'TT' , 'Andhra Pradesh': 'AP', 'Arunachal Pradesh': 'AR', 'Assam': 'AS', 'Bihar': 'BR',
-                        'Chhattisgarh': 'CT', 'Goa': 'GA', 'Gujarat': 'GJ', 'Haryana': 'HR',
-                        'Himachal Pradesh': 'HP', 'Jharkhand': 'JH', 'Karnataka': 'KA', 'Kerala': 'KL',
-                        'Madhya Pradesh': 'MP', 'Maharashtra': 'MH', 'Manipur': 'MN', 'Meghalaya': 'ML',
-                        'Mizoram': 'MZ', 'Nagaland': 'NL', 'Orissa': 'OR', 'Punjab': 'PB', 'Rajasthan': 'RJ',
-                        'Sikkim': 'SK', 'Tamil Nadu': 'TN', 'Telangana': 'TG', 'Tripura': 'TR', 'Uttarakhand': 'UT',
-                        'Uttar Pradesh': 'UP', 'West Bengal': 'WB','Chandigarh': 'CH', 'Dadra and Nagar Haveli': 'DN',
-                        'Delhi': 'DL', 'Ladakh': 'LA', 'Lakshadweep': 'LD', 'Pondicherry': 'PY',
-                        'Jammu And Kashmir': 'JK', 'Andaman And Nicobar Islands': 'AN', 'Daman And Diu': 'DD'}
         ## The main code that is responsible for serching through the data
         ## This if computes  if the given input is a state or not and searches accordingly
         try:
@@ -298,8 +231,6 @@ class Action_Delta_stat(Action):
         except Exception as e:
             print ( e)
             dispatcher.utter_message("Sorry we don't have information regarding that place")
-            return []
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
-        return [] 
