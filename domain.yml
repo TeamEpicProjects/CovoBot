@@ -9,11 +9,18 @@ intents:
   - mood_unhappy
   - bot_challenge
   - Hello World
+  - corona_intro
+  - corona_symptoms
+  - corona_vaccine
   - corona_states_stat
   - corona_vaccine_stats
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
+  - corona_states_delta_cases
+  - corona_states_death_cases
+  - corona_states_recovered_cases
+  - corona_prevent
 
 entities: 
   - States
@@ -32,31 +39,63 @@ slots:
 
 actions:
   - action_hello_world
+  - action_bot_challenge
+  - action_intro_corona
+  - action_corona_symptoms
+  - action_help_covobot
+  - action_covobot_purpose
+  - action_covobot_who_made_this
+  - action_corona_prevent
   - action_corona_stat
   - action_vaccine_stat
+  - action_delta_stat
+  - action_death_stat
+  - action_recovered_stat
+
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  # utter_cheer_up:
+  # - text: "Here is something to cheer you up:"
+  #   image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great! Is there anything else i can help you with ?"
 
   utter_data :
-    - text : "Here you go!"
+    - text : "Here you go !"
+  
+  utter_deny : 
+    - text : "Okay. Please repeat your query"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "GoodBye !"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa." 
+    - text: "I am a bot, powered by Rasa." 
+  
+  utter_stat :
+    - text: "Here are the stats !"
+
+  utter_delta :
+    - text: "Here are the stats for delta cases"
+
+  utter_prevention :
+    - text: "These are some of the ways to prevent Covid19"
+
+  utter_vaccine: 
+    - text: "Here are the stats for vaccine"
+
+  utter_death :
+    - text: "Here are the stats for death cases"
+
+  utter_recovered :
+    - text: "Here are the stats for recovered cases"
 
   utter_help:
     - text: "I am a Covid Chatbot which can give you information related to covid situation

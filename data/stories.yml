@@ -6,33 +6,32 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+
 
 - story: hello world path
   steps:
   - intent: Hello World
   - action: action_hello_world
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
 
 # - story : covid story
 #   steps:
@@ -41,23 +40,166 @@ stories:
 #   - intent : affirm
 #   - action: utter_happy
 
+- story : Bot Challenge
+  steps:
+  - intent : bot_challenge
+  - action : action_bot_challenge
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Intro Corona
+  steps:
+  - intent : corona_intro
+  - action : action_intro_corona
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Symptoms Corona
+  steps:
+  - intent : corona_symptoms
+  - action : action_corona_symptoms
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Help CovoBot
+  steps:
+  - intent : covobot_help
+  - action : action_help_covobot
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Purpose CovoBot
+  steps:
+  - intent : covobot_purpose
+  - action : action_covobot_purpose
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Who made this Bot
+  steps:
+  - intent : covobot_who_made_this
+  - action : action_covobot_who_made_this
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : Preventions of corona
+  steps:
+  - intent : corona_prevent
+  - action : action_corona_prevent
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
 - story : corona stat path
   steps:
   - intent : corona_states_stat
+  - action : utter_stat
   - action : action_corona_stat
+  - action: utter_did_that_help
   - intent : affirm
   - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : corona delta stat 
+  steps :
+  - intent : corona_states_delta_cases
+  - action : utter_delta
+  - action : action_delta_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
 - story : corona vaccine stat
   steps:
   - intent : corona_vaccine_stats
+  - action : utter_vaccine
   - action : action_vaccine_stat
+  - action: utter_did_that_help
   - intent : affirm
   - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
+- story : corona death stat
+  steps :
+  - intent : corona_states_death_cases
+  - action : utter_death
+  - action : action_death_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story : corona recovered stat
+  steps :
+  - intent : corona_states_recovered_cases
+  - action : utter_recovered
+  - action : action_recovered_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
 - story : help story
   steps:
   - intent: covobot_help
   - action : utter_help
+
+# - story : corona vaccine stat2
+#   steps:
+#   - intent : corona_vaccine_stats
+#   - action : action_vaccine_stat
+  
+
+# -story : corona prevention
+#  steps :
+#  - intent : corona_prevent
+#  - action : ??
+#  - intent : affirm
+#  - action : utter_prevention
+#  - action : utter_did_that_help
+#  - intent : affirm
+#  - action : utter_happy
+
+# - story : coron recovered cases
+#   steps : 
+#   - intent : corona_states_recovered_cases
+#   - action : ??
+#   - intent : affirm
+#   - action : utter_recovered
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action : utter_happy
+#   - intent : deny
+#   - action : utter_deny
+  
+
+
+  
+
 

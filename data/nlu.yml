@@ -145,10 +145,9 @@ nlu:
     - help 
     - what should i do now ?
     
-
 - intent: covobot_purpose
   examples: |
-    - what is the purposr of this bot?
+    - what is the purpose of this bot?
     - why do we need this bot ?
 
 - intent: covobot_who_made_this
@@ -198,6 +197,8 @@ nlu:
     - so i want you to give me the total cases in [{name}](RState)
     - in [{name}](RState) how many cases have been registered
 
+- intent : corona_states_delta_cases
+  examples : |
     - ok how about number of delta cases in [{name}](RState)
     - do you know the number of delta cases in [{name}](RState)
     - can i get the details of delta cases in [{name}](RState)
@@ -207,6 +208,8 @@ nlu:
     - tell me the number of delta cases in [{name}](RState)
     - in [{name}](RState) how many are delta cases
 
+- intent : corona_states_death_cases
+  examples : |
     - i would like to know about the number of deaths in [{name}](RState)
     - do you know the number of deaths in [{name}](RState)
     - give me the total number of death cases in [{name}](RState)
@@ -219,6 +222,8 @@ nlu:
     - in [{name}](RState) how many are deaths
     - umm what about the number of deaths in [{name}](RState)
 
+- intent : corona_states_recovered_cases
+  examples : |
     - can i get the details of recovered in [{name}](RState)
     - do you know the number of recovered in [{name}](RState)
     - so i want you to give me the total recovered in [{name}](RState)
