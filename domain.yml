@@ -63,43 +63,61 @@ responses:
 
   utter_did_that_help:
     - text: "Did that help you?"
+    - text: "Was that helpful enough?"
 
   utter_happy:
-    - text: "Great! Is there anything else i can help you with ?"
+    - text: "Great! Is there anything else i can help you with?"
+    - text: "Amazing! Can I help you with anything else?"
+    - text: "Is there anything else that I can help you with?"
 
   utter_data :
-    - text : "Here you go !"
+    - text: "Here you go!"
+    - text: "Here is your answer:"
   
   utter_deny : 
-    - text : "Okay. Please repeat your query"
+    - text: "Okay. Please repeat your query"
+    - text: "Can you please rephrase your query?"
+    - text: "Please try rephrasing the query."
 
   utter_goodbye:
-    - text: "GoodBye !"
+    - text: "GoodBye!"
+    - text: "Have a good day!"
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." 
   
   utter_stat :
-    - text: "Here are the stats !"
+    - text: "Here are the stats!"
+    - text: "The stats are as follows:"
 
   utter_delta :
-    - text: "Here are the stats for delta cases"
+    - text: "Here are the stats for delta cases:"
+    - text: "The stats for delta cases are as follows:"
+    - text: "The number of delta variant cases are:"
+    - text: "People in contact with delta variant are:"
 
   utter_prevention :
-    - text: "These are some of the ways to prevent Covid19"
+    - text: "These are some of the ways to prevent COVID-19:"
+    - text: "COVID-19 can be prevented in the following ways:"
+    - text: "You can prevent COVID-19 by following the mentioned ways:"
 
   utter_vaccine: 
-    - text: "Here are the stats for vaccine"
+    - text: "Here are the stats for vaccine:"
+    - text: "Here are the vaccination stats:"
+    - text: "The number of vaccinations done are:"
+    - text: "Number of people vaccinated are:"
 
   utter_death :
-    - text: "Here are the stats for death cases"
+    - text: "Here are the stats for death cases:"
+    - text: "Number of people passed away due to COVID-19 are:"
 
   utter_recovered :
-    - text: "Here are the stats for recovered cases"
+    - text: "Here are the stats for recovered cases:"
+    - text: "People recovered from COVID-19 are:"
 
   utter_help:
-    - text: "I am a Covid Chatbot which can give you information related to covid situation
-              in india. Feel free to ask me anything regarding C/R/D"
+    - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
+              Feel free to ask me anything regarding C/R/D"
 
   # nlu:
 

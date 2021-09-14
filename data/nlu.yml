@@ -144,11 +144,14 @@ nlu:
     - what can this bot do ?
     - help 
     - what should i do now ?
+    - I am confused
     
 - intent: covobot_purpose
   examples: |
     - what is the purpose of this bot?
     - why do we need this bot ?
+    - What do you do?
+    - What are you made for?
 
 - intent: covobot_who_made_this
   examples: |
@@ -165,12 +168,12 @@ nlu:
     - how can i prevent covid-19?
     - prevent covid19?
     - prevent corona
-    - how once can prevent himself/herself from getting infected from covid19?
-    - how once can prevent himself/herself from getting infected from corona?
+    - how can one prevent oneself from getting infected from covid19?
+    - how one can prevent himself/herself from getting infected from corona?
 
 - intent: corona_states_stat
   examples : |
-    - give me stats for [Pubjab](RState)
+    - give me stats for [Punjab](RState)
     - can you give me stats for [Andhra Pradesh](RState)
     - give stats for [East Godavari](RState)
     - What is the Number of cases in [Bihar](RState)
