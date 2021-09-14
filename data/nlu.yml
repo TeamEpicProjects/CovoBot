@@ -237,7 +237,19 @@ nlu:
     - recovered in [{name}](RState)
     - in [{name}](RState) how many are recovered
 
-
+- intent : get_state_name
+  examples : |
+    - what are the number of positive cases?
+    - how many people contacted delta variant?
+    - how many people lost their lives to COVID-19?
+    - Total deaths?
+    - total recovered cases?
+    - current deceased cases?
+    - what are the number of cases?
+    - give me details of infected people
+    - number of people died?
+    - number of people recovered?
+    - number of people fighting COVID-19?
 
 ## Using Regex to match all the possible states 
 # - regex: RState
