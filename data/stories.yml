@@ -195,9 +195,3 @@ stories:
 #   - action : utter_happy
 #   - intent : deny
 #   - action : utter_deny
-  
-
-
-  
-
-

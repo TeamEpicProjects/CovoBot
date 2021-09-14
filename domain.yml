@@ -82,13 +82,15 @@ responses:
   utter_goodbye:
     - text: "GoodBye!"
     - text: "Have a good day!"
+    - text: "Bye! take care."
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." 
   
   utter_stat :
-    - text: "Here are the stats!"
+    - text: "Here are the stats:"
     - text: "The stats are as follows:"
+    - text: "Here are the details:"
 
   utter_delta :
     - text: "Here are the stats for delta cases:"
@@ -114,6 +116,12 @@ responses:
   utter_recovered :
     - text: "Here are the stats for recovered cases:"
     - text: "People recovered from COVID-19 are:"
+
+  utter_location :
+    - text: "Can you enter the state/district name"
+    - text: "Please enter the state/district name"
+    - text: "Can you mention the state/district?"
+    - text: "May I know the state/district?"
 
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
