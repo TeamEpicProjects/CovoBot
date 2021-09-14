@@ -415,11 +415,14 @@ class Action_Vaccine_stat(Action):
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
             if ( next(tracker.get_latest_entity_values('RState'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
-            elif ( next(tracker.get_latest_entity_values('LOC'), None) != None):
+            if ( next(tracker.get_latest_entity_values('LOC'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('LOC'), None)
-            elif ( next(tracker.get_latest_entity_values('GPE'), None) != None):
+            if ( next(tracker.get_latest_entity_values('GPE'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
+            if ( next(tracker.get_latest_entity_values('Vtypes'), None) != None):
+                type_from_chatbot = next(tracker.get_latest_entity_values('Vtypes'), None)
             print ("State to be processed : ", entity_from_chatbot )
+            print ("type to be processed : ", type_from_chatbot )
         except Exception as e:
             print ( "did not got anything")
         ## API URL and the API call we need to do 
