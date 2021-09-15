@@ -12,17 +12,16 @@ stories:
   - intent: Hello World
   - action: action_hello_world
 
-<<<<<<< Updated upstream
-- story : Bot Challenge
-  steps:
-  - intent : bot_challenge
-  - action : action_bot_challenge
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-=======
+# - story : Bot Challenge
+#   steps:
+#   - intent : bot_challenge
+#   - action : action_bot_challenge
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+
 # - story: sad path 1
 #   steps:
 #   - intent: greet
@@ -59,7 +58,7 @@ stories:
 #   - action: utter_happy
 #   - intent : deny
 #   - action: utter_deny
->>>>>>> Stashed changes
+
 
 - story : Intro Corona
   steps:
