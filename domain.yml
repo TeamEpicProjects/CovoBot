@@ -22,6 +22,7 @@ intents:
   - corona_states_death_cases
   - corona_states_recovered_cases
   - corona_prevent
+  - corona_states_confirmed_cases
 
 entities: 
   - States
@@ -55,6 +56,7 @@ actions:
   - action_delta_stat
   - action_death_stat
   - action_recovered_stat
+  - action_confirmed_stat
 
 
 responses:
@@ -121,11 +123,19 @@ responses:
     - text: "Here are the stats for recovered cases:"
     - text: "People recovered from COVID-19 are:"
 
+ utter_confirmed :
+    - text: "Here are the stats for confirmed cases:"
+    - text: "Number of confirmed COVID-19 cases are:"
+
   utter_location :
     - text: "Can you enter the state/district name"
     - text: "Please enter the state/district name"
     - text: "Can you mention the state/district?"
     - text: "May I know the state/district?"
+    - text: "Please tell me the state/district name"
+    - text: "can you please tell me your location?"
+    - text: "Mention your location please"
+    - text: "The location ?"
 
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 

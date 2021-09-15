@@ -195,14 +195,14 @@ stories:
 #   - intent : affirm
 #   - action : utter_happy
 
-# - story : coron recovered cases
-#   steps : 
-#   - intent : corona_states_recovered_cases
-#   - action : ??
-#   - intent : affirm
-#   - action : utter_recovered
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action : utter_happy
-#   - intent : deny
-#   - action : utter_deny
+- story : coron confirmed cases
+  steps : 
+  - intent : corona_states_confirmed_cases
+  - action : action_confirmed_stat
+  - intent : affirm
+  - action : utter_confirmed
+  - action: utter_did_that_help
+  - intent : affirm
+  - action : utter_happy
+  - intent : deny
+  - action : utter_deny

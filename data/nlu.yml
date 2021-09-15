@@ -240,17 +240,17 @@ nlu:
     - in [{name}](RState) how many are recovered
 
 
-- intent : corona_states_recovered_cases
+- intent : corona_states_confirmed_cases
   examples : |
-    - can i get the details of recovered in [{name}](RState)
-    - do you know the number of recovered in [{name}](RState)
-    - so i want you to give me the total recovered in [{name}](RState)
-    - number of recovered in [{name}](RState)
-    - hello i am looking for recovered in [{name}](RState)
-    - can you please give a brief of recovered covid cases in [{name}](RState)
-    - umm what about the number of recovered in [{name}](RState)
-    - recovered in [{name}](RState)
-    - in [{name}](RState) how many are recovered
+    - can i get the details of confirmed in [{name}](RState)
+    - do you know the number of confirmed in [{name}](RState)
+    - so i want you to give me the total confirmed in [{name}](RState)
+    - number of confirmed in [{name}](RState)
+    - hello i am looking for confirmed in [{name}](RState)
+    - can you please give a brief of confirmed covid cases in [{name}](RState)
+    - umm what about the number of confirmed in [{name}](RState)
+    - confirmed in [{name}](RState)
+    - in [{name}](RState) how many are confirmed
 
 - intent : get_state_name
   examples : |
@@ -266,6 +266,34 @@ nlu:
     - number of people recovered?
     - number of people fighting COVID-19?
 
+- intent : covid_delta_halfQ
+  examples: |
+    - tell me total number of delta cases
+    - How many delta cases are there now
+    - Number of delta cases
+    - Can you show me stat for delta cases
+    - How many of us are now affected by the delta variant
+    - Number of people affected by delta variant
+    - Stats for delta cases
+    - Can you tell me the delta cases in my area?
+    - number of delta cases in my location
+    - How many people are affected by the delta variant here?
+
+- intent : covid_confirmed_halfQ
+  examples: |
+    - tell me total number of confirmed cases
+    - How many confirmed cases are there now
+    - Number of confirmed cases
+    - Can you show me stat for confirmed cases
+    - How many of us are now confirmed with covid
+    - Number of people are sufferring from covid19 now
+    - Stats for confirmed cases
+    - Can you tell me the confirmed cases in my area?
+    - number of confirmed cases in my location
+    - How many people are affected by covid19 here?
+    - Tell me the total cases of covid
+    - Can you please share the data on current total cases of covid19?
+    - Give me the stats for current confirmed cases
 
 - intent : covid_vaccine_halfQ
   examples: |
@@ -276,8 +304,32 @@ nlu:
     - how many deaths ?
     - how many people died 
 
-# - intent : covid_total_halfQ
-#   examples : |
+# - intent : covid_recovered_halfQ
+#   examples: |
+
+- intent : covid_total_halfQ
+  examples : |
+    - give me stats of covid19
+    - can you give me stats for corona
+    - give stats for corona
+    - covid stats
+    - Now, what condition of the covid stats
+    - give me all the stats
+    - hey can you give me details of covid cases
+    - i would like to know the stats
+    - i am looking for the whole covid data
+    - i need current informatios of covid stats
+    - stats for corona
+    - i want to know the corona virus stats 
+    - can you show me the details of covid cases
+    - can i get the details of all cases
+    - umm what about the number of confirmed, death and recovered
+    - yeah so i am looking for the details of covid cases of confirmed, death, recovered, vaccinated
+    - can you please give a brief of covid stats
+    - all covid related cases in my area
+    - hello i am looking for covid stats here
+    - how many cases have been registered
+    - what about the current registered data of covid
 
 
 ## Using Regex to match all the possible states 
