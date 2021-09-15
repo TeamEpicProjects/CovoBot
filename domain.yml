@@ -11,16 +11,16 @@ intents:
   - Hello World
   - corona_intro
   - corona_symptoms
-  # - corona_vaccine
+  - corona_vaccine
   - corona_states_stat
-  # - corona_vaccine_stats
+  - corona_vaccine_stats
   - boss_intent
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
-  # - corona_states_delta_cases
-  # - corona_states_death_cases
-  # - corona_states_recovered_cases
+  - corona_states_delta_cases
+  - corona_states_death_cases
+  - corona_states_recovered_cases
   - corona_prevent
 
 entities: 

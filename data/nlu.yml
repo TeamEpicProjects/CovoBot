@@ -107,8 +107,6 @@ nlu:
     - can you tell me about corona
     - can you tell me about covid-19
 
-    
-
 - intent: corona_symptoms
   examples: |
     - What are the symptoms of novel coronavirus?
@@ -118,93 +116,27 @@ nlu:
     - symptoms of corona virus?
     - symptoms of covid19 virus?
 
-# - intent: corona_vaccine
-#   examples: |
-#     - Are there any vaccines available for prevention of corona virus?
-#     - Are there any vaccines available for prevention of covid19 virus?
-#     - what about vaccines available for prevention of corona virus?
-#     - vaccines available for prevention of corona virus?
-#     - Have the vaccines been developed for corona virus?
-#     - is there any vaccine for corona virus?
-#     - is there any vaccine for covid19 virus?
-  
-- intent: boss_intent
+- intent: corona_vaccine
   examples: |
-    - i need number of [death](Vtypes) done in [{name}](RState)
-    - i need number of [vaccines](Vtypes) done in [{name}](RState)
-    - i need number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - i need number of [delta](Vtypes) done in [{name}](RState)
-    - please show me number of [death](Vtypes) done in [{name}](RState)
-    - please show me number of [vaccines](Vtypes) done in [{name}](RState)
-    - please show me number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - please show me number of [delta](Vtypes) done in [{name}](RState)
-    - can you show me the details of number of [death](Vtypes) done in [{name}](RState)
-    - can you show me the details of number of [vaccines](Vtypes) done in [{name}](RState)
-    - can you show me the details of number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - can you show me the details of number of [delta](Vtypes) done in [{name}](RState)   
-    - do you know the number of [death](Vtypes) done in [{name}](RState)
-    - do you know the number of [vaccan] you show me the details of number of deaths in srinagar ines](Vtypes) done in [{name}](RState)
-    - do you know the number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - do you know the number of [delta](Vtypes) done in [{name}](RState) 
-    - i am looking for the number of [death](Vtypes) done in [{name}](RState)
-    - i am looking for the number of [vaccines](Vtypes) done in [{name}](RState)
-    - i am looking for the number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - i am looking for the number of [delta](Vtypes) done in [{name}](RState)
-    - can i get the details of [death](Vtypes) done in [{name}](RState)
-    - can i get the details of [vaccines](Vtypes) done in [{name}](RState)
-    - can i get the details of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - can i get the details of [delta](Vtypes) done in [{name}](RState)
-    - umm what about the number of [death](Vtypes) done in [{name}](RState)
-    - umm what about the number of [vaccines](Vtypes) done in [{name}](RState)
-    - umm what about the number of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - umm what about the number of [delta](Vtypes) done in [{name}](RState)                     
-    - yeah so i am looking for the details of [death](Vtypes) done in [{name}](RState)
-    - yeah so i am looking for the details of [vaccines](Vtypes) done in [{name}](RState)
-    - yeah so i am looking for the details of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - yeah so i am looking for the details of [delta](Vtypes) done in [{name}](RState)
-    - can you please give a brief of [death](Vtypes) done in [{name}](RState)
-    - can you please give a brief of [vaccines](Vtypes) done in [{name}](RState)
-    - can you please give a brief of [vaccination](Vtypes:vaccines) done in [{name}](RState)
-    - can you please give a brief of [delta](Vtypes) done in [{name}](RState)
-    - tell me the number of [death](Vtypes) cases in [{name}](RState)
-    - tell me the number of [vaccines](Vtypes) cases in [{name}](RState)
-    - tell me the number of [vaccination](Vtypes:vaccines) cases in [{name}](RState)
-    - tell me the number of [delta](Vtypes) cases in [{name}](RState)
-    - in [{name}](RState) how many are [death](Vtypes) cases
-    - in [{name}](RState) how many are [vaccines](Vtypes) cases
-    - in [{name}](RState) how many are [vaccination](Vtypes:vaccines) cases
-    - in [{name}](RState) how many are [delta](Vtypes) cases
-    - do you know the number of [death](Vtypes) in [{name}](RState)
-    - do you know the number of [vaccines](Vtypes) in [{name}](RState)
-    - do you know the number of [vaccination](Vtypes:vaccines) in [{name}](RState)
-    - do you know the number of [delta](Vtypes) in [{name}](RState)
-    - number of [death](Vtypes) in [{name}](RState)
-    - number of [vaccines](Vtypes) in [{name}](RState)
-    - number of [vaccination](Vtypes:vaccines) in [{name}](RState)
-    - number of [delta](Vtypes) in [{name}](RState)
-    - hello i am looking for [death](Vtypes) in [{name}](RState)
-    - hello i am looking for [vaccines](Vtypes) in [{name}](RState)
-    - hello i am looking for [vaccination](Vtypes:vaccines) in [{name}](RState)
-    - hello i am looking for [delta](Vtypes) in [{name}](RState)
-    - [death](Vtypes) in [{name}](RState)
-    - [vaccines](Vtypes) in [{name}](RState)
-    - [vaccination](Vtypes:vaccines) in [{name}](RState)
-    - [delta](Vtypes) in [{name}](RState)
-    - so i want you to give me the total [death](Vtypes) cases in [{name}](RState)
-    - so i want you to give me the total [vaccines](Vtypes) in [{name}](RState)
-    - so i want you to give me the total [vaccination](Vtypes:vaccines) in [{name}](RState)
-    - so i want you to give me the total [delta](Vtypes) cases in [{name}](RState)
-     
+    - Are there any vaccines available for prevention of corona virus?
+    - Are there any vaccines available for prevention of covid19 virus?
+    - what about vaccines available for prevention of corona virus?
+    - vaccines available for prevention of corona virus?
+    - Have the vaccines been developed for corona virus?
+    - is there any vaccine for corona virus?
+    - is there any vaccine for covid19 virus?
 
-# # - i am looking for the number of vaccines done in [{name}](RState)
-# # - i need number of vaccines done in [{name}](RState)
-# # - please show me number of vaccines done in [{name}](RState)
-# # - can you show me the details of number of vaccines done in [{name}](RState)
-# # - do you know the number of vaccine done in [{name}](RState)
-# # - can i get the details of vaccines done in [{name}](RState)
-# # - umm what about the number of vaccines done in [{name}](RState)
-# # - yeah so i am looking for the details of vaccines done in [{name}](RState)
-# # - can you please give a brief of vaccines done in [{name}](RState)
+- intent: corona_vaccine_stats
+  examples: |
+    - i am looking for the number of vaccines done in [{name}](RState)
+    - i need number of vaccines done in [{name}](RState)
+    - please show me number of vaccines done in [{name}](RState)
+    - can you show me the details of number of vaccines done in [{name}](RState)
+    - do you know the number of vaccine done in [{name}](RState)
+    - can i get the details of vaccines done in [{name}](RState)
+    - umm what about the number of vaccines done in [{name}](RState)
+    - yeah so i am looking for the details of vaccines done in [{name}](RState)
+    - can you please give a brief of vaccines done in [{name}](RState)
 
 
 - intent: covobot_help
@@ -269,56 +201,56 @@ nlu:
     - so i want you to give me the total cases in [{name}](RState)
     - in [{name}](RState) how many cases have been registered
 
-# - intent : corona_states_delta_cases
-#   examples : |
-#     - ok how about number of delta cases in [{name}](RState)
-#     - do you know the number of delta cases in [{name}](RState)
-#     - can i get the details of delta cases in [{name}](RState)
-#     - umm what about the number of delta cases in [{name}](RState)
-#     - yeah so i am looking for the details of delta cases in [{name}](RState)
-#     - can you please give a brief of delta cases in [{name}](RState)
-#     - tell me the number of delta cases in [{name}](RState)
-#     - in [{name}](RState) how many are delta cases
+- intent : corona_states_delta_cases
+  examples : |
+    - ok how about number of delta cases in [{name}](RState)
+    - do you know the number of delta cases in [{name}](RState)
+    - can i get the details of delta cases in [{name}](RState)
+    - umm what about the number of delta cases in [{name}](RState)
+    - yeah so i am looking for the details of delta cases in [{name}](RState)
+    - can you please give a brief of delta cases in [{name}](RState)
+    - tell me the number of delta cases in [{name}](RState)
+    - in [{name}](RState) how many are delta cases
 
-# - intent : corona_states_death_cases
-#   examples : |
-#     - i would like to know about the number of deaths in [{name}](RState)
-#     - do you know the number of deaths in [{name}](RState)
-#     - give me the total number of death cases in [{name}](RState)
-#     - can you please give a brief of deaths in [{name}](RState)
-#     - can i get the details of deaths in [{name}](RState)
-#     - so i want you to give me the total deaths in [{name}](RState)
-#     - number of deaths in [{name}](RState)
-#     - hello i am looking for deaths in [{name}](RState)
-#     - deaths in [{name}](RState)
-#     - in [{name}](RState) how many are dead due to covid ?
-#     - umm what about the number of deaths in [{name}](RState)
-
-
-# - intent : corona_states_recovered_cases
-#   examples : |
-#     - can i get the details of recovered in [{name}](RState)
-#     - do you know the number of recovered in [{name}](RState)
-#     - so i want you to give me the total recovered in [{name}](RState)
-#     - number of recovered in [{name}](RState)
-#     - hello i am looking for recovered in [{name}](RState)
-#     - can you please give a brief of recovered covid cases in [{name}](RState)
-#     - umm what about the number of recovered in [{name}](RState)
-#     - recovered in [{name}](RState)
-#     - in [{name}](RState) how many are recovered
+- intent : corona_states_death_cases
+  examples : |
+    - i would like to know about the number of deaths in [{name}](RState)
+    - do you know the number of deaths in [{name}](RState)
+    - give me the total number of death cases in [{name}](RState)
+    - can you please give a brief of deaths in [{name}](RState)
+    - can i get the details of deaths in [{name}](RState)
+    - so i want you to give me the total deaths in [{name}](RState)
+    - number of deaths in [{name}](RState)
+    - hello i am looking for deaths in [{name}](RState)
+    - deaths in [{name}](RState)
+    - in [{name}](RState) how many are dead due to covid ?
+    - umm what about the number of deaths in [{name}](RState)
 
 
-# - intent : corona_states_recovered_cases
-#   examples : |
-#     - can i get the details of recovered in [{name}](RState)
-#     - do you know the number of recovered in [{name}](RState)
-#     - so i want you to give me the total recovered in [{name}](RState)
-#     - number of recovered in [{name}](RState)
-#     - hello i am looking for recovered in [{name}](RState)
-#     - can you please give a brief of recovered covid cases in [{name}](RState)
-#     - umm what about the number of recovered in [{name}](RState)
-#     - recovered in [{name}](RState)
-#     - in [{name}](RState) how many are recovered
+- intent : corona_states_recovered_cases
+  examples : |
+    - can i get the details of recovered in [{name}](RState)
+    - do you know the number of recovered in [{name}](RState)
+    - so i want you to give me the total recovered in [{name}](RState)
+    - number of recovered in [{name}](RState)
+    - hello i am looking for recovered in [{name}](RState)
+    - can you please give a brief of recovered covid cases in [{name}](RState)
+    - umm what about the number of recovered in [{name}](RState)
+    - recovered in [{name}](RState)
+    - in [{name}](RState) how many are recovered
+
+
+- intent : corona_states_recovered_cases
+  examples : |
+    - can i get the details of recovered in [{name}](RState)
+    - do you know the number of recovered in [{name}](RState)
+    - so i want you to give me the total recovered in [{name}](RState)
+    - number of recovered in [{name}](RState)
+    - hello i am looking for recovered in [{name}](RState)
+    - can you please give a brief of recovered covid cases in [{name}](RState)
+    - umm what about the number of recovered in [{name}](RState)
+    - recovered in [{name}](RState)
+    - in [{name}](RState) how many are recovered
 
 - intent : get_state_name
   examples : |
@@ -333,6 +265,20 @@ nlu:
     - number of people died?
     - number of people recovered?
     - number of people fighting COVID-19?
+
+
+- intent : covid_vaccine_halfQ
+  examples: |
+    - tell me total number of vaccinated people
+
+- intent : covid_death_halfQ
+  examples : |
+    - how many deaths ?
+    - how many people died 
+
+# - intent : covid_total_halfQ
+#   examples : |
+
 
 ## Using Regex to match all the possible states 
 # - regex: RState

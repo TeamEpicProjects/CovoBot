@@ -517,6 +517,3 @@ class Action_Delta_stat(Action):
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
-
-
-

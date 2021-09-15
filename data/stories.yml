@@ -131,16 +131,16 @@ stories:
   - intent : deny
   - action: utter_deny
 
-# - story : corona delta stat 
-#   steps :
-#   - intent : corona_states_delta_cases
-#   - action : utter_delta
-#   - action : action_delta_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
+- story : corona delta stat 
+  steps :
+  - intent : corona_states_delta_cases
+  - action : utter_delta
+  - action : action_delta_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
 - story : corona Boss_Intent
   steps:
@@ -153,47 +153,47 @@ stories:
   - intent : deny
   - action: utter_deny
 
-# - story : corona death stat
-#   steps :
-#   - intent : corona_states_death_cases
-#   - action : utter_death
-#   - action : action_death_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
+- story : corona death stat
+  steps :
+  - intent : corona_states_death_cases
+  - action : utter_death
+  - action : action_death_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
-# - story : corona recovered stat
-#   steps :
-#   - intent : corona_states_recovered_cases
-#   - action : utter_recovered
-#   - action : action_recovered_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
+- story : corona recovered stat
+  steps :
+  - intent : corona_states_recovered_cases
+  - action : utter_recovered
+  - action : action_recovered_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
 
 - story : help story
   steps:
   - intent: covobot_help
   - action : utter_help
 
-# - story : corona vaccine stat2
-#   steps:
-#   - intent : corona_vaccine_stats
-#   - action : action_vaccine_stat
+- story : corona vaccine stat2
+  steps:
+  - intent : corona_vaccine_stats
+  - action : action_vaccine_stat
 
 # -story : corona prevention
-#  steps :
-#  - intent : corona_prevent
-#  - action : ??
-#  - intent : affirm
-#  - action : utter_prevention
-#  - action : utter_did_that_help
-#  - intent : affirm
-#  - action : utter_happy
+#   steps :
+#   - intent : corona_prevent
+#   - action : ??
+#   - intent : affirm
+#   - action : utter_prevention
+#   - action : utter_did_that_help
+#   - intent : affirm
+#   - action : utter_happy
 
 # - story : coron recovered cases
 #   steps : 
