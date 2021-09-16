@@ -183,6 +183,10 @@ nlu:
 
 - intent : corona_states_death_cases
   examples : |
+    - death
+    - deaths
+    - decesed
+    - passed away
     - i would like to know about the number of deaths in [{name}](RState)
     - do you know the number of deaths in [{name}](RState)
     - give me the total number of death cases in [{name}](RState)
@@ -281,7 +285,7 @@ nlu:
     - confirmed cases
 
 - intent : covid_vaccine_halfQ
-  examples: |
+  examples : |
     - tell me total number of vaccines done 
     - Number of vaccinated people 
     - Can you show me stat for vaccinations
@@ -301,6 +305,12 @@ nlu:
     - Tell me the total vaccinated people
     - Can you please share the data on current total vaccinated people?
     - Give me the stats for current vaccination
+
+- intent : states_classify
+  examples : |
+    - [pathankot](RState)
+    - [andhra pradesh](RState)
+
 
 - intent : covid_death_halfQ
   examples : |
@@ -331,7 +341,7 @@ nlu:
 
 
 - intent : covid_recovered_halfQ
-  examples: |
+  examples : |
     - how many recovered ?
     - how many people recovered 
     - Give me the stats for current recovered cases  

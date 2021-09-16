@@ -24,19 +24,19 @@ intents:
   - corona_states_recovered_cases
   - corona_prevent
   - corona_states_confirmed_cases
-  - get_state_name
-  - covid_delta_halfQ
-  - covid_confirmed_halfQ
-  - covid_vaccine_halfQ
+  - states_classify
   - covid_death_halfQ
   - covid_recovered_halfQ
   - covid_total_halfQ
+  - covid_vaccine_halfQ
+  - covid_confirmed_halfQ
+  - covid_delta_halfQ
+  - get_state_name
 
 entities: 
   - States
   - RState
   - LOC
-  - Vtypes
 
 slots:
   States:
@@ -47,8 +47,6 @@ slots:
     type: text
   GPE:
     type: text
-  Vtypes: 
-    type: text
 
 actions:
   - action_hello_world
@@ -56,8 +54,6 @@ actions:
   - action_intro_corona
   - action_corona_symptoms
   - action_help_covobot
-  - action_covobot_purpose
-  - action_covobot_who_made_this
   - action_corona_prevent
   - action_corona_stat
   - action_vaccine_stat
@@ -65,17 +61,14 @@ actions:
   - action_death_stat
   - action_recovered_stat
   - action_confirmed_stat
+  - action_Tested_stat
 
 
 responses:
   utter_greet :
     - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
     - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
-
-    - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer frequent questions related to Covid-19 in India"
-
     - text: "Namaste 🙏. I am CovoBot. I am a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
-
 
   utter_happy :
     - text: "Great! Is there anything else i can help you with?"
@@ -206,7 +199,9 @@ responses:
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
               Feel free to ask me anything regarding C/R/D"
-
+  
+  utter_who_made_this:
+    - text: " NAMES "
   # nlu:
 
 session_config:
