@@ -103,7 +103,7 @@ responses:
     - text: "Adios !"
     - text: "GoodBye and Stay Safe"
 
-   utter_did_that_help:
+  utter_did_that_help:
     - text: "Did that help you?"
     - text: "Was that helpful enough?"
     - text: "Is it helpful enough"
@@ -167,7 +167,7 @@ responses:
     - text: "Number of recovered cases:"
     - text: "Confirmed Recovered Cases:"
 
- utter_confirmed :
+  utter_confirmed :
     - text: "Here are the stats for confirmed cases:"
     - text: "Number of confirmed COVID-19 cases are:"
     - text: "Confirmed Cases:"
