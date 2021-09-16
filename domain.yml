@@ -63,7 +63,7 @@ responses:
   utter_greet:
     - text: "Namaste 🙏. I am CovoBot. I'm here to help you. Ask me anything about covid in India !!"
     - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
-    - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
+    - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer frequent questions related to Covid-19 in India"
 
   utter_happy:
     - text: "Great! Is there anything else i can help you with?"

@@ -59,7 +59,6 @@ stories:
 #   - intent : deny
 #   - action: utter_deny
 
-
 - story : Intro Corona
   steps:
   - intent : corona_intro
@@ -206,3 +205,88 @@ stories:
   - action : utter_happy
   - intent : deny
   - action : utter_deny
+
+- story : get state name
+  steps : 
+  - intent : get_state_name
+  - action: utter_location
+  - action: utter_stat
+  - action: action_corona_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story: delta half ques
+  steps: 
+  - intent: covid_delta_halfQ
+  - action: utter_location
+  - action: utter_delta
+  - action: action_delta_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story: confirmed half ques
+  steps:
+  - intent: covid_confirmed_halfQ
+  - action: utter_location
+  - action: utter_confirmed
+  - action: action_confirmed_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story: vaccine half ques
+  steps:
+  - intent: covid_vaccine_halfQ
+  - action: utter_location
+  - action: utter_vaccine
+  - action: action_vaccine_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+
+- story: death half ques
+  steps:
+  - intent: covid_death_halfQ
+  - action: utter_location
+  - action: utter_death
+  - action: action_death_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny  
+
+- story: recovered half ques
+  steps:
+  - intent: covid_recovered_halfQ
+  - action: utter_location
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny 
+
+- story: total half ques
+  steps:
+  - intent: covid_total_halfQ
+  - action: utter_location
+  - action : utter_stat
+  - action : action_corona_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+

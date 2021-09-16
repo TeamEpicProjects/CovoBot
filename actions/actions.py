@@ -146,10 +146,10 @@ class Action_Confirmed_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_confirmed".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += " Total Confirmed cases of " + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res += " Total Confirmed cases of " + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -207,10 +207,10 @@ class Action_Death_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += " Total Death cases of " + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0):
-                res += " Total Death cases of " + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -269,10 +269,10 @@ class Action_Recovered_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_recovered".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += " Total Recovered cases of " + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_recovered".format(fname=entity_from_chatbot),i)) != 0):
-                res += " Total Recovered cases of " + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -331,10 +331,10 @@ class Action_Tested_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_tested".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += " Total Tested cases of " + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_tested".format(fname=entity_from_chatbot),i)) != 0):
-                res += " Total Tested cases of " + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -397,11 +397,11 @@ class Action_Vaccine_stat(Action):
                 # print ( "This is the str[i] value ", str(i) )
                 # print( "\nTHis is the str[flattedDict[i]] value :" , str(flattedDict[i]))
                 # res += str(i[2:]) + ": " + str(flattedDict[i]) + "\n"
-                res += entity_from_chatbot + " Total Vaccinated " + str(count) + " : " +  str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + "" + str(count) + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_vaccinated".format(fname=entity_from_chatbot),i)) != 0):
                 count += 1
-                res += entity_from_chatbot + " Total Vaccinated " + str(count) + " : "  + str(flattedDict[i]) + "\n" 
+                res += entity_from_chatbot + "" + str(count) + " : "  + str(flattedDict[i]) + "\n" 
         return res.replace("_" , " " ) 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
@@ -415,14 +415,11 @@ class Action_Vaccine_stat(Action):
             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
             if ( next(tracker.get_latest_entity_values('RState'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
-            if ( next(tracker.get_latest_entity_values('LOC'), None) != None):
+            elif ( next(tracker.get_latest_entity_values('LOC'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('LOC'), None)
-            if ( next(tracker.get_latest_entity_values('GPE'), None) != None):
+            elif ( next(tracker.get_latest_entity_values('GPE'), None) != None):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
-            if ( next(tracker.get_latest_entity_values('Vtypes'), None) != None):
-                type_from_chatbot = next(tracker.get_latest_entity_values('Vtypes'), None)
             print ("State to be processed : ", entity_from_chatbot )
-            print ("type to be processed : ", type_from_chatbot )
         except Exception as e:
             print ( "did not got anything")
         ## API URL and the API call we need to do 
@@ -461,18 +458,18 @@ class Action_Delta_stat(Action):
         for i in flattedDict.keys ():
 
             if (state == False and len(re.findall(r"(.+?){fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +="Total Delta cases of "+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+="Total Delta21_14 cases of "+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+="Total Delta7 cases of "+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len(re.findall(r"{fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +="Total Delta cases of "+ entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +="Total Delta21_14 cases of "+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +="Total Delta7 cases of "+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
         # if res == "":
         #     res += "Data is not available"
             
@@ -517,3 +514,6 @@ class Action_Delta_stat(Action):
         ## giving the output to the chatbot 
         print(message)
         dispatcher.utter_message(message)
+
+
+
