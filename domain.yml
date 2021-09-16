@@ -24,6 +24,13 @@ intents:
   - corona_states_recovered_cases
   - corona_prevent
   - corona_states_confirmed_cases
+  - get_state_name
+  - covid_delta_halfQ
+  - covid_confirmed_halfQ
+  - covid_vaccine_halfQ
+  - covid_death_halfQ
+  - covid_recovered_halfQ
+  - covid_total_halfQ
 
 entities: 
   - States
@@ -64,11 +71,11 @@ responses:
   utter_greet :
     - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
     - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
-<<<<<<< Updated upstream
+
     - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer frequent questions related to Covid-19 in India"
-=======
+
     - text: "Namaste 🙏. I am CovoBot. I am a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
->>>>>>> Stashed changes
+
 
   utter_happy :
     - text: "Great! Is there anything else i can help you with?"
@@ -192,8 +199,7 @@ responses:
     - text: "can you please tell me your location?"
     - text: "Mention your location please"
     - text: "The location ?"
- 
- 
+
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." 
 
