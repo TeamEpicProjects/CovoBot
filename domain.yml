@@ -61,82 +61,136 @@ actions:
 
 responses:
   utter_greet:
-    - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
-
-  # utter_cheer_up:
-  # - text: "Here is something to cheer you up:"
-  #   image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-    - text: "Was that helpful enough?"
+    - text: "Namaste 🙏. I am CovoBot. I'm here to help you. Ask me anything about covid in India !!"
+    - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
+    - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
 
   utter_happy:
     - text: "Great! Is there anything else i can help you with?"
     - text: "Amazing! Can I help you with anything else?"
     - text: "Is there anything else that I can help you with?"
+    - text: "What else can i do for you"
+    - text: "What else can i do to help you"
+    - text: "Is there anything else i can assist you with?"
+    - text: "May I assist you with anything further?"
+    - text: "Be sure to ask if you have any other questions!"
 
   utter_data :
     - text: "Here you go!"
     - text: "Here is your answer:"
+    - text: "Here you have it."
+    - text: "Here is your data"
+    - text: "Here are your details"
+    
   
   utter_deny : 
     - text: "Okay. Please repeat your query"
     - text: "Can you please rephrase your query?"
     - text: "Please try rephrasing the query."
+    - text: "Could you say that again? I didn’t understand."
+    - text: "I’m sorry. Could you please repeat your question"
+    - text: "Would you mind repeating your query?"
+    - text: "I’m sorry... I didn’t get that. Could you explain in another way?"
+    - text: "Could you please re-explain your question"
 
   utter_goodbye:
     - text: "GoodBye!"
     - text: "Have a good day!"
+    - text: "Goodbye and Stay Home and Stay Safe"
+    - text: "Bye and dont forget to Wash your hands frequently."   
     - text: "Bye! take care."
+    - text: "Bye-Bye!"
+    - text: "Adios !"
+    - text: "GoodBye and Stay Safe"
 
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa." 
-  
+   utter_did_that_help:
+    - text: "Did that help you?"
+    - text: "Was that helpful enough?"
+    - text: "Is it helpful enough"
+    - text: "Was this helpful"
+    - text: "Did that help ?"
+ 
+  utter_prevention :
+    - text: "These are some of the ways to prevent COVID-19:"
+    - text: "You can prevent COVID by: "
+    - text: "COVID-19 can be prevented in the following ways:"
+    - text: "These are a few ways to prevent Corona"  
+    - text: "You can prevent COVID-19 by following the mentioned ways:"
+    - text: "These are a few ways to prevent COVID" 
+    - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
+    - text: "These are a few ways to prevent COVID-19"
+    - text: "These are a few ways to prevent coronavirus"
+ 
   utter_stat :
     - text: "Here are the stats:"
+    - text: "Here are your details"
     - text: "The stats are as follows:"
     - text: "Here are the details:"
+    - text: "These are your details"
 
   utter_delta :
     - text: "Here are the stats for delta cases:"
     - text: "The stats for delta cases are as follows:"
     - text: "The number of delta variant cases are:"
     - text: "People in contact with delta variant are:"
-
-  utter_prevention :
-    - text: "These are some of the ways to prevent COVID-19:"
-    - text: "COVID-19 can be prevented in the following ways:"
-    - text: "You can prevent COVID-19 by following the mentioned ways:"
+    - text: "Detal cases:"
+    - text: "The number of delta cases are:"
+    - text: "Number of people affected by delta variant are:"
+    - text: "Number of people confirmed with delta variant are:"
+    - text: "Here you the details of delta variant cases:"
 
   utter_vaccine: 
     - text: "Here are the stats for vaccine:"
     - text: "Here are the vaccination stats:"
     - text: "The number of vaccinations done are:"
     - text: "Number of people vaccinated are:"
+    - text: "People vaccinated are: "
+    - text: "Vaccinated people :"
+    - text: "Confirmed Vaccinated people are: "
 
   utter_death :
     - text: "Here are the stats for death cases:"
     - text: "Number of people passed away due to COVID-19 are:"
+    - text: "Here are the number of deceased"
+    - text: "Deaths:"
+    - text: "Number of peopled died :"
+    - text: "Deceased: "
+    - text: "Number of people died due to covid :"
+    - text: "Confirmed Deaths :"
 
   utter_recovered :
     - text: "Here are the stats for recovered cases:"
     - text: "People recovered from COVID-19 are:"
+    - text: "Recovered :"
+    - text: "Recovered people :"
+    - text: "Recovered cases"
+    - text: "Number of recovered cases:"
+    - text: "Confirmed Recovered Cases:"
 
  utter_confirmed :
     - text: "Here are the stats for confirmed cases:"
     - text: "Number of confirmed COVID-19 cases are:"
+    - text: "Confirmed Cases:"
+    - text: "Number of confirmed cases"
+    - text: "Here are the number of confirmed cases"
 
   utter_location :
     - text: "Can you enter the state/district name"
     - text: "Please enter the state/district name"
     - text: "Can you mention the state/district?"
+    - text: "Please mention the location"
+    - text: "Please specify the location for which you need the details"
+    - text: "Location ?"
+    - text: "Please provide the location"
     - text: "May I know the state/district?"
     - text: "Please tell me the state/district name"
     - text: "can you please tell me your location?"
     - text: "Mention your location please"
     - text: "The location ?"
-
+ 
+ 
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa." 
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
               Feel free to ask me anything regarding C/R/D"

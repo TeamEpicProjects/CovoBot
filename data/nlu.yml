@@ -171,6 +171,10 @@ nlu:
     - prevent corona
     - how can one prevent oneself from getting infected from covid19?
     - how one can prevent himself/herself from getting infected from corona?
+    - text: "Please tell me the wats to prevent COVID-19"
+    - text: "Give me the ways to prevent COVID"
+    - text: "How can i prevent COVID."
+    - text: "Briefly explain how can i prevent COVID"
 
 - intent: corona_states_stat
   examples : |
@@ -278,6 +282,14 @@ nlu:
     - Can you tell me the delta cases in my area?
     - number of delta cases in my location
     - How many people are affected by the delta variant here?
+    - can i get the details of delta cases
+    - do you know the number of delta cases 
+    - so i want you to give me the total delta cases
+    - number of delta cases
+    - hello i am looking for confirmed delta cases
+    - can you please give a brief of delta cases
+    - umm what about the number of delta cases
+    - confirmed delta cases
 
 - intent : covid_confirmed_halfQ
   examples: |
@@ -294,18 +306,92 @@ nlu:
     - Tell me the total cases of covid
     - Can you please share the data on current total cases of covid19?
     - Give me the stats for current confirmed cases
+    - can i get the details of confirmed cases
+    - do you know the number of confirmed cases 
+    - so i want you to give me the total confirmed cases
+    - number of confirmed cases
+    - hello i am looking for confirmed cases
+    - can you please give a brief of confirmed cases
+    - umm what about the number of confirmed cases
+    - confirmed cases
 
 - intent : covid_vaccine_halfQ
   examples: |
-    - tell me total number of vaccinated people
+    - tell me total number of vaccines done 
+    - Number of vaccinated people 
+    - Can you show me stat for vaccinations
+    - can i get the details of vaccinated people 
+    - do you know the number of vaccinated people   
+    - so i want you to give me the total vaccinations done  
+    - number of vaccinated
+    - hello i am looking for confirmed vaccinated people
+    - can you please give a brief of confirmed vaccines done 
+    - umm what about the number of people vaccinated
+    - confirmed vaccinated people
+    - Number of people are who are vaccinated now
+    - Stats for vaccinations 
+    - Can you tell me the vaccination done in my area?
+    - number of people done with vaccines in my location
+    - How many people are vaccinated here?
+    - Tell me the total vaccinated people
+    - Can you please share the data on current total vaccinated people?
+    - Give me the stats for current vaccination
 
 - intent : covid_death_halfQ
   examples : |
     - how many deaths ?
     - how many people died 
+    - tell me total number of deaths
+    - How many confirmed deaths are there now
+    - Number of deceased
+    - can i get the details of deaths 
+    - do you know the number of deaths  
+    - so i want you to give me the total deceased  
+    - number of deceased cases
+    - hello i am looking for confirmed deaths
+    - can you please give a brief of confirmed deaths 
+    - umm what about the number of deathS
+    - confirmed deaths
+    - Can you show me stat for deceased 
+    - Number of people died from covid19 now
+    - Stats for deceased
+    - Can you tell me the the number of deaths in my area?
+    - number of deceased in my location
+     confirmed deceased
+    - How many people died by covid19 here?
+    - Tell me the total number of deaths due to covid
+    - Can you please share the data on number of deaths due to covid19?
+    - Give me the stats for current deceased cases
 
-# - intent : covid_recovered_halfQ
-#   examples: |
+
+
+- intent : covid_recovered_halfQ
+  examples: |
+    - how many recovered ?
+    - how many people recovered 
+    - Give me the stats for current recovered cases  
+    - can i get the details of recovered cases
+    - do you know the number of recovered cases 
+    - so i want you to give me the total recovered cases
+    - number of recovered cases
+    - hello i am looking for confirmed in recovered
+    - can you please give a brief of confirmed recovered cases
+    - umm what about the number of recovered cases
+    - confirmed recovered cases
+    - tell me total number of recovered cases
+    - How many recovered cases are there now
+    - Number of recovered cases
+    - Can you show me stat for recovered cases
+    - How many of us are now recovered with covid
+    - Number of people are recovered from covid19 now
+    - Stats for recovered cases
+    - Can you tell me the recovered cases in my area?
+    - number of recovered cases in my location
+    - How many people are recovered by covid19 here?
+    - Tell me the total recovered cases of covid
+    - Can you please share the data on current total recovered cases of covid19?
+
+
 
 - intent : covid_total_halfQ
   examples : |
