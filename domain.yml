@@ -1,5 +1,6 @@
 version: "2.0"
 
+
 intents:
   - greet
   - goodbye
@@ -60,12 +61,16 @@ actions:
 
 
 responses:
-  utter_greet:
-    - text: "Namaste 🙏. I am CovoBot. I'm here to help you. Ask me anything about covid in India !!"
+  utter_greet :
+    - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
     - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
+<<<<<<< Updated upstream
     - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer frequent questions related to Covid-19 in India"
+=======
+    - text: "Namaste 🙏. I am CovoBot. I am a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
+>>>>>>> Stashed changes
 
-  utter_happy:
+  utter_happy :
     - text: "Great! Is there anything else i can help you with?"
     - text: "Amazing! Can I help you with anything else?"
     - text: "Is there anything else that I can help you with?"
@@ -103,13 +108,13 @@ responses:
     - text: "Adios !"
     - text: "GoodBye and Stay Safe"
 
-   utter_did_that_help:
+  utter_did_that_help :
     - text: "Did that help you?"
     - text: "Was that helpful enough?"
     - text: "Is it helpful enough"
     - text: "Was this helpful"
     - text: "Did that help ?"
- 
+
   utter_prevention :
     - text: "These are some of the ways to prevent COVID-19:"
     - text: "You can prevent COVID by: "
@@ -120,7 +125,7 @@ responses:
     - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
     - text: "These are a few ways to prevent COVID-19"
     - text: "These are a few ways to prevent coronavirus"
- 
+
   utter_stat :
     - text: "Here are the stats:"
     - text: "Here are your details"
@@ -139,7 +144,7 @@ responses:
     - text: "Number of people confirmed with delta variant are:"
     - text: "Here you the details of delta variant cases:"
 
-  utter_vaccine: 
+  utter_vaccine : 
     - text: "Here are the stats for vaccine:"
     - text: "Here are the vaccination stats:"
     - text: "The number of vaccinations done are:"
@@ -167,7 +172,7 @@ responses:
     - text: "Number of recovered cases:"
     - text: "Confirmed Recovered Cases:"
 
- utter_confirmed :
+  utter_confirmed :
     - text: "Here are the stats for confirmed cases:"
     - text: "Number of confirmed COVID-19 cases are:"
     - text: "Confirmed Cases:"
@@ -191,6 +196,7 @@ responses:
  
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." 
+
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
               Feel free to ask me anything regarding C/R/D"
