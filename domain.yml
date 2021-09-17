@@ -60,8 +60,7 @@ slots:
     type: text
   GPE:
     type: text
-  name:
-    type: text
+
 
 actions:
   - action_hello_world
@@ -78,11 +77,6 @@ actions:
   - action_confirmed_stat
   - action_Tested_stat
   - action_receive_name
-  - action_say_name
-  - utter_ask_name
-  - utter_goodbye
-  - utter_greet
-
 
 responses:
   utter_greet :
@@ -223,8 +217,8 @@ responses:
   utter_who_made_this:
     - text: " NAMES "
 
-  utter_ask_name:
-  - text: What is your name?
+  # utter_ask_name:
+  # - text: What is your name?
 
   # nlu:
 

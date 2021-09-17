@@ -295,10 +295,6 @@ nlu:
     - current total vaccinated people
     - stats for current vaccination
 
-- intent : states_classify
-  examples : |
-    - [pathankot](RState)
-    - [andhra pradesh](RState)
 
 
 - intent : covid_death_halfQ
@@ -366,31 +362,32 @@ nlu:
     - cases registered
     - current registered data of covid
 
-- intent: tell_name
+- intent: give_State
   examples: |
-    - i want to tell you my name
-    - give name
-    - ill give you my name
-    - do you want to know my name?
-- intent: repeat_name
-  examples: |
-    - what is my name
-    - tell me my name
-    - do you know my name
-    - repeat my name
-- intent: give_name
-  examples: |
-    - vincent
-    - rachael
-    - emma
-    - juste
-    - jenny
-    - vedansh
-    - umrah
     - pathankot 
     - srinagar
     - kolkata
     - delhi
+    - Kargil
+    - Leh
+    - Ambala	
+    - Bhiwani	
+    - Charkhi Dadri	
+    - Faridabad	
+    - Fatehabad	
+    - Gurugram
+    - Pune	
+    - Raigad	
+    - Ratnagiri	
+    - Sangli	
+    - Satara	
+    - Sindhudurg	
+    - Solapur
+    - Chandigarh
+    - Karaikal	
+    - Mahe	
+    - Puducherry	
+    - Yanam
 ## Using Regex to match all the possible states 
 # - regex: RState
 #   examples : |

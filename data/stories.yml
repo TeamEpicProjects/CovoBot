@@ -210,7 +210,7 @@ stories:
   steps : 
   - intent : get_state_name
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action: utter_stat
   - action: action_corona_stat
   - action: utter_did_that_help
@@ -223,7 +223,7 @@ stories:
   steps: 
   - intent: covid_delta_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action: utter_delta
   - action: action_delta_stat
   - action: utter_did_that_help
@@ -236,7 +236,7 @@ stories:
   steps:
   - intent: covid_confirmed_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action: utter_confirmed
   - action: action_confirmed_stat
   - action: utter_did_that_help
@@ -249,7 +249,7 @@ stories:
   steps:
   - intent: covid_vaccine_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action: utter_vaccine
   - action: action_vaccine_stat
   - action: utter_did_that_help
@@ -262,7 +262,7 @@ stories:
   steps:
   - intent: covid_death_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   # - action: utter_death
   - action: action_death_stat
   - action: utter_did_that_help
@@ -275,7 +275,7 @@ stories:
   steps:
   - intent: covid_recovered_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action: utter_recovered
   - action: action_recovered_stat
   - action: utter_did_that_help
@@ -288,7 +288,7 @@ stories:
   steps:
   - intent: covid_total_halfQ
   - action: utter_location
-  - intent: states_classify
+  - intent: give_State
   - action : utter_stat
   - action : action_corona_stat
   - action: utter_did_that_help
@@ -297,36 +297,25 @@ stories:
   - intent : deny
   - action: utter_deny
 
-- story: name path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - intent: repeat_name
-  - action: action_say_name
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - slot_was_set:
-    - name: vincent
-  - intent: repeat_name
-  - action: action_say_name
-  - intent: tell_name
-  - action: utter_ask_name
-  - intent: give_name
-  - action: action_receive_name
-  - slot_was_set:
-    - name: jenny
-  - intent: repeat_name
-  - action: action_say_name
-  - intent: goodbye
-  - action: utter_goodbye
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: vincent
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: jenny
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: goodbye
+#   - action: utter_goodbye
