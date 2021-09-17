@@ -89,20 +89,20 @@ stories:
   - intent : deny
   - action: utter_deny
 
-- story : Purpose CovoBot
-  steps:
-  - intent : covobot_purpose
-  - action : action_covobot_purpose
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
+# - story : Purpose CovoBot
+#   steps:
+#   - intent : covobot_purpose
+#   - action : action_covobot_purpose
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
 
 - story : Who made this Bot
   steps:
   - intent : covobot_who_made_this
-  - action : action_covobot_who_made_this
+  - action : utter_who_made_this
   - action: utter_did_that_help
   - intent : affirm
   - action: utter_happy
@@ -210,6 +210,7 @@ stories:
   steps : 
   - intent : get_state_name
   - action: utter_location
+  - intent: give_State
   - action: utter_stat
   - action: action_corona_stat
   - action: utter_did_that_help
@@ -222,6 +223,7 @@ stories:
   steps: 
   - intent: covid_delta_halfQ
   - action: utter_location
+  - intent: give_State
   - action: utter_delta
   - action: action_delta_stat
   - action: utter_did_that_help
@@ -234,6 +236,7 @@ stories:
   steps:
   - intent: covid_confirmed_halfQ
   - action: utter_location
+  - intent: give_State
   - action: utter_confirmed
   - action: action_confirmed_stat
   - action: utter_did_that_help
@@ -246,6 +249,7 @@ stories:
   steps:
   - intent: covid_vaccine_halfQ
   - action: utter_location
+  - intent: give_State
   - action: utter_vaccine
   - action: action_vaccine_stat
   - action: utter_did_that_help
@@ -258,7 +262,8 @@ stories:
   steps:
   - intent: covid_death_halfQ
   - action: utter_location
-  - action: utter_death
+  - intent: give_State
+  # - action: utter_death
   - action: action_death_stat
   - action: utter_did_that_help
   - intent : affirm
@@ -270,6 +275,7 @@ stories:
   steps:
   - intent: covid_recovered_halfQ
   - action: utter_location
+  - intent: give_State
   - action: utter_recovered
   - action: action_recovered_stat
   - action: utter_did_that_help
@@ -282,6 +288,7 @@ stories:
   steps:
   - intent: covid_total_halfQ
   - action: utter_location
+  - intent: give_State
   - action : utter_stat
   - action : action_corona_stat
   - action: utter_did_that_help
@@ -290,3 +297,25 @@ stories:
   - intent : deny
   - action: utter_deny
 
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: vincent
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: jenny
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: goodbye
+#   - action: utter_goodbye

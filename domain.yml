@@ -1,5 +1,6 @@
 version: "2.0"
 
+
 intents:
   - greet
   - goodbye
@@ -13,22 +14,42 @@ intents:
   - corona_symptoms
   - corona_vaccine
   - corona_states_stat
-  - corona_vaccine_stats
+  - corona_vaccine_stats:
+      use_entities: true
   - boss_intent
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
-  - corona_states_delta_cases
-  - corona_states_death_cases
-  - corona_states_recovered_cases
+  - corona_states_delta_cases:
+      use_entities: true
+  - corona_states_death_cases:
+      use_entities: true
+  - corona_states_recovered_cases:
+      use_entities: true
   - corona_prevent
   - corona_states_confirmed_cases
+  - states_classify
+  - covid_death_halfQ:
+      use_entities: true
+  - covid_recovered_halfQ: 
+      use_entities: true
+  - covid_total_halfQ: 
+      use_entities: true
+  - covid_vaccine_halfQ:
+      use_entities: true  
+  - covid_confirmed_halfQ:
+      use_entities: true
+  - covid_delta_halfQ:
+      use_entities: true
+  - get_state_name
+  - repeat_name
+  - give_name
+  - tell_name
 
 entities: 
   - States
   - RState
   - LOC
-  - Vtypes
 
 slots:
   States:
@@ -39,8 +60,7 @@ slots:
     type: text
   GPE:
     type: text
-  Vtypes: 
-    type: text
+
 
 actions:
   - action_hello_world
@@ -48,8 +68,6 @@ actions:
   - action_intro_corona
   - action_corona_symptoms
   - action_help_covobot
-  - action_covobot_purpose
-  - action_covobot_who_made_this
   - action_corona_prevent
   - action_corona_stat
   - action_vaccine_stat
@@ -57,15 +75,16 @@ actions:
   - action_death_stat
   - action_recovered_stat
   - action_confirmed_stat
-
+  - action_Tested_stat
+  - action_receive_name
 
 responses:
-  utter_greet:
-    - text: "Namaste 🙏. I am CovoBot. I'm here to help you. Ask me anything about covid in India !!"
+  utter_greet :
+    - text: "Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!"
     - text: "Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!"
-    - text: "Namaste 🙏. I am CovoBot. I'm a bot programmed to answer frequent questions related to Covid-19 in India"
+    - text: "Namaste 🙏. I am CovoBot. I am a bot programmed to answer only some of the frequent questions related to Covid-19 in India"
 
-  utter_happy:
+  utter_happy :
     - text: "Great! Is there anything else i can help you with?"
     - text: "Amazing! Can I help you with anything else?"
     - text: "Is there anything else that I can help you with?"
@@ -109,7 +128,7 @@ responses:
     - text: "Is it helpful enough"
     - text: "Was this helpful"
     - text: "Did that help ?"
- 
+
   utter_prevention :
     - text: "These are some of the ways to prevent COVID-19:"
     - text: "You can prevent COVID by: "
@@ -120,7 +139,7 @@ responses:
     - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
     - text: "These are a few ways to prevent COVID-19"
     - text: "These are a few ways to prevent coronavirus"
- 
+
   utter_stat :
     - text: "Here are the stats:"
     - text: "Here are your details"
@@ -139,7 +158,7 @@ responses:
     - text: "Number of people confirmed with delta variant are:"
     - text: "Here you the details of delta variant cases:"
 
-  utter_vaccine: 
+  utter_vaccine : 
     - text: "Here are the stats for vaccine:"
     - text: "Here are the vaccination stats:"
     - text: "The number of vaccinations done are:"
@@ -187,16 +206,25 @@ responses:
     - text: "can you please tell me your location?"
     - text: "Mention your location please"
     - text: "The location ?"
- 
- 
+
   utter_iamabot:
     - text: "I am a bot, powered by Rasa." 
+
   utter_help:
     - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
               Feel free to ask me anything regarding C/R/D"
+  
+  utter_who_made_this:
+    - text: " NAMES "
+
+  # utter_ask_name:
+  # - text: What is your name?
 
   # nlu:
 
+
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
