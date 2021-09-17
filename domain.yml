@@ -14,24 +14,37 @@ intents:
   - corona_symptoms
   - corona_vaccine
   - corona_states_stat
-  - corona_vaccine_stats
+  - corona_vaccine_stats:
+      use_entities: true
   - boss_intent
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
-  - corona_states_delta_cases
-  - corona_states_death_cases
-  - corona_states_recovered_cases
+  - corona_states_delta_cases:
+      use_entities: true
+  - corona_states_death_cases:
+      use_entities: true
+  - corona_states_recovered_cases:
+      use_entities: true
   - corona_prevent
   - corona_states_confirmed_cases
   - states_classify
-  - covid_death_halfQ
-  - covid_recovered_halfQ
-  - covid_total_halfQ
-  - covid_vaccine_halfQ
-  - covid_confirmed_halfQ
-  - covid_delta_halfQ
+  - covid_death_halfQ:
+      use_entities: true
+  - covid_recovered_halfQ: 
+      use_entities: true
+  - covid_total_halfQ: 
+      use_entities: true
+  - covid_vaccine_halfQ:
+      use_entities: true  
+  - covid_confirmed_halfQ:
+      use_entities: true
+  - covid_delta_halfQ:
+      use_entities: true
   - get_state_name
+  - repeat_name
+  - give_name
+  - tell_name
 
 entities: 
   - States
@@ -46,6 +59,8 @@ slots:
   LOC:
     type: text
   GPE:
+    type: text
+  name:
     type: text
 
 actions:
@@ -62,6 +77,11 @@ actions:
   - action_recovered_stat
   - action_confirmed_stat
   - action_Tested_stat
+  - action_receive_name
+  - action_say_name
+  - utter_ask_name
+  - utter_goodbye
+  - utter_greet
 
 
 responses:
@@ -202,8 +222,15 @@ responses:
   
   utter_who_made_this:
     - text: " NAMES "
+
+  utter_ask_name:
+  - text: What is your name?
+
   # nlu:
 
+
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
