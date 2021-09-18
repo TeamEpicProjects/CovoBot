@@ -65,7 +65,7 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: corona_intro
+ intent: corona_intro
   examples: |
     - what is corona?
     - what is covid-19?
@@ -73,6 +73,38 @@ nlu:
     - tell me about corona
     - can you tell me about corona
     - can you tell me about covid-19
+
+- intent: corona_spread
+  examples: |
+    - how does corona virus spread?
+    - how does this virus spread?
+    - how does corona spread?
+    - corona spread?
+    - covid spread.
+    - covid19 spread.
+
+- intent: corona_food_spread
+  examples: |
+    - how does food spread corona virus?
+    - does consuming junk food spread corona virus?
+    - how will corona spread from food?
+
+- intent: corona_spread_warm
+  examples: |
+    - how will warm weather stop corona virus?
+    - Can warm weather actually stop corona?
+    - will it stop with warm weather?
+
+- intent: corona_spread_risk
+  examples: |
+    - who is at higher risk of infection
+    - who is more prone to get corona virus infection
+
+- intent: corona_community
+  examples: |
+    - what is community spread?
+    - how does community spread occurs?
+    - community spread
 
 - intent: corona_symptoms
   examples: |
@@ -83,6 +115,13 @@ nlu:
     - symptoms of corona virus?
     - symptoms of covid19 virus?
 
+- intent: corona_mosq_spread
+  examples: |
+    - can mosquitoes spread corona virus?
+    - how does mosquitoes spread corona virus?
+    - mosquitoes spread covid-19 virus.
+    - mosquitoes spread covid virus.
+
 - intent: corona_vaccine
   examples: |
     - Are there any vaccines available for prevention of corona virus?
@@ -91,20 +130,34 @@ nlu:
     - vaccines available for prevention of corona virus?
     - Have the vaccines been developed for corona virus?
     - is there any vaccine for corona virus?
-    - is there any vaccine for covid19 virus?
+    - is there any vaccine for covid19 virus?  
 
-- intent: corona_vaccine_stats
+- intent: corona_prevent
   examples: |
-    - i am looking for the number of vaccines done in [{name}](RState)
-    - i need number of vaccines done in [{name}](RState)
-    - please show me number of vaccines done in [{name}](RState)
-    - can you show me the details of number of vaccines done in [{name}](RState)
-    - do you know the number of vaccine done in [{name}](RState)
-    - can i get the details of vaccines done in [{name}](RState)
-    - umm what about the number of vaccines done in [{name}](RState)
-    - yeah so i am looking for the details of vaccines done in [{name}](RState)
-    - can you please give a brief of vaccines done in [{name}](RState)
+    - how can i prevent covid19?
+    - how can i prevent corona virus?
+    - how can i prevent covid-19?
+    - prevent covid19?
+    - prevent corona
+    - how can one prevent oneself from getting infected from covid19?
+    - how one can prevent himself/herself from getting infected from corona?
+    - text: "Please tell me the wats to prevent COVID-19"
+    - text: "Give me the ways to prevent COVID"
+    - text: "How can i prevent COVID."
+    - text: "Briefly explain how can i prevent COVID"
 
+- intent: corona_infected person
+  examples: |
+    - If You or Someone You Know is Sick or Had Contact with Someone who Has COVID-19
+    - If You or Someone You Know is Sick or Had Contact with Someone who Has corona?
+    - what should i do if someone in my house gets infected by corona?
+    - what should i do if someone in my house gets infected by covid-19?
+    - someone gets covid-19 i know?
+    - my family member gets infected by corona?
+    - someone gets infected by corona i know?
+    - someone gets infected by corona i was in contact with?
+    - someone gets infected by covid i was in contact with?
+    - what to do if someone gets infected by covid i was in contact with?
 
 - intent: covobot_help
   examples: |
@@ -128,20 +181,6 @@ nlu:
     - who made you ?
     - who created you ? 
     - who are your masters ?
-
-- intent: corona_prevent
-  examples: |
-    - how can i prevent covid19?
-    - how can i prevent corona virus?
-    - how can i prevent covid-19?
-    - prevent covid19?
-    - prevent corona
-    - how can one prevent oneself from getting infected from covid19?
-    - how one can prevent himself/herself from getting infected from corona?
-    - text: "Please tell me the wats to prevent COVID-19"
-    - text: "Give me the ways to prevent COVID"
-    - text: "How can i prevent COVID."
-    - text: "Briefly explain how can i prevent COVID"
 
 - intent: corona_states_stat
   examples : |
@@ -171,6 +210,20 @@ nlu:
     - number of cases in [{name}](RState)
     - so i want you to give me the total cases in [{name}](RState)
     - in [{name}](RState) how many cases have been registered
+
+
+- intent: corona_vaccine_stats
+  examples: |
+    - i am looking for the number of vaccines done in [{name}](RState)
+    - i need number of vaccines done in [{name}](RState)
+    - please show me number of vaccines done in [{name}](RState)
+    - can you show me the details of number of vaccines done in [{name}](RState)
+    - do you know the number of vaccine done in [{name}](RState)
+    - can i get the details of vaccines done in [{name}](RState)
+    - umm what about the number of vaccines done in [{name}](RState)
+    - yeah so i am looking for the details of vaccines done in [{name}](RState)
+    - can you please give a brief of vaccines done in [{name}](RState)
+
 
 - intent : corona_states_delta_cases
   examples : |
@@ -224,6 +277,8 @@ nlu:
     - confirmed in [{name}](RState)
     - in [{name}](RState) how many are confirmed
     - whole covid data in [{name}](RState)
+
+
 
 # - intent : get_state_name
 #   examples : |
@@ -562,3 +617,4 @@ nlu:
 # - intent: corona_datewise_stat
 #   example: |
     # -
+

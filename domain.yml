@@ -11,8 +11,16 @@ intents:
   - bot_challenge
   - Hello World
   - corona_intro
+  - corona_spread
+  - corona_food_spread
+  - corona_spread_warm
+  - corona_spread_risk
+  - corona_community
   - corona_symptoms
+  - corona_mosq_spread
   - corona_vaccine
+  - corona_prevent
+  - corona_infected person
   - corona_states_stat
   - corona_vaccine_stats:
       use_entities: true
