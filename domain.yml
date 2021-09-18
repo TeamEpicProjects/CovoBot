@@ -42,9 +42,9 @@ intents:
   - covid_delta_halfQ:
       use_entities: true
   - get_state_name
-  - repeat_name
-  - give_name
-  - tell_name
+  - give_State:
+      use_entities: true
+
 
 entities: 
   - States

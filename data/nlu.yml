@@ -36,6 +36,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - thank you
 
 - intent: affirm
   examples: |
@@ -45,6 +46,7 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - thank you
 
 - intent: deny
   examples: |
@@ -294,8 +296,6 @@ nlu:
     - total vaccinated people
     - current total vaccinated people
     - stats for current vaccination
-
-
 
 - intent : covid_death_halfQ
   examples : |
