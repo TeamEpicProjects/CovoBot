@@ -185,6 +185,7 @@ nlu:
 
 - intent : corona_states_death_cases
   examples : |
+    - can you give me number of people who died during covid in [{name}](RState)
     - i would like to know about the number of deaths in [{name}](RState)
     - do you know the number of deaths in [{name}](RState)
     - give me the total number of death cases in [{name}](RState)
@@ -224,175 +225,331 @@ nlu:
     - in [{name}](RState) how many are confirmed
     - whole covid data in [{name}](RState)
 
-- intent : get_state_name
-  examples : |
-    - what are the number of positive cases?
-    - how many people contacted delta variant?
-    - how many people lost their lives to COVID-19?
-    - Total deaths?
-    - total recovered cases?
-    - current deceased cases?
-    - what are the number of cases?
-    - give me details of infected people
-    - number of people died?
-    - number of people recovered?
-    - number of people fighting COVID-19?
+# - intent : get_state_name
+#   examples : |
+#     - what are the number of positive cases?
+#     - how many people contacted delta variant?
+#     - how many people lost their lives to COVID-19?
+#     - Total deaths?
+#     - total recovered cases?
+#     - current deceased cases?
+#     - what are the number of cases?
+#     - give me details of infected people
+#     - number of people died?
+#     - number of people recovered?
+#     - number of people fighting COVID-19?
 
-- intent : covid_delta_halfQ
-  examples: |
-    - total number of delta cases
-    - How many delta cases are there now
-    - Number of delta cases
-    - stat for delta cases
-    - How many of us are now affected by the delta variant
-    - Number of people affected by delta variant
-    - Stats for delta cases
-    - tell me the delta cases in my area?
-    - number of delta cases in my location
-    - How many people are infected by the delta variant here?
-    - details of delta cases
-    - give me the total delta cases
-    - number of delta cases
-    - hello i am looking for confirmed delta cases
-    - delta cases
-    - confirmed delta cases
+# - intent : covid_delta_halfQ
+#   examples: |
+#     - total number of delta cases
+#     - How many delta cases are there now
+#     - Number of delta cases
+#     - stat for delta cases
+#     - How many of us are now affected by the delta variant
+#     - Number of people affected by delta variant
+#     - Stats for delta cases
+#     - tell me the delta cases in my area?
+#     - number of delta cases in my location
+#     - How many people are infected by the delta variant here?
+#     - details of delta cases
+#     - give me the total delta cases
+#     - number of delta cases
+#     - hello i am looking for confirmed delta cases
+#     - delta cases
+#     - confirmed delta cases
 
-- intent : covid_confirmed_halfQ
-  examples: |
-    - total number of confirmed cases
-    - confirmed cases 
-    - Number of confirmed cases
-    - stat for confirmed cases
-    - How many of us are now confirmed with covid
-    - people sufferring from covid19 now
-    - Stats for confirmed cases
-    - confirmed cases in my area?
-    - number of confirmed cases in my location
-    - people affected by covid19 here?
-    - total cases of covid
-    - current total cases of covid19?
-    - stats for current confirmed cases
-    - details of confirmed cases
-    - number of confirmed cases 
-    - give me the total confirmed cases
-    - number of confirmed cases
-    - give a brief of confirmed cases
-    - give number of confirmed cases
-    - confirmed cases
+# - intent : covid_confirmed_halfQ
+#   examples: |
+#     - total number of confirmed cases
+#     - confirmed cases 
+#     - Number of confirmed cases
+#     - stat for confirmed cases
+#     - How many of us are now confirmed with covid
+#     - people sufferring from covid19 now
+#     - Stats for confirmed cases
+#     - confirmed cases in my area?
+#     - number of confirmed cases in my location
+#     - people affected by covid19 here?
+#     - total cases of covid
+#     - current total cases of covid19?
+#     - stats for current confirmed cases
+#     - details of confirmed cases
+#     - number of confirmed cases 
+#     - give me the total confirmed cases
+#     - number of confirmed cases
+#     - give a brief of confirmed cases
+#     - give number of confirmed cases
+#     - confirmed cases
 
-- intent : covid_vaccine_halfQ
-  examples : |
-    - total number of vaccines done 
-    - Number of vaccinated people 
-    - stat for vaccinations
-    - details of vaccinated people 
-    - total vaccinations done  
-    - confirmed vaccinated people
-    - confirmed vaccines done 
-    - Stats for vaccinations 
-    - vaccination done in my area?
-    - number of people done with vaccines in my location
-    - people vaccinated here
-    - total vaccinated people
-    - current total vaccinated people
-    - stats for current vaccination
+# - intent : covid_vaccine_halfQ
+#   examples : |
+#     - total number of vaccines done 
+#     - Number of vaccinated people 
+#     - stat for vaccinations
+#     - details of vaccinated people 
+#     - total vaccinations done  
+#     - confirmed vaccinated people
+#     - confirmed vaccines done 
+#     - Stats for vaccinations 
+#     - vaccination done in my area?
+#     - number of people done with vaccines in my location
+#     - people vaccinated here
+#     - total vaccinated people
+#     - current total vaccinated people
+#     - stats for current vaccination
 
-- intent : covid_death_halfQ
-  examples : |
-    - death
-    - deaths
-    - deceased
-    - passed away
-    - how many deaths ?
-    - how many people died 
-    - total number of deaths
-    - Number of deceased
-    - details of deaths 
-    - do you know the number of deaths  
-    - give me the total deceased  
-    - number of deceased cases
-    - confirmed deaths 
-    - number of deaths
-    - Number of people died from covid19 
-    - Stats for deceased
-    - number of deaths in my area?
-    - number of deceased in my location
-    - confirmed deceased
-    - How many people died by covid19 here?
-    - Tell me the total number of deaths due to covid
-    - Can you please share the data on number of deaths due to covid19?
-    - Give me the stats for current deceased cases
-
-
-
-- intent : covid_recovered_halfQ
-  examples : |
-    - recovered 
-    - how many people recovered 
-    - stats for current recovered   
-    - details of recovered 
-    - number of recovered  
-    - total recovered 
-    - confirmed recovered
-    - total number of recovered 
-    - How many recovered  are there now
-    - Show me stat for recovered 
-    - Number of people recovered from covid19
-    - Stats for recovered
-    - tell me the recovered in my area?
-    - number of recovered in my location
-    - people recovered by covid19 here?
-    - total recovered of covid
-    - current total recovered of covid19?
+# - intent : covid_death_halfQ
+#   examples : |
+#     - death
+#     - deaths
+#     - deceased
+#     - passed away
+#     - how many deaths ?
+#     - how many people died 
+#     - total number of deaths
+#     - Number of deceased
+#     - details of deaths 
+#     - do you know the number of deaths  
+#     - give me the total deceased  
+#     - number of deceased cases
+#     - confirmed deaths 
+#     - number of deaths
+#     - Number of people died from covid19 
+#     - Stats for deceased
+#     - number of deaths in my area?
+#     - number of deceased in my location
+#     - confirmed deceased
+#     - How many people died by covid19 here?
+#     - Tell me the total number of deaths due to covid
+#     - Can you please share the data on number of deaths due to covid19?
+#     - Give me the stats for current deceased cases
 
 
-- intent : covid_total_halfQ
-  examples : |
-    - stats of covid19
-    - stats for corona
-    - give stats for corona
-    - covid stats
-    - give me all the stats
-    - details of covid cases
-    - whole covid data
-    - current informatios of covid stats
-    - stats for corona
-    - corona virus stats 
-    - details of all cases
-    - number of confirmed, death and recovered
-    - details of covid cases of confirmed, death, recovered, vaccinated
-    - can you please give a brief of covid stats
-    - all covid related cases in my area
-    - covid stats here
-    - cases registered
-    - current registered data of covid
 
-- intent: give_State
-  examples: |
-    - pathankot 
-    - srinagar
-    - kolkata
-    - delhi
-    - Kargil
-    - Leh
-    - Ambala	
-    - Bhiwani	
-    - Charkhi Dadri	
-    - Faridabad	
-    - Fatehabad	
-    - Gurugram
-    - Pune	
-    - Raigad	
-    - Ratnagiri	
-    - Sangli	
-    - Satara	
-    - Sindhudurg	
-    - Solapur
-    - Chandigarh
-    - Karaikal	
-    - Mahe	
-    - Puducherry	
-    - Yanam
+# - intent : covid_recovered_halfQ
+#   examples : |
+#     - recovered 
+#     - how many people recovered 
+#     - stats for current recovered   
+#     - details of recovered 
+#     - number of recovered  
+#     - total recovered 
+#     - confirmed recovered
+#     - total number of recovered 
+#     - How many recovered  are there now
+#     - Show me stat for recovered 
+#     - Number of people recovered from covid19
+#     - Stats for recovered
+#     - tell me the recovered in my area?
+#     - number of recovered in my location
+#     - people recovered by covid19 here?
+#     - total recovered of covid
+#     - current total recovered of covid19?
+
+
+# - intent : covid_total_halfQ
+#   examples : |
+#     - stats of covid19
+#     - stats for corona
+#     - give stats for corona
+#     - covid stats
+#     - give me all the stats
+#     - details of covid cases
+#     - whole covid data
+#     - current informatios of covid stats
+#     - stats for corona
+#     - corona virus stats 
+#     - details of all cases
+#     - number of confirmed, death and recovered
+#     - details of covid cases of confirmed, death, recovered, vaccinated
+#     - can you please give a brief of covid stats
+#     - all covid related cases in my area
+#     - covid stats here
+#     - cases registered
+#     - current registered data of covid
+
+# - intent: state_names
+#   examples: |
+#     - pathankot 
+#     - srinagar
+#     - kolkata
+#     - delhi
+#     - Kargil
+#     - Leh
+#     - Ambala	
+#     - Bhiwani	
+#     - Charkhi Dadri	
+#     - Faridabad	
+#     - Fatehabad	
+#     - Gurugram
+#     - Pune	
+#     - Raigad	
+#     - Ratnagiri	
+#     - Sangli	
+#     - Satara	
+#     - Sindhudurg	
+#     - Solapur
+#     - Chandigarh
+#     - Karaikal	
+#     - Mahe	
+#     - Puducherry	
+#     - Yanam
+
+# - lookup : RStates, FStates
+#   examples : |
+#     - India
+#     - Gujarat  
+#     - Andhra Pradesh  
+#     - Andhra Pradesh 
+#     - Anantapur	
+#     - Chittoor	
+#     - East Godavari	
+#     - Foreign Evacuees
+#     - Guntur	
+#     - Krishna	
+#     - Kurnool	
+#     - Other State
+#     - Prakasam
+#     - S.P.S. Nellore	
+#     - Srikakulam	
+#     - Visakhapatnam	
+#     - Vizianagaram	
+#     - West Godavari	
+#     - Y.S.R. Kadapa
+#     - Arunachal Pradesh  
+#     - Anjaw	
+#     - Capital Complex	
+#     - Changlang	
+#     - East Kameng	
+#     - East Siang	
+#     - Kamle	
+#     - Kra Daadi	
+#     - Kurung Kumey	
+#     - Lepa Rada	
+#     - Lohit	
+#     - Longding	
+#     - Lower Dibang Valley	
+#     - Lower Siang	
+#     - Lower Subansiri	
+#     - Namsai	
+#     - Pakke Kessang	
+#     - Papum Pare	
+#     - Shi Yomi	
+#     - Siang	
+#     - Tawang	
+#     - Tirap	
+#     - Upper Dibang Valley	
+#     - Upper Siang	
+#     - Upper Subansiri	
+#     - West Kameng	
+#     - West Siang
+#     - Assam  
+#     - Bihar  
+#     - Baksa	
+#     - Barpeta	
+#     - Biswanath	
+#     - Bongaigaon	
+#     - Cachar	
+#     - Charaideo	
+#     - Chirang	
+#     - Darrang	
+#     - Dhemaji	
+#     - Dhubri	
+#     - Dibrugarh	
+#     - Dima Hasao	
+#     - Goalpara	
+#     - Golaghat	
+#     - Hailakandi	
+#     - Hojai	
+#     - Jorhat	
+#     - Kamrup	
+#     - Kamrup Metropolitan	
+#     - Karbi Anglong	
+#     - Karimganj	
+#     - Kokrajhar	
+#     - Lakhimpur	
+#     - Majuli	
+#     - Morigaon	
+#     - Nagaon	
+#     - Nalbari	
+#     - Sivasagar	
+#     - Sonitpur	
+#     - South Salmara Mankachar	
+#     - Tinsukia	
+#     - Udalguri	
+#     - Unknown	
+#     - West Karbi Anglong
+#     - Bihar
+#     - Araria	
+#     - Arwal	
+#     - Aurangabad	
+#     - Banka	
+#     - Begusarai	
+#     - Bhagalpur	
+#     - Bhojpur	
+#     - Buxar	
+#     - Darbhanga	
+#     - East Champaran	
+#     - Gaya	
+#     - Gopalganj	
+#     - Jamui	
+#     - Jehanabad	
+#     - Kaimur	
+#     - Katihar	
+#     - Khagaria	
+#     - Kishanganj	
+#     - Lakhisarai	
+#     - Madhepura	
+#     - Madhubani	
+#     - Munger	
+#     - Muzaffarpur	
+#     - Nalanda	
+#     - Nawada	
+#     - Patna	
+#     - Purnia	
+#     - Rohtas	
+#     - Saharsa	
+#     - Samastipur	
+#     - Saran	
+#     - Sheikhpura	
+#     - Sheohar	
+#     - Sitamarhi	
+#     - Siwan	
+#     - Supaul	
+#     - Vaishali	
+#     - West Champaran 
+#     - Chhattisgarh
+#     - Balod	
+#     - Baloda Bazar	
+#     - Balrampur	
+#     - Bametara	
+#     - Bastar	
+#     - Bijapur	
+#     - Bilaspur	
+#     - Dakshin Bastar Dantewada	
+#     - Dhamtari	
+#     - Durg	
+#     - Gariaband	
+#     - Gaurela Pendra Marwahi	
+#     - Janjgir Champa	
+#     - Jashpur	
+#     - Kabeerdham	
+#     - Kondagaon	
+#     - Korba	
+#     - Koriya	
+#     - Mahasamund	
+#     - Mungeli	
+#     - Narayanpur	
+#     - Other State	
+#     - Raigarh	
+#     - Raipur	
+#     - Rajnandgaon	
+#     - Sukma	
+#     - Surajpur	
+#     - Surguja	
+#     - Uttar Bastar Kanker
+
+
 ## Using Regex to match all the possible states 
 # - regex: RState
 #   examples : |

@@ -18,3 +18,24 @@ rules:
     steps:
       # - intent: greet
       - action: utter_greet
+
+  # - rule: Activate death form
+  #   steps:
+  #   - intent: corona_states_death_cases
+  #   - action: utter_form_activate
+  #   - action: state_name_form
+  #   - active_loop: state_name_form
+
+  # - rule: submit death form
+  #   condition:
+  #   - active_loop: state_name_form
+  #   steps:
+  #   - action: state_name_form
+  #   - active_loop: null
+  #   - slot_was_set:
+  #     - requested_slot: null
+  #   - slot_was_set:
+  #     - requested_slot : FState
+  #   - action: action_death_form
+  #   - action: utter_form_deactivate
+  #   - action: utter_slot_values

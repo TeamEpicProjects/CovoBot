@@ -16,7 +16,6 @@ intents:
   - corona_states_stat
   - corona_vaccine_stats:
       use_entities: true
-  - boss_intent
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
@@ -29,33 +28,58 @@ intents:
   - corona_prevent
   - corona_states_confirmed_cases
   - states_classify
-  - covid_death_halfQ:
-      use_entities: true
-  - covid_recovered_halfQ: 
-      use_entities: true
-  - covid_total_halfQ: 
-      use_entities: true
-  - covid_vaccine_halfQ:
-      use_entities: true  
-  - covid_confirmed_halfQ:
-      use_entities: true
-  - covid_delta_halfQ:
-      use_entities: true
-  - get_state_name
-  - give_State:
-      use_entities: true
+  # - state_names
+  # - covid_death_halfQ:
+  #     use_entities: true
+  # - covid_recovered_halfQ: 
+  #     use_entities: true
+  # - covid_total_halfQ: 
+  #     use_entities: true
+  # - covid_vaccine_halfQ:
+  #     use_entities: true  
+  # - covid_confirmed_halfQ:
+  #     use_entities: true
+  # - covid_delta_halfQ:
+  #     use_entities: true
+  # - get_state_name
+  # - give_State:
+  #     use_entities: true
 
+
+
+# The from_entity mapping fills slots based on extracted entities. 
+# It will look for an entity called entity_name to fill a slot slot_name. 
+# If intent_name is None, the slot will be filled regardless of intent name. 
+# Otherwise, the slot will only be filled if the user's intent is intent_name.
+
+# forms:
+#   state_name_form:
+#     required_slots:
+#       FState:
+#       - type: from_text
+#         intent_name: state_names
+#       FStates: 
+#       - type: from_entity
+#         entity: GPR, PERSON, LOC, RState
+#         intent_name: state_names. corona_states_death_cases
 
 entities: 
   - States
   - RState
+  # - FState
+  # - FStates
   - LOC
+  - GPE
 
 slots:
   States:
     type: text
   RState:  
     type: text
+  # FState:
+  #   type: text
+  # FStates:
+  #   type: text
   LOC:
     type: text
   GPE:
@@ -73,6 +97,7 @@ actions:
   - action_vaccine_stat
   - action_delta_stat
   - action_death_stat
+  # - action_death_form
   - action_recovered_stat
   - action_confirmed_stat
   - action_Tested_stat
@@ -216,7 +241,13 @@ responses:
   
   utter_who_made_this:
     - text: " NAMES "
-
+  
+  utter_form_activate:
+    - text: "Form Is ACTIVATED"
+  utter_form_deactivate:
+    - text: "Form Is DE-ACTIVATED"
+  utter_slot_values:
+    - text: "this is the state value : {RState}"
   # utter_ask_name:
   # - text: What is your name?
 
