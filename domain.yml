@@ -161,16 +161,6 @@ responses:
     - text: "Was this helpful"
     - text: "Did that help ?"
 
-  utter_prevention :
-    - text: "These are some of the ways to prevent COVID-19:"
-    - text: "You can prevent COVID by: "
-    - text: "COVID-19 can be prevented in the following ways:"
-    - text: "These are a few ways to prevent Corona"  
-    - text: "You can prevent COVID-19 by following the mentioned ways:"
-    - text: "These are a few ways to prevent COVID" 
-    - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
-    - text: "These are a few ways to prevent COVID-19"
-    - text: "These are a few ways to prevent coronavirus"
 
   utter_stat :
     - text: "Here are the stats:"
@@ -247,8 +237,22 @@ responses:
               Feel free to ask me anything regarding C/R/D"
   
   utter_who_made_this:
-    - text: " NAMES "
+    - text: " Vedansh\n Umrah\n Udit\n Pratyayee"
 
+  # utter_prevention :
+  #   - text: "These are some of the ways to prevent COVID-19:"
+  #   - text: "You can prevent COVID by: "
+  #   - text: "COVID-19 can be prevented in the following ways:"
+  #   - text: "These are a few ways to prevent Corona"  
+  #   - text: "You can prevent COVID-19 by following the mentioned ways:"
+  #   - text: "These are a few ways to prevent COVID" 
+  #   - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
+  #   - text: "These are a few ways to prevent COVID-19"
+  #   - text: "These are a few ways to prevent coronavirus"
+
+
+  utter_corona_prevent:
+    - text: "The best way to prevent illness is to avoid being exposed to the virus. CDC recommends everyday preventive actions to help prevent the spread of respiratory diseases.CDC recommends washing your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. If soap and water are not available, CDC recommends using an alcohol-based hand sanitizer that contains at least 60 percent alcohol.\nWear masks in public settings when around people not living in your household and particularly where other social distancing measures are difficult to maintain, such as grocery stores, pharmacies, and gas stations. Masks may slow the spread of the virus and help people who may have the virus and do not know it from transmitting it to others.COVID-19 can be spread by people who do not have symptoms and do not know that they are infected. That’s why it’s important for everyone to practice social distancing (staying at least 6 feet away from other people) and wear masks in public settings. Masks provide an extra layer to help prevent the respiratory droplets from traveling in the air and onto other people.The masks recommended are not surgical masks or N-95 respirators. Those are critical supplies that must continue to be reserved for healthcare workers and other medical first responders, as recommended by current CDC guidance."
   utter_corona_spread:
       - text: "This virus was first detected in Wuhan City, Hubei Province, China. The\
                     \ first infections were linked to a live animal market, but the virus is now\
@@ -268,6 +272,16 @@ responses:
                     \ in the community (“community spread”) in some affected geographic areas. Community\
                     \ spread means people have been infected with the virus in an area, including\
                     \ some who are not sure how or where they became infected."
+  
+  utter_corona_infected_person:
+  - text: "Stay home for 14 days after your last contact with a person who has COVID-19.\nBe alert for symptoms. Watch for fever, cough, shortness of breath, or other symptoms of COVID-19.\nIf possible, stay away from others, especially people who are at higher risk for getting very sick from COVID-19."
+
+  utter_corona_symptoms:
+  - text: "COVID-19 symptoms include:\nCough\nFever or chills\nShortness of breath or \ndifficulty breathing\nMuscle or body aches\nSore throat\nNew loss of taste or smell\nDiarrhea\nHeadache\nNew fatigue\nNausea or vomiting\nCongestion or runny noseIn confirmed cases of illness in humans, common symptoms have been acute, serious respiratory illness with fever, cough, shortness of breath, and breathing difficulties. Based on current clinical experience, the infection generally presents as pneumonia. It has caused kidney failure and death in some cases. It is important to note that the current understanding of the illness caused by this infection is based on a limited number of cases and may change as more information becomes available."
+  
+  utter_corona_vaccine:
+  - text: "Human clinical trials for Covid-19 vaccine initiated in India: ICMR. Human clinical trials for a vaccine for Covid-19 have been initiated with approximately 1,000 volunteers participating in the exercise for each of the two indigenously developed vaccine candidates\nWhile some western, traditional or home remedies may provide comfort and alleviate symptoms of mild COVID-19, there are no medicines that have been shown to prevent or cure the disease. WHO does not recommend self-medication with any medicines, including antibiotics, as a prevention or cure for COVID-19. However, there are several ongoing clinical trials of both western and traditional medicines. WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19 and will continue to provide updated information\nAt this time there is no vaccine to prevent coronavirus disease 2019 (COVID-19). The FDA is working with vaccine developers and other researchers and manufacturers to help expedite the development and availability of medical products such as vaccines, antibodies, and drugs to prevent COVID-19"
+  
   utter_corona_food_spread:
   - text: "It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes."
 
