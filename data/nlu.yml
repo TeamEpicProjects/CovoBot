@@ -65,7 +65,7 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
- intent: corona_intro
+- intent: corona_intro
   examples: |
     - what is corona?
     - what is covid-19?

@@ -32,8 +32,7 @@ intents:
   - corona_states_death_cases:
       use_entities: true
   - corona_states_recovered_cases:
-      use_entities: true
-  - corona_prevent
+      use_entities: true 
   - corona_states_confirmed_cases
   - states_classify
   # - state_names
@@ -249,7 +248,42 @@ responses:
   
   utter_who_made_this:
     - text: " NAMES "
-  
+
+  utter_corona_spread:
+      - text: "This virus was first detected in Wuhan City, Hubei Province, China. The\
+                    \ first infections were linked to a live animal market, but the virus is now\
+                    \ spreading from person-to-person. It’s important to note that person-to-person\
+                    \ spread can happen on a continuum. Some viruses are highly contagious (like\
+                    \ measles), while other viruses are less so. The virus that causes COVID-19\
+                    \ is spreading from person-to-person. Someone who is actively sick with COVID-19\
+                    \ can spread the illness to others. That is why we recommend that these patients\
+                    \ be isolated either in the hospital or at home (depending on how sick they\
+                    \ are) until they are better and no longer pose a risk of infecting others.\n\
+                    How long someone is actively sick can vary so the decision on when to release\
+                    \ someone from isolation is made on a case-by-case basis in consultation with\
+                    \ doctors, infection prevention and control experts, and public health officials\
+                    \ and involves considering specifics of each situation including disease severity,\
+                    \ illness signs and symptoms, and results of laboratory testing for that patient.\n\
+                    The virus that causes COVID-19 seems to be spreading easily and sustainably\
+                    \ in the community (“community spread”) in some affected geographic areas. Community\
+                    \ spread means people have been infected with the virus in an area, including\
+                    \ some who are not sure how or where they became infected."
+  utter_corona_food_spread:
+  - text: "It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes."
+
+  utter_corona_spread_warm:
+  - text: "With the start of summer coming soon, many are hopeful that the warmer weather will slow the spread of SARS-CoV-2, the novel coronavirus that causes COVID-19. There have been hints from lab experiments that increased temperature and humidity may reduce the viability of SARS-CoV-2. Meanwhile, other coronaviruses that cause less severe diseases, such as the common cold, do spread more slowly among people during the summer."
+
+  utter_corona_spread_risk:
+  - text: "COVID-19 is often more severe in people who are older than 60 years or who have health conditions like lung or heart disease, diabetes or conditions that affect their immune system.​If you’re at high risk, know what to do, and take the right actions now to protect yourself.If you’re not at high risk, do your part to prevent the spread of coronavirus to those who are.There is increasing evidence that people with existing chronic conditions or compromised immune systems due to disability are at higher risk of death due to COVID-19."
+
+  utter_corona_community:
+  - text: "Community spread means people have been infected with the virus in an area, including some who are not sure how or where they became infected. Each health department determines community spread differently based on local conditions. For information on community spread in your area, please visit your health department’s website.​"
+
+  utter_corona_mosq_spread:
+  - text: "At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person. See How Coronavirus Spreads for more information."
+
+
   utter_form_activate:
     - text: "Form Is ACTIVATED"
   utter_form_deactivate:

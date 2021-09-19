@@ -103,51 +103,107 @@ stories:
   steps:
   - intent: corona_spread
   - action: utter_corona_spread
-
-- story: corona food spread
-  steps:
-  - intent: corona_food_spread
-  - action: utter_corona_food_spread
-
-- story: corona warm weather
-  steps:
-  - intent: corona_spread_warm
-  - action: utter_corona_spread_warm
-
-- story: corona risk
-  steps:
-  - intent: corona_spread_risk
-  - action: utter_corona_spread_risk
-
-- story: corona community spread path
-  steps:
-  - intent: corona_community
-  - action: utter_corona_community
-
-- story: corona mosquito path
-  steps:
-  - intent: corona_mosq_spread
-  - action: utter_corona_mosq_spread
-
-- story: corona vaccine path
-  steps:
-  - intent: corona_vaccine
-  - action: utter_corona_vaccine
-
-- story: corona infected path
-  steps:
-  - intent: corona_infected person
-  - action: utter_corona_infected person
-
-- story : Purpose CovoBot
-  steps:
-  - intent : covobot_purpose
-  - action : utter_covobot_purpose
   - action: utter_did_that_help
   - intent : affirm
   - action: utter_happy
   - intent : deny
   - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona food spread
+  steps:
+  - intent: corona_food_spread
+  - action: utter_corona_food_spread
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona warm weather
+  steps:
+  - intent: corona_spread_warm
+  - action: utter_corona_spread_warm
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona risk
+  steps:
+  - intent: corona_spread_risk
+  - action: utter_corona_spread_risk
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona community spread path
+  steps:
+  - intent: corona_community
+  - action: utter_corona_community
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona mosquito path
+  steps:
+  - intent: corona_mosq_spread
+  - action: utter_corona_mosq_spread
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona vaccine path
+  steps:
+  - intent: corona_vaccine
+  - action: utter_corona_vaccine
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+- story: corona infected path
+  steps:
+  - intent: corona_infected person
+  - action: utter_corona_infected person
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+# - story : Purpose CovoBot
+#   steps:
+#   - intent : covobot_purpose
+#   - action : utter_covobot_purpose
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
 
 - story : Who made this Bot
   steps:

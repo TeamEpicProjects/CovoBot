@@ -547,7 +547,6 @@ class Action_Delta_stat(Action):
         #     res += "Data is not available"
             
         return res
-   
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
         def get_key(val , dict_to_search_from):
