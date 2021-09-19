@@ -20,7 +20,7 @@ intents:
   - corona_mosq_spread
   - corona_vaccine
   - corona_prevent
-  - corona_infected person
+  - corona_infected_person
   - corona_states_stat
   - corona_vaccine_stats:
       use_entities: true
@@ -77,6 +77,7 @@ entities:
   # - FStates
   - LOC
   - GPE
+  - PERSON
 
 slots:
   States:
@@ -91,14 +92,13 @@ slots:
     type: text
   GPE:
     type: text
+  PERSON:
+    type: text
 
 
 actions:
   - action_hello_world
   - action_bot_challenge
-  - action_intro_corona
-  - action_corona_symptoms
-  - action_help_covobot
   - action_corona_prevent
   - action_corona_stat
   - action_vaccine_stat
@@ -200,7 +200,7 @@ responses:
     - text: "Confirmed Vaccinated people are: "
 
   utter_death :
-    - text: "Here are the stats for death cases:"
+    - text: "Here are the stats for death cases :"
     - text: "Number of people passed away due to COVID-19 are:"
     - text: "Here are the number of deceased"
     - text: "Deaths:"
@@ -283,16 +283,8 @@ responses:
   utter_corona_mosq_spread:
   - text: "At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person. See How Coronavirus Spreads for more information."
 
-
-  utter_form_activate:
-    - text: "Form Is ACTIVATED"
-  utter_form_deactivate:
-    - text: "Form Is DE-ACTIVATED"
-  utter_slot_values:
-    - text: "this is the state value : {RState}"
   # utter_ask_name:
   # - text: What is your name?
-
   # nlu:
 
 

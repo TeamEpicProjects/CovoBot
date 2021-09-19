@@ -19,6 +19,11 @@ rules:
       # - intent: greet
       - action: utter_greet
 
+  - rule: did not understood user
+    steps:
+    - intent: nlu_fallback
+    - action: utter_deny
+
   # - rule: Activate death form
   #   steps:
   #   - intent: corona_states_death_cases

@@ -277,13 +277,12 @@ class Action_Death_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += "-->  " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0):
-                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+                res +=  "-->  "  + str(flattedDict[i]) + "\n" 
         if res == "":
-            res += "Data is not available"
-            
+            res += "Data is not available for this location"
         return res
 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -304,8 +303,7 @@ class Action_Death_stat(Action):
                 entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
             print ("State to be processed : ", entity_from_chatbot )
         except Exception as e:
-            print ( "DID NOT GET ANYTHONG")
-            dispatcher.utter_message( "did not got anything please enter the place again")
+            print ( "DID NOT GET ANYTHING")
             return []
         ## API URL and the API call we need to do 
         # url= "https://data.covid19india.org/v4/min/data.min.json"
@@ -325,12 +323,9 @@ class Action_Death_stat(Action):
             print ( e)
             dispatcher.utter_message("Sorry we don't have information regarding that place")
         ## giving the output to the chatbot 
-        print(message)
+        print("THIS IS DEATH STATS for ", entity_from_chatbot, " : ",  message)
         dispatcher.utter_message(message) 
         return []
-
-
-
 
 
 class Action_Recovered_stat(Action):

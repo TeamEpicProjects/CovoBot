@@ -146,7 +146,7 @@ nlu:
     - text: "How can i prevent COVID."
     - text: "Briefly explain how can i prevent COVID"
 
-- intent: corona_infected person
+- intent: corona_infected_person
   examples: |
     - If You or Someone You Know is Sick or Had Contact with Someone who Has COVID-19
     - If You or Someone You Know is Sick or Had Contact with Someone who Has corona?
