@@ -374,7 +374,6 @@ stories:
   - action : utter_greet
   - intent : corona_delta_stats
   - action : utter_ask_location
-  - intent : corona_delta_stats
     entities :
     - or:
       - GPE : "Pathankot"

@@ -147,10 +147,10 @@ class Action_Confirmed_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_confirmed".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += ">> " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res += ">> "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -210,10 +210,10 @@ class Action_Death_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += ">>  " +  str(flattedDict[i]) + "\n"
+                res += "-->  " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0):
-                res +=  ">>  "  + str(flattedDict[i]) + "\n" 
+                res +=  "-->  "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available for this location"
         return res
@@ -334,10 +334,10 @@ class Action_Tested_stat(Action):
         res = ""
         for i in flattedDict.keys ():
             if (state == False and len (re.findall(r"(.+?){fname}_total_tested".format(fname=entity_from_chatbot),i)) != 0 ):
-                res += ">> " +  str(flattedDict[i]) + "\n"
+                res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_tested".format(fname=entity_from_chatbot),i)) != 0):
-                res += ">> "  + str(flattedDict[i]) + "\n" 
+                res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
         if res == "":
             res += "Data is not available"
             
@@ -400,11 +400,11 @@ class Action_Vaccine_stat(Action):
                 # print ( "This is the str[i] value ", str(i) )
                 # print( "\nTHis is the str[flattedDict[i]] value :" , str(flattedDict[i]))
                 # res += str(i[2:]) + ": " + str(flattedDict[i]) + "\n"
-                res += entity_from_chatbot + "" + str(count) + ">> "+  str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + "" + str(count) + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len (re.findall(r"{fname}_total_vaccinated".format(fname=entity_from_chatbot),i)) != 0):
                 count += 1
-                res += entity_from_chatbot + "" + str(count) + ">> "  + str(flattedDict[i]) + "\n" 
+                res += entity_from_chatbot + "" + str(count) + " : "  + str(flattedDict[i]) + "\n" 
         return res.replace("_" , " " ) 
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         ## For better output formatting
@@ -461,18 +461,18 @@ class Action_Delta_stat(Action):
         for i in flattedDict.keys ():
 
             if (state == False and len(re.findall(r"(.+?){fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + ">> " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+=""+ entity_from_chatbot + ">> " +  str(flattedDict[i]) + "\n"
+                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+=""+ entity_from_chatbot + ">> " +  str(flattedDict[i]) + "\n"
+                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len(re.findall(r"{fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + ">> "  + str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + ">> " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + ">> " +  str(flattedDict[i]) + "\n"
+                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
         # if res == "":
         #     res += "Data is not available"
             
