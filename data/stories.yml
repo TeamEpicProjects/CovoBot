@@ -16,21 +16,54 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story : Bot Challenge
-  steps:
-  - intent : bot_challenge
-  - action : action_bot_challenge
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
+# - story : Bot Challenge
+#   steps:
+#   - intent : bot_challenge
+#   - action : action_bot_challenge
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
 
-# -------------------------------------------------
-# COVID FAQ STORIES :----
-# -------------------------------------------------
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
 
-- story : Intro Corona faq
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+# - story : covid story
+#   steps:
+#   - intent : get_covid_data
+#   - action : utter_data
+#   - intent : affirm
+#   - action: utter_happy
+
+# - story : Bot Challenge
+#   steps:
+#   - intent : bot_challenge
+#   - action : action_bot_challenge
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+
+- story : Intro Corona
   steps:
   - intent : corona_intro
   - action : utter_corona_spread
@@ -42,7 +75,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story : Symptoms Corona faq
+- story : Symptoms Corona
   steps:
   - intent : corona_symptoms
   - action : utter_corona_symptoms
@@ -54,7 +87,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story : Help CovoBot faq
+- story : Help CovoBot
   steps:
   - intent : covobot_help
   - action : utter_help
@@ -66,7 +99,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona spread faq
+- story: corona spread
   steps:
   - intent: corona_spread
   - action: utter_corona_spread
@@ -78,7 +111,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona food spread faq
+- story: corona food spread
   steps:
   - intent: corona_food_spread
   - action: utter_corona_food_spread
@@ -90,7 +123,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona warm weather faq
+- story: corona warm weather
   steps:
   - intent: corona_spread_warm
   - action: utter_corona_spread_warm
@@ -102,7 +135,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona risk faq
+- story: corona risk
   steps:
   - intent: corona_spread_risk
   - action: utter_corona_spread_risk
@@ -114,7 +147,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona community spread faq
+- story: corona community spread path
   steps:
   - intent: corona_community
   - action: utter_corona_community
@@ -126,7 +159,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona mosquito faq
+- story: corona mosquito path
   steps:
   - intent: corona_mosq_spread
   - action: utter_corona_mosq_spread
@@ -138,7 +171,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona vaccine faq
+- story: corona vaccine path
   steps:
   - intent: corona_vaccine
   - action: utter_corona_vaccine
@@ -150,7 +183,7 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story: corona infected faq
+- story: corona infected path
   steps:
   - intent: corona_infected_person
   - action: utter_corona_infected_person
@@ -172,7 +205,7 @@ stories:
 #   - intent : deny
 #   - action: utter_deny
 
-- story : Who made this Bot faq
+- story : Who made this Bot
   steps:
   - intent : covobot_who_made_this
   - action : utter_who_made_this
@@ -184,7 +217,8 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
-- story : Preventions of corona faq
+
+- story : Preventions of corona
   steps:
   - intent : corona_prevent
   - action : utter_corona_prevent
@@ -195,73 +229,6 @@ stories:
   - action: utter_deny
   - intent : goodbye
   - action: utter_goodbye
-
-# -story : corona prevention
-#   steps :
-#   - intent : corona_prevent
-#   - action : ??
-#   - intent : affirm
-#   - action : utter_prevention
-#   - action : utter_did_that_help
-#   - intent : affirm
-#   - action : utter_happy
-
-# -------------------------------------------------
-# INTERACTIVE STORIES
-# -------------------------------------------------
-# DEmo Interactive Story
-# - story : corona interactive death story
-#   steps :
-#   - intent : greet
-#   - action : utter_greet
-#   - intent : corona_states_death_cases
-#   - action : utter_location
-#   - intent : corona_states_death_cases
-#     entities :
-        # - GPE : "srinagar"
-#   - action : utter_death
-#   - action : action_death_stat
-
-- story : corona interactive death story 
-  steps :
-  - intent : greet
-  - action : utter_greet
-  - intent : corona_states_death_cases
-  - action : utter_location
-  - intent : corona_states_death_cases
-    entities :
-    - or:
-      - GPE : "srinagar"
-      - LOC: "srinagar"
-      - RState: "srinagar"
-      - PERSON: "srinagar"
-  - action : utter_death
-  - action : action_death_stat
-  - intent : corona_states_death_cases
-    entities :
-    - or:
-      - GPE : "pathankot"
-      - LOC: "pathankot"
-      - RState: "pathankot"
-      - PERSON: "pathankot"
-  - action : utter_death
-  - action : action_death_stat
-
-- story : corona interactive delta story
-  steps :
-  - intent : greet
-  - action : utter_greet
-  - intent : corona_states_delta_cases
-  - action : utter_location
-  - intent : corona_states_delta_cases
-    entities :
-    - or:
-      - GPE : "srinagar"
-      - LOC: "srinagar"
-      - RState: "srinagar"
-      - PERSON: "srinagar"
-  - action : utter_delta
-  - action : action_delta_stat
 
 
 - story : corona stat path
@@ -277,6 +244,46 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
+
+- story : corona delta stat 
+  steps :
+  - intent : corona_states_delta_cases
+  - action : utter_delta
+  - action : action_delta_stat
+  - action: utter_did_that_help
+  - intent : affirm
+  - action: utter_happy
+  - intent : deny
+  - action: utter_deny
+  - intent : goodbye
+  - action: utter_goodbye
+
+# - story : corona death stat
+#   steps :
+#   - intent : corona_states_death_cases
+#   - action : utter_death
+#   # - action : action_death_stat
+#   - action : action_death_form
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+- story: corona interactive death story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_states_death_cases
+  - slot_was_set:
+    - requested_slot : RState
+  - slot_was_set:
+    - RState : null
+  - action: action_death_stat
+  - action: utter_slot_values
+
 - story : corona recovered stat
   steps :
   - intent : corona_states_recovered_cases
@@ -289,6 +296,30 @@ stories:
   - action: utter_deny
   - intent : goodbye
   - action: utter_goodbye
+
+# - story : help story
+#   steps:
+#   - intent: covobot_help
+#   - action : utter_help
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+- story : corona vaccine stat2
+  steps:
+  - intent : corona_vaccine_stats
+  - action : action_vaccine_stat
+  - intent : goodbye
+  - action: utter_goodbye
+
+# -story : corona prevention
+#   steps :
+#   - intent : corona_prevent
+#   - action : ??
+#   - intent : affirm
+#   - action : utter_prevention
+#   - action : utter_did_that_help
+#   - intent : affirm
+#   - action : utter_happy
 
 - story : corona confirmed cases
   steps : 
@@ -303,3 +334,137 @@ stories:
   - action : utter_deny
   - intent : goodbye
   - action: utter_goodbye
+
+
+# - story : get state name
+#   steps : 
+#   - intent : get_state_name
+#   - action: utter_location
+#   - intent: give_State
+#   - action: utter_stat
+#   - action: action_corona_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+
+# - story: delta half ques
+#   steps: 
+#   - intent: covid_delta_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   - action: utter_delta
+#   - action: action_delta_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+
+# - story: confirmed half ques
+#   steps:
+#   - intent: covid_confirmed_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   - action: utter_confirmed
+#   - action: action_confirmed_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+
+# - story: vaccine half ques
+#   steps:
+#   - intent: covid_vaccine_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   - action: utter_vaccine
+#   - action: action_vaccine_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+
+# - story: death half ques
+#   steps:
+#   - intent: covid_death_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   # - action: utter_death
+#   - action: action_death_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny  
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+
+# - story: recovered half ques
+#   steps:
+#   - intent: covid_recovered_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   - action: utter_recovered
+#   - action: action_recovered_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny 
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+# - story: total half ques
+#   steps:
+#   - intent: covid_total_halfQ
+#   - action: utter_location
+#   - intent: give_State
+#   - action : utter_stat
+#   - action : action_corona_stat
+#   - action: utter_did_that_help
+#   - intent : affirm
+#   - action: utter_happy
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: vincent
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: give_State
+#   - action: utter_ask_name
+#   - intent: give_name
+#   - action: action_receive_name
+#   - slot_was_set:
+#     - name: jenny
+#   - intent: repeat_name
+#   - action: action_say_name
+#   - intent: goodbye
+#   - action: utter_goodbye
