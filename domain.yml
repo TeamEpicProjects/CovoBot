@@ -3,13 +3,12 @@ version: "2.0"
 
 intents:
   - greet
+  - Hello World
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
-  - Hello World
+
   - corona_intro
   - corona_spread
   - corona_food_spread
@@ -21,73 +20,32 @@ intents:
   - corona_vaccine
   - corona_prevent
   - corona_infected_person
-  - corona_states_stat
-  - corona_vaccine_stats:
-      use_entities: true
   - covobot_help
   - covobot_purpose
   - covobot_who_made_this
-  - corona_states_delta_cases:
-      use_entities: true
-  - corona_states_death_cases:
-      use_entities: true
-  - corona_states_recovered_cases:
-      use_entities: true 
-  - corona_states_confirmed_cases
-  - states_classify
-  # - state_names
-  # - covid_death_halfQ:
-  #     use_entities: true
-  # - covid_recovered_halfQ: 
-  #     use_entities: true
-  # - covid_total_halfQ: 
-  #     use_entities: true
-  # - covid_vaccine_halfQ:
-  #     use_entities: true  
-  # - covid_confirmed_halfQ:
-  #     use_entities: true
-  # - covid_delta_halfQ:
-  #     use_entities: true
-  # - get_state_name
-  # - give_State:
-  #     use_entities: true
+  
+  - corona_all_stats
+  - corona_confirmed_stats
+  - corona_death_stats
+  - corona_recovered_stats
+  - corona_tested_stats
+  - corona_vaccine_stats
+  - corona_delta_stats
 
-
-
-# The from_entity mapping fills slots based on extracted entities. 
-# It will look for an entity called entity_name to fill a slot slot_name. 
-# If intent_name is None, the slot will be filled regardless of intent name. 
-# Otherwise, the slot will only be filled if the user's intent is intent_name.
-
-# forms:
-#   state_name_form:
-#     required_slots:
-#       FState:
-#       - type: from_text
-#         intent_name: state_names
-#       FStates: 
-#       - type: from_entity
-#         entity: GPR, PERSON, LOC, RState
-#         intent_name: state_names. corona_states_death_cases
-
+  
 entities: 
   - States
   - RState
-  # - FState
-  # - FStates
   - LOC
   - GPE
   - PERSON
+
 
 slots:
   States:
     type: text
   RState:  
     type: text
-  # FState:
-  #   type: text
-  # FStates:
-  #   type: text
   LOC:
     type: text
   GPE:
@@ -98,17 +56,14 @@ slots:
 
 actions:
   - action_hello_world
-  - action_bot_challenge
-  - action_corona_prevent
   - action_corona_stat
+  - action_confirmed_stat
+  - action_death_stat
+  - action_recovered_stat
+  - action_Tested_stat
   - action_vaccine_stat
   - action_delta_stat
-  - action_death_stat
-  # - action_death_form
-  - action_recovered_stat
-  - action_confirmed_stat
-  - action_Tested_stat
-  - action_receive_name
+
 
 responses:
   utter_greet :
@@ -126,6 +81,94 @@ responses:
     - text: "May I assist you with anything further?"
     - text: "Be sure to ask if you have any other questions!"
 
+  utter_goodbye:
+      - text: "GoodBye!"
+      - text: "Have a good day!"
+      - text: "Goodbye and Stay Home and Stay Safe"
+      - text: "Bye and dont forget to Wash your hands frequently."   
+      - text: "Bye! take care."
+      - text: "Bye-Bye!"
+      - text: "Adios !"
+      - text: "GoodBye and Stay Safe"
+
+  utter_deny : 
+      - text: "Okay. Please repeat your query"
+      - text: "Can you please rephrase your query?"
+      - text: "Please try rephrasing the query."
+      - text: "Could you say that again? I didn’t understand."
+      - text: "I’m sorry. Could you please repeat your question"
+      - text: "Would you mind repeating your query?"
+      - text: "I’m sorry... I didn’t get that. Could you explain in another way?"
+      - text: "Could you please re-explain your question"
+
+  utter_iamabot:
+      - text: "I am a bot, powered by Rasa." 
+
+# -------------------------------------------------
+# COVID FAQ UTTERANCES :----
+# -------------------------------------------------
+ 
+  utter_corona_spread:
+        - text: "This virus was first detected in Wuhan City, Hubei Province, China. The\
+                      \ first infections were linked to a live animal market, but the virus is now\
+                      \ spreading from person-to-person. It’s important to note that person-to-person\
+                      \ spread can happen on a continuum. Some viruses are highly contagious (like\
+                      \ measles), while other viruses are less so. The virus that causes COVID-19\
+                      \ is spreading from person-to-person. Someone who is actively sick with COVID-19\
+                      \ can spread the illness to others. That is why we recommend that these patients\
+                      \ be isolated either in the hospital or at home (depending on how sick they\
+                      \ are) until they are better and no longer pose a risk of infecting others.\n\
+                      How long someone is actively sick can vary so the decision on when to release\
+                      \ someone from isolation is made on a case-by-case basis in consultation with\
+                      \ doctors, infection prevention and control experts, and public health officials\
+                      \ and involves considering specifics of each situation including disease severity,\
+                      \ illness signs and symptoms, and results of laboratory testing for that patient.\n\
+                      The virus that causes COVID-19 seems to be spreading easily and sustainably\
+                      \ in the community (“community spread”) in some affected geographic areas. Community\
+                      \ spread means people have been infected with the virus in an area, including\
+                      \ some who are not sure how or where they became infected." 
+
+  utter_corona_food_spread:
+    - text: "It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes."
+
+  utter_corona_spread_warm:
+    - text: "With the start of summer coming soon, many are hopeful that the warmer weather will slow the spread of SARS-CoV-2, the novel coronavirus that causes COVID-19. There have been hints from lab experiments that increased temperature and humidity may reduce the viability of SARS-CoV-2. Meanwhile, other coronaviruses that cause less severe diseases, such as the common cold, do spread more slowly among people during the summer."
+
+  utter_corona_spread_risk:
+  - text: "COVID-19 is often more severe in people who are older than 60 years or who have health conditions like lung or heart disease, diabetes or conditions that affect their immune system.​If you’re at high risk, know what to do, and take the right actions now to protect yourself.If you’re not at high risk, do your part to prevent the spread of coronavirus to those who are.There is increasing evidence that people with existing chronic conditions or compromised immune systems due to disability are at higher risk of death due to COVID-19."
+
+  utter_corona_community:
+  - text: "Community spread means people have been infected with the virus in an area, including some who are not sure how or where they became infected. Each health department determines community spread differently based on local conditions. For information on community spread in your area, please visit your health department’s website.​"
+
+  utter_corona_symptoms:
+    - text: "COVID-19 symptoms include:\nCough\nFever or chills\nShortness of breath or \ndifficulty breathing\nMuscle or body aches\nSore throat\nNew loss of taste or smell\nDiarrhea\nHeadache\nNew fatigue\nNausea or vomiting\nCongestion or runny noseIn confirmed cases of illness in humans, common symptoms have been acute, serious respiratory illness with fever, cough, shortness of breath, and breathing difficulties. Based on current clinical experience, the infection generally presents as pneumonia. It has caused kidney failure and death in some cases. It is important to note that the current understanding of the illness caused by this infection is based on a limited number of cases and may change as more information becomes available."
+
+  utter_corona_mosq_spread:
+    - text: "At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person. See How Coronavirus Spreads for more information."
+
+  utter_corona_vaccine:
+    - text: "Human clinical trials for Covid-19 vaccine initiated in India: ICMR. Human clinical trials for a vaccine for Covid-19 have been initiated with approximately 1,000 volunteers participating in the exercise for each of the two indigenously developed vaccine candidates\nWhile some western, traditional or home remedies may provide comfort and alleviate symptoms of mild COVID-19, there are no medicines that have been shown to prevent or cure the disease. WHO does not recommend self-medication with any medicines, including antibiotics, as a prevention or cure for COVID-19. However, there are several ongoing clinical trials of both western and traditional medicines. WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19 and will continue to provide updated information\nAt this time there is no vaccine to prevent coronavirus disease 2019 (COVID-19). The FDA is working with vaccine developers and other researchers and manufacturers to help expedite the development and availability of medical products such as vaccines, antibodies, and drugs to prevent COVID-19"
+
+  utter_corona_prevent:
+    - text: "The best way to prevent illness is to avoid being exposed to the virus. CDC recommends everyday preventive actions to help prevent the spread of respiratory diseases.CDC recommends washing your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. If soap and water are not available, CDC recommends using an alcohol-based hand sanitizer that contains at least 60 percent alcohol.\nWear masks in public settings when around people not living in your household and particularly where other social distancing measures are difficult to maintain, such as grocery stores, pharmacies, and gas stations. Masks may slow the spread of the virus and help people who may have the virus and do not know it from transmitting it to others.COVID-19 can be spread by people who do not have symptoms and do not know that they are infected. That’s why it’s important for everyone to practice social distancing (staying at least 6 feet away from other people) and wear masks in public settings. Masks provide an extra layer to help prevent the respiratory droplets from traveling in the air and onto other people.The masks recommended are not surgical masks or N-95 respirators. Those are critical supplies that must continue to be reserved for healthcare workers and other medical first responders, as recommended by current CDC guidance."
+
+  utter_corona_infected_person:
+    - text: "Stay home for 14 days after your last contact with a person who has COVID-19.\nBe alert for symptoms. Watch for fever, cough, shortness of breath, or other symptoms of COVID-19.\nIf possible, stay away from others, especially people who are at higher risk for getting very sick from COVID-19."
+
+  utter_help:
+    - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
+              Feel free to ask me anything regarding C/R/D"
+
+  utter_covobot_purpose:
+      - text : "We are all together in a fight against the COVID-19 pandemic. Chatbots, if effectively designed and deployed, could help us by sharing up-to-date information quickly, encouraging desired health impacting behaviors, and lessening the psychological damage caused by fear and isolation. Despite this potential, the risk of amplifying misinformation and the lack of prior effectiveness research is cause for concern. Immediate collaborations between healthcare workers, companies, academics and governments are merited and may aid future pandemic preparedness efforts."
+
+  utter_who_made_this:
+    - text: " Vedansh\n Umrah\n Udit\n Pratyayee"
+
+# -------------------------------------------------
+# API COVID STATS UTTERANCES FOR INTERACTIVE STORIES
+# ------------------------------------------------- 
+
   utter_data :
     - text: "Here you go!"
     - text: "Here is your answer:"
@@ -133,27 +176,6 @@ responses:
     - text: "Here is your data"
     - text: "Here are your details"
     
-  
-  utter_deny : 
-    - text: "Okay. Please repeat your query"
-    - text: "Can you please rephrase your query?"
-    - text: "Please try rephrasing the query."
-    - text: "Could you say that again? I didn’t understand."
-    - text: "I’m sorry. Could you please repeat your question"
-    - text: "Would you mind repeating your query?"
-    - text: "I’m sorry... I didn’t get that. Could you explain in another way?"
-    - text: "Could you please re-explain your question"
-
-  utter_goodbye:
-    - text: "GoodBye!"
-    - text: "Have a good day!"
-    - text: "Goodbye and Stay Home and Stay Safe"
-    - text: "Bye and dont forget to Wash your hands frequently."   
-    - text: "Bye! take care."
-    - text: "Bye-Bye!"
-    - text: "Adios !"
-    - text: "GoodBye and Stay Safe"
-
   utter_did_that_help:
     - text: "Did that help you?"
     - text: "Was that helpful enough?"
@@ -161,6 +183,19 @@ responses:
     - text: "Was this helpful"
     - text: "Did that help ?"
 
+  utter_ask_location :
+    - text: "Can you enter the state/district name"
+    - text: "Please enter the state/district name"
+    - text: "Can you mention the state/district?"
+    - text: "Please mention the location"
+    - text: "Please specify the location for which you need the details"
+    - text: "Location ?"
+    - text: "Please provide the location"
+    - text: "May I know the state/district?"
+    - text: "Please tell me the state/district name"
+    - text: "can you please tell me your location?"
+    - text: "Mention your location please"
+    - text: "The location ?"
 
   utter_stat :
     - text: "Here are the stats:"
@@ -168,26 +203,14 @@ responses:
     - text: "The stats are as follows:"
     - text: "Here are the details:"
     - text: "These are your details"
+    - text: "Here are the all the stats:"
 
-  utter_delta :
-    - text: "Here are the stats for delta cases:"
-    - text: "The stats for delta cases are as follows:"
-    - text: "The number of delta variant cases are:"
-    - text: "People in contact with delta variant are:"
-    - text: "Detal cases:"
-    - text: "The number of delta cases are:"
-    - text: "Number of people affected by delta variant are:"
-    - text: "Number of people confirmed with delta variant are:"
-    - text: "Here you the details of delta variant cases:"
-
-  utter_vaccine : 
-    - text: "Here are the stats for vaccine:"
-    - text: "Here are the vaccination stats:"
-    - text: "The number of vaccinations done are:"
-    - text: "Number of people vaccinated are:"
-    - text: "People vaccinated are: "
-    - text: "Vaccinated people :"
-    - text: "Confirmed Vaccinated people are: "
+  utter_confirmed :
+    - text: "Here are the stats for confirmed cases:"
+    - text: "Number of confirmed COVID-19 cases are:"
+    - text: "Confirmed Cases:"
+    - text: "Number of confirmed cases"
+    - text: "Here are the number of confirmed cases"
 
   utter_death :
     - text: "Here are the stats for death cases :"
@@ -208,100 +231,34 @@ responses:
     - text: "Number of recovered cases:"
     - text: "Confirmed Recovered Cases:"
 
-  utter_confirmed :
-    - text: "Here are the stats for confirmed cases:"
-    - text: "Number of confirmed COVID-19 cases are:"
-    - text: "Confirmed Cases:"
-    - text: "Number of confirmed cases"
-    - text: "Here are the number of confirmed cases"
+  utter_tested:
+    - text: "Here are the stats for tested cases:"
+    - text: "Number of tested COVID-19 cases are:"
+    - text: "Tested Cases:"
+    - text: "Number of tested cases"
+    - text: "Here are the number of tested cases"
 
-  utter_location :
-    - text: "Can you enter the state/district name"
-    - text: "Please enter the state/district name"
-    - text: "Can you mention the state/district?"
-    - text: "Please mention the location"
-    - text: "Please specify the location for which you need the details"
-    - text: "Location ?"
-    - text: "Please provide the location"
-    - text: "May I know the state/district?"
-    - text: "Please tell me the state/district name"
-    - text: "can you please tell me your location?"
-    - text: "Mention your location please"
-    - text: "The location ?"
+  utter_vaccine : 
+    - text: "Here are the stats for vaccine:"
+    - text: "Here are the vaccination stats:"
+    - text: "The number of vaccinations done are:"
+    - text: "Number of people vaccinated are:"
+    - text: "People vaccinated are: "
+    - text: "Vaccinated people :"
+    - text: "Confirmed Vaccinated people are: "
+    
+  utter_delta :
+    - text: "Here are the stats for delta cases:"
+    - text: "The stats for delta cases are as follows:"
+    - text: "The number of delta variant cases are:"
+    - text: "People in contact with delta variant are:"
+    - text: "Detal cases:"
+    - text: "The number of delta cases are:"
+    - text: "Number of people affected by delta variant are:"
+    - text: "Number of people confirmed with delta variant are:"
+    - text: "Here you the details of delta variant cases:"
 
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa." 
-
-  utter_help:
-    - text: "I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. 
-              Feel free to ask me anything regarding C/R/D"
   
-  utter_who_made_this:
-    - text: " Vedansh\n Umrah\n Udit\n Pratyayee"
-
-  # utter_prevention :
-  #   - text: "These are some of the ways to prevent COVID-19:"
-  #   - text: "You can prevent COVID by: "
-  #   - text: "COVID-19 can be prevented in the following ways:"
-  #   - text: "These are a few ways to prevent Corona"  
-  #   - text: "You can prevent COVID-19 by following the mentioned ways:"
-  #   - text: "These are a few ways to prevent COVID" 
-  #   - text: "You can protect yourself from COVID-19 by following the mentioned ways:"
-  #   - text: "These are a few ways to prevent COVID-19"
-  #   - text: "These are a few ways to prevent coronavirus"
-
-
-  utter_corona_prevent:
-    - text: "The best way to prevent illness is to avoid being exposed to the virus. CDC recommends everyday preventive actions to help prevent the spread of respiratory diseases.CDC recommends washing your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. If soap and water are not available, CDC recommends using an alcohol-based hand sanitizer that contains at least 60 percent alcohol.\nWear masks in public settings when around people not living in your household and particularly where other social distancing measures are difficult to maintain, such as grocery stores, pharmacies, and gas stations. Masks may slow the spread of the virus and help people who may have the virus and do not know it from transmitting it to others.COVID-19 can be spread by people who do not have symptoms and do not know that they are infected. That’s why it’s important for everyone to practice social distancing (staying at least 6 feet away from other people) and wear masks in public settings. Masks provide an extra layer to help prevent the respiratory droplets from traveling in the air and onto other people.The masks recommended are not surgical masks or N-95 respirators. Those are critical supplies that must continue to be reserved for healthcare workers and other medical first responders, as recommended by current CDC guidance."
-  utter_corona_spread:
-      - text: "This virus was first detected in Wuhan City, Hubei Province, China. The\
-                    \ first infections were linked to a live animal market, but the virus is now\
-                    \ spreading from person-to-person. It’s important to note that person-to-person\
-                    \ spread can happen on a continuum. Some viruses are highly contagious (like\
-                    \ measles), while other viruses are less so. The virus that causes COVID-19\
-                    \ is spreading from person-to-person. Someone who is actively sick with COVID-19\
-                    \ can spread the illness to others. That is why we recommend that these patients\
-                    \ be isolated either in the hospital or at home (depending on how sick they\
-                    \ are) until they are better and no longer pose a risk of infecting others.\n\
-                    How long someone is actively sick can vary so the decision on when to release\
-                    \ someone from isolation is made on a case-by-case basis in consultation with\
-                    \ doctors, infection prevention and control experts, and public health officials\
-                    \ and involves considering specifics of each situation including disease severity,\
-                    \ illness signs and symptoms, and results of laboratory testing for that patient.\n\
-                    The virus that causes COVID-19 seems to be spreading easily and sustainably\
-                    \ in the community (“community spread”) in some affected geographic areas. Community\
-                    \ spread means people have been infected with the virus in an area, including\
-                    \ some who are not sure how or where they became infected."
-  
-  utter_corona_infected_person:
-  - text: "Stay home for 14 days after your last contact with a person who has COVID-19.\nBe alert for symptoms. Watch for fever, cough, shortness of breath, or other symptoms of COVID-19.\nIf possible, stay away from others, especially people who are at higher risk for getting very sick from COVID-19."
-
-  utter_corona_symptoms:
-  - text: "COVID-19 symptoms include:\nCough\nFever or chills\nShortness of breath or \ndifficulty breathing\nMuscle or body aches\nSore throat\nNew loss of taste or smell\nDiarrhea\nHeadache\nNew fatigue\nNausea or vomiting\nCongestion or runny noseIn confirmed cases of illness in humans, common symptoms have been acute, serious respiratory illness with fever, cough, shortness of breath, and breathing difficulties. Based on current clinical experience, the infection generally presents as pneumonia. It has caused kidney failure and death in some cases. It is important to note that the current understanding of the illness caused by this infection is based on a limited number of cases and may change as more information becomes available."
-  
-  utter_corona_vaccine:
-  - text: "Human clinical trials for Covid-19 vaccine initiated in India: ICMR. Human clinical trials for a vaccine for Covid-19 have been initiated with approximately 1,000 volunteers participating in the exercise for each of the two indigenously developed vaccine candidates\nWhile some western, traditional or home remedies may provide comfort and alleviate symptoms of mild COVID-19, there are no medicines that have been shown to prevent or cure the disease. WHO does not recommend self-medication with any medicines, including antibiotics, as a prevention or cure for COVID-19. However, there are several ongoing clinical trials of both western and traditional medicines. WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19 and will continue to provide updated information\nAt this time there is no vaccine to prevent coronavirus disease 2019 (COVID-19). The FDA is working with vaccine developers and other researchers and manufacturers to help expedite the development and availability of medical products such as vaccines, antibodies, and drugs to prevent COVID-19"
-  
-  utter_corona_food_spread:
-  - text: "It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes."
-
-  utter_corona_spread_warm:
-  - text: "With the start of summer coming soon, many are hopeful that the warmer weather will slow the spread of SARS-CoV-2, the novel coronavirus that causes COVID-19. There have been hints from lab experiments that increased temperature and humidity may reduce the viability of SARS-CoV-2. Meanwhile, other coronaviruses that cause less severe diseases, such as the common cold, do spread more slowly among people during the summer."
-
-  utter_corona_spread_risk:
-  - text: "COVID-19 is often more severe in people who are older than 60 years or who have health conditions like lung or heart disease, diabetes or conditions that affect their immune system.​If you’re at high risk, know what to do, and take the right actions now to protect yourself.If you’re not at high risk, do your part to prevent the spread of coronavirus to those who are.There is increasing evidence that people with existing chronic conditions or compromised immune systems due to disability are at higher risk of death due to COVID-19."
-
-  utter_corona_community:
-  - text: "Community spread means people have been infected with the virus in an area, including some who are not sure how or where they became infected. Each health department determines community spread differently based on local conditions. For information on community spread in your area, please visit your health department’s website.​"
-
-  utter_corona_mosq_spread:
-  - text: "At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person. See How Coronavirus Spreads for more information."
-
-  # utter_ask_name:
-  # - text: What is your name?
-  # nlu:
-
-
 config:
   store_entities_as_slots: true
 session_config:

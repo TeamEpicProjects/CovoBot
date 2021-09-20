@@ -77,73 +77,6 @@ class ActionHelloWorld(Action):
 
 
 
-# ##TODO:THis has been changed so work carefully
-# class Action_Death_form(FormAction):
-#     def name(self) -> Text:
-#         return "action_death_form"
-#     ## This will fetch the given state or districts data provided an input
-
-#     @staticmethod
-#     def required_slots(tracker: Tracker) -> List[Text]:
-#         return ["FState"]
-    
-#     def get_sats(self, entity_from_chatbot, flattedDict, state = False):
-#         res = ""
-#         for i in flattedDict.keys ():
-#             if (state == False and len (re.findall(r"(.+?){fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0 ):
-#                 res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
-#             ##to get the the total values of only states excluding district
-#             if ( state == True and len (re.findall(r"{fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0):
-#                 res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
-#         if res == "":
-#             res += "Data is not available"
-            
-#         return res
-
-#     def submit(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         ## For better output formatting
-#         def get_key(val , dict_to_search_from):
-#             for key, value in dict_to_search_from.items():
-#                 if val == value:
-#                     return key
-#             return "key doesn't exist" 
-#         ## To get the slot value from chatbot context. ie: fetching entites
-#         try:
-#             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
-#             if ( next(tracker.get_latest_entity_values('RState'), None) != None):
-#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
-#             elif ( next(tracker.get_latest_entity_values('FState'), None) != None):
-#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
-#             elif ( next(tracker.get_latest_entity_values('FStates'), None) != None):
-#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
-#             elif ( next(tracker.get_latest_entity_values('LOC'), None) != None):
-#                 entity_from_chatbot = next(tracker.get_latest_entity_values('LOC'), None)
-#             elif ( next(tracker.get_latest_entity_values('GPE'), None) != None):
-#                 entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
-#             print ("State to be processed : ", entity_from_chatbot )
-#         except Exception as e:
-#             print ( "did not got anything")
-#         ## API URL and the API call we need to do 
-#         # url= "https://data.covid19india.org/v4/min/data.min.json"
-#         # r= requests.get(url = url).json()
-#         r = getdataFromAPI()
-#         ## Preprocessing of data. Flattening the dict so that it will work with regex
-#         flattedDict = flatten_json(r)
-#         ## The main code that is responsible for serching through the data
-#         ## This if computes  if the given input is a state or not and searches accordingly
-#         try:
-#             if ( entity_from_chatbot.title() in final_states):
-#                 message = self.get_sats(final_states[entity_from_chatbot.title().strip()] , flattedDict , True).replace( final_states[entity_from_chatbot.title()] , entity_from_chatbot.title() )
-#             else:
-#                 message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
-#                 message = message.replace("districts" , "")
-#         except Exception as e:
-#             print ( e)
-#             dispatcher.utter_message("Sorry we don't have information regarding that place")
-#         ## giving the output to the chatbot 
-#         print(message)
-#         dispatcher.utter_message(message) 
-
 
 class Action_corona_stat(Action):
 
@@ -326,6 +259,8 @@ class Action_Death_stat(Action):
         print("THIS IS DEATH STATS for ", entity_from_chatbot, " : ",  message)
         dispatcher.utter_message(message) 
         return []
+
+
 
 
 class Action_Recovered_stat(Action):
@@ -583,17 +518,92 @@ class Action_Delta_stat(Action):
         dispatcher.utter_message(message)
 
 
-class ActionReceiveName(Action):
 
-    def name(self) -> Text:
-        return "action_receive_name"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        text = tracker.latest_message['text']
-        # dispatcher.utter_message(text=f" {text}!")
-        return [SlotSet("RState", text)]
 
+
+
+
+# class ActionReceiveName(Action):
+
+#     def name(self) -> Text:
+#         return "action_receive_name"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+#         text = tracker.latest_message['text']
+#         # dispatcher.utter_message(text=f" {text}!")
+#         return [SlotSet("RState", text)]
+
+
+
+# ##TODO:THis has been changed so work carefully
+# class Action_Death_form(FormAction):
+#     def name(self) -> Text:
+#         return "action_death_form"
+#     ## This will fetch the given state or districts data provided an input
+
+#     @staticmethod
+#     def required_slots(tracker: Tracker) -> List[Text]:
+#         return ["FState"]
+    
+#     def get_sats(self, entity_from_chatbot, flattedDict, state = False):
+#         res = ""
+#         for i in flattedDict.keys ():
+#             if (state == False and len (re.findall(r"(.+?){fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0 ):
+#                 res += "" + entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+#             ##to get the the total values of only states excluding district
+#             if ( state == True and len (re.findall(r"{fname}_total_deceased".format(fname=entity_from_chatbot),i)) != 0):
+#                 res += "" + entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n" 
+#         if res == "":
+#             res += "Data is not available"
+            
+#         return res
+
+#     def submit(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         ## For better output formatting
+#         def get_key(val , dict_to_search_from):
+#             for key, value in dict_to_search_from.items():
+#                 if val == value:
+#                     return key
+#             return "key doesn't exist" 
+#         ## To get the slot value from chatbot context. ie: fetching entites
+#         try:
+#             # entity_from_chatbot = next(tracker.get_latest_entity_values('State'), None)
+#             if ( next(tracker.get_latest_entity_values('RState'), None) != None):
+#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+#             elif ( next(tracker.get_latest_entity_values('FState'), None) != None):
+#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+#             elif ( next(tracker.get_latest_entity_values('FStates'), None) != None):
+#                 entity_from_chatbot = next(tracker.get_latest_entity_values('RState'), None)
+#             elif ( next(tracker.get_latest_entity_values('LOC'), None) != None):
+#                 entity_from_chatbot = next(tracker.get_latest_entity_values('LOC'), None)
+#             elif ( next(tracker.get_latest_entity_values('GPE'), None) != None):
+#                 entity_from_chatbot = next(tracker.get_latest_entity_values('GPE'), None)
+#             print ("State to be processed : ", entity_from_chatbot )
+#         except Exception as e:
+#             print ( "did not got anything")
+#         ## API URL and the API call we need to do 
+#         # url= "https://data.covid19india.org/v4/min/data.min.json"
+#         # r= requests.get(url = url).json()
+#         r = getdataFromAPI()
+#         ## Preprocessing of data. Flattening the dict so that it will work with regex
+#         flattedDict = flatten_json(r)
+#         ## The main code that is responsible for serching through the data
+#         ## This if computes  if the given input is a state or not and searches accordingly
+#         try:
+#             if ( entity_from_chatbot.title() in final_states):
+#                 message = self.get_sats(final_states[entity_from_chatbot.title().strip()] , flattedDict , True).replace( final_states[entity_from_chatbot.title()] , entity_from_chatbot.title() )
+#             else:
+#                 message = self.get_sats(entity_from_chatbot.title().strip() , flattedDict )
+#                 message = message.replace("districts" , "")
+#         except Exception as e:
+#             print ( e)
+#             dispatcher.utter_message("Sorry we don't have information regarding that place")
+#         ## giving the output to the chatbot 
+#         print(message)
+#         dispatcher.utter_message(message) 
 
