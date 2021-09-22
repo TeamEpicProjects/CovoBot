@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,13 +15,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: Hello World
   examples: |
     - Hello world
     - Programming
     - first program
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -37,7 +34,6 @@ nlu:
     - bye bye
     - see you later
     - thank you
-
 - intent: affirm
   examples: |
     - yes
@@ -47,7 +43,6 @@ nlu:
     - that sounds good
     - correct
     - thank you
-
 - intent: deny
   examples: |
     - no
@@ -57,18 +52,12 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
-# -------------------------------------------------
-# COVID FAQ INTENTS :----
-# -------------------------------------------------
-
 - intent: corona_intro
   examples: |
     - what is corona?
@@ -77,7 +66,6 @@ nlu:
     - tell me about corona
     - can you tell me about corona
     - can you tell me about covid-19
-
 - intent: corona_spread
   examples: |
     - how does corona virus spread?
@@ -86,30 +74,25 @@ nlu:
     - corona spread?
     - covid spread.
     - covid19 spread.
-
 - intent: corona_food_spread
   examples: |
     - how does food spread corona virus?
     - does consuming junk food spread corona virus?
     - how will corona spread from food?
-
 - intent: corona_spread_warm
   examples: |
     - how will warm weather stop corona virus?
     - Can warm weather actually stop corona?
     - will it stop with warm weather?
-
 - intent: corona_spread_risk
   examples: |
     - who is at higher risk of infection
     - who is more prone to get corona virus infection
-
 - intent: corona_community
   examples: |
     - what is community spread?
     - how does community spread occurs?
     - community spread
-
 - intent: corona_symptoms
   examples: |
     - What are the symptoms of novel coronavirus?
@@ -118,14 +101,12 @@ nlu:
     - What are the symptoms of corona virus?
     - symptoms of corona virus?
     - symptoms of covid19 virus?
-
 - intent: corona_mosq_spread
   examples: |
     - can mosquitoes spread corona virus?
     - how does mosquitoes spread corona virus?
     - mosquitoes spread covid-19 virus.
     - mosquitoes spread covid virus.
-
 - intent: corona_vaccine
   examples: |
     - Are there any vaccines available for prevention of corona virus?
@@ -134,8 +115,7 @@ nlu:
     - vaccines available for prevention of corona virus?
     - Have the vaccines been developed for corona virus?
     - is there any vaccine for corona virus?
-    - is there any vaccine for covid19 virus?  
-
+    - is there any vaccine for covid19 virus?
 - intent: corona_prevent
   examples: |
     - how can i prevent covid19?
@@ -149,7 +129,6 @@ nlu:
     - text: "Give me the ways to prevent COVID"
     - text: "How can i prevent COVID."
     - text: "Briefly explain how can i prevent COVID"
-
 - intent: corona_infected_person
   examples: |
     - If You or Someone You Know is Sick or Had Contact with Someone who Has COVID-19
@@ -162,37 +141,28 @@ nlu:
     - someone gets infected by corona i was in contact with?
     - someone gets infected by covid i was in contact with?
     - what to do if someone gets infected by covid i was in contact with?
-
 - intent: covobot_help
   examples: |
     - what is this bot about ?
     - what can this bot do ?
-    - help 
+    - help
     - what should i do now ?
     - I am confused
-    
 - intent: covobot_purpose
   examples: |
     - what is the purpose of this bot?
     - why do we need this bot ?
     - What do you do?
     - What are you made for?
-
 - intent: covobot_who_made_this
   examples: |
     - who made this covobot ?
     - who made this chatbot ?
     - who made you ?
-    - who created you ? 
+    - who created you ?
     - who are your masters ?
-
-
-# -------------------------------------------------
-# API COVID STATS INTENTS FOR INTERACTIVE STORIES
-# -------------------------------------------------
-
 - intent: corona_all_stats
-  examples : |
+  examples: |
     - give me stats for [Punjab](RState)
     - can you give me stats for [Andhra Pradesh](RState)
     - give stats for [East Godavari](RState)
@@ -219,11 +189,12 @@ nlu:
     - number of cases in [{name}](RState)
     - so i want you to see the total cases in [{name}](RState)
     - in [{name}](RState) how many cases have been registered
-    
-    
-- intent : corona_confirmed_stats
-  examples : |
-    - can i get the details of confirmed in [{name}](RState)
+    - tell me all stats for covid19
+    - what are total number of cases, recovered, deaths from covid19 ?
+    - what are C,R,D from covid ?
+- intent: corona_confirmed_stats
+  examples: |
+    - can i get the details of confirmed in [Punjab](RState)
     - do you know the number of confirmed in [{name}](RState)
     - so i want you to see the total confirmed in [{name}](RState)
     - number of confirmed in [{name}](RState)
@@ -233,11 +204,11 @@ nlu:
     - confirmed in [{name}](RState)
     - in [{name}](RState) how many are confirmed
     - whole covid data in [{name}](RState)
-    
-
-- intent : corona_death_stats
-  examples : |
-    - can you give me number of people who died during covid in [{name}](RState)
+    - can you give me number of confirmed cases ?
+    - can you tell me confirmed stats
+- intent: corona_death_stats
+  examples: |
+    - can you give me number of people who died during covid in [Punjab](RState)
     - i would like to know about the number of deaths in [{name}](RState)
     - do you know the number of deaths in [{name}](RState)
     - give me the total number of death cases in [{name}](RState)
@@ -249,11 +220,19 @@ nlu:
     - deaths in [{name}](RState)
     - in [{name}](RState) how many are dead due to covid ?
     - umm what about the number of deaths in [{name}](RState)
-    
-
-- intent : corona_recovered_stats
-  examples : |
-    - can i get the details of recovered in [{name}](RState)
+    - can you tell me number of people who died from covid ?
+    - can you tell me total deaths ?
+    - can you tell me stats for deaths from covid ?
+    - deaths from covid
+    - how many died from covid ?
+    - deaths
+    - dead
+    - passed away
+    - how many are deceased from covid ?
+    - death cases
+- intent: corona_recovered_stats
+  examples: |
+    - can i get the details of recovered in [Punjab](RState)
     - do you know the number of recovered in [{name}](RState)
     - so i want you to see the total recovered in [{name}](RState)
     - number of recovered in [{name}](RState)
@@ -263,11 +242,13 @@ nlu:
     - recovered in [{name}](RState)
     - in [{name}](RState) how many are recovered
     - recovered cases in [{name}](RState)
-   
-
-- intent : corona_tested_stats
-  examples : |
-    - can i get the details of tested in [{name}](RState)
+    - how many survived covid ?
+    - recovered
+    - recoverd numbers from covid
+    - can you tell me number of recoverd cases from covid
+- intent: corona_tested_stats
+  examples: |
+    - can i get the details of tested in [Punjab](RState)
     - do you know the number of tested in [{name}](RState)
     - so i want you to see the total tested in [{name}](RState)
     - number of tested in [{name}](RState)
@@ -277,10 +258,14 @@ nlu:
     - tested in [{name}](RState)
     - in [{name}](RState) how many are tested for covid
     - total tested cases in [{name}](RState)
-
+    - how many tested positive from covid
+    - how many are positive from covid
+    - how many are covid +ve
+    - number of positive from covid
+    - positive cases
 - intent: corona_vaccine_stats
   examples: |
-    - i am looking for the number of vaccines done in [{name}](RState)
+    - i am looking for the number of vaccines done in  [Punjab](RState)
     - i need number of vaccines done in [{name}](RState)
     - please show me number of vaccines done in [{name}](RState)
     - can you show me the details of number of vaccines done in [{name}](RState)
@@ -289,16 +274,83 @@ nlu:
     - umm what about the number of vaccines done in [{name}](RState)
     - yeah so i am looking for the details of vaccines done in [{name}](RState)
     - can you please give a brief of vaccines done in [{name}](RState)
-   
-
-- intent : corona_delta_stats
-  examples : |
-    - ok how about number of delta cases in [{name}](RState)
-    - do you know the number of delta cases in [{name}](RState)
-    - can i get the details of delta cases in [{name}](RState)
-    - umm what about the number of delta cases in [{name}](RState)
-    - yeah so i am looking for the details of delta cases in [{name}](RState)
-    - can you please give a brief of delta cases in [{name}](RState)
+    - how many are vaccinated from covid
+    - vaccinated stats
+    - vaccinated
+    - Number of vaccinated people
+- intent: corona_delta_stats
+  examples: |
+    - ok how about number of delta cases in [Punjab](RState)
+    - do you know the number of delta cases in [Gujarat](RState)
+    - can i get the details of delta cases in [Madhya Pradesh](RState)
+    - umm what about the number of delta cases in [Mizoram](RState)
+    - yeah so i am looking for the details of delta cases in [Uttar Pradesh](RState)
+    - can you please give a brief of delta cases in [Delhi](RState)
     - tell me the number of delta cases in [{name}](RState)
     - in [{name}](RState) how many are delta cases
-    
+    - tell me what is the stats for latest variant of covid19
+    - latest varient of covid19
+    - what are delta strain's stats
+    - number of poeple affected from delta virus
+- intent: get_states
+  examples: |
+    - [India](RState)
+    - I live in [India](RState)
+    - [Gujarat](RState)
+    - I live in [Gujarat](RState)
+    - [Andhra Pradesh](RState)
+    - I live in [Andhra Pradesh](RState)
+    - [Arunachal Pradesh](RState)
+    - I live in [Arunachal Pradesh](RState)
+    - [Assam](RState)
+    - I live in [Assam](RState)
+    - [Bihar](RState)
+    - I live in [Bihar](RState)
+    - [Goa](RState)
+    - I live in [Goa](RState)
+    - [Chhattisgarh](RState)
+    - I live in [Chhattisgarh](RState)
+    - [Haryana](RState)
+    - I live in [Haryana](RState)
+    - [Himachal Pradesh](RState)
+    - I live in [Himachal Pradesh](RState)
+    - [Jharkhand](RState)
+    - I live in [Jharkhand](RState)
+    - [Karnataka](RState)
+    - I live in [Karnataka](RState)
+    - [Madhya Pradesh](RState)
+    - I live in [Madhya Pradesh](RState)
+    - [Kerala](RState)
+    - I live in [Kerala](RState)
+    - [Maharashtra](RState)
+    - I live in [Maharashtra](RState)
+    - [Manipur](RState)
+    - I live in [Manipur](RState)
+    - [Meghalaya](RState)
+    - I live in [Meghalaya](RState)
+    - [Mizoram](RState)
+    - I live in [Mizoram](RState)
+    - [Nagaland](RState)
+    - I live in [Nagaland](RState)
+    - [Odisha](RState)
+    - I live in [Odisha](RState)
+    - [Punjab](RState)
+    - I live in [Punjab](RState)
+    - [Rajasthan](RState)
+    - I live in [Rajasthan](RState)
+    - [Sikkim](RState)
+    - I live in [Sikkim](RState)
+    - [Tamil Nadu](RState)
+    - I live in [Tamil Nadu](RState)
+    - [Telangana](RState)
+    - I live in [Telangana](RState)
+    - [Tripura](RState)
+    - I live in [Tripura](RState)
+    - [Uttar Pradesh](RState)
+    - I live in [Uttar Pradesh](RState)
+    - [Uttarakhand](RState)
+    - I live in [Uttarakhand](RState)
+    - [West Bengal](RState)
+    - I live in [West Bengal](RState)
+    - [Delhi](RState)
+    - I live in [Delhi](RState)

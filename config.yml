@@ -13,20 +13,17 @@ pipeline:
   - name: SpacyEntityExtractor
   - name: SpacyFeaturizer
     pooling: mean
+
+  ##CountVectorsFeaturizer- Creates features for intent classification and response selection. 
+  ##Creates bag-of-words representation of user message, intent, and response
   - name: CountVectorsFeaturizer
-    analyzer: char_wb
-    min_ngram: 1
-    max_ngram: 2
-  # - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-    ##CountVectorsFeaturizer- Creates features for intent classification and response selection. 
-    ##Creates bag-of-words representation of user message, intent, and response
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: char_wb
+    analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
+  # - name: WhitespaceTokenizer
+  # - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+
     ##Dual Intent Entity Transformer (DIET) used for intent classification and entity extraction
   - name: DIETClassifier
     epochs: 100
@@ -41,6 +38,7 @@ pipeline:
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
+
   #   ##RegexEntityExtractor: Extracts entities using the lookup tables and/or regexes defined in the training data
   # - name: RegexEntityExtractor
   #   # text will be processed with case insensitive as default
@@ -54,16 +52,25 @@ pipeline:
     
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
+# policies:
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+#   - name: MemoizationPolicy
+#   - name: RulePolicy
+#   - name: UnexpecTEDIntentPolicy
+#     max_history: 2
+#     epochs: 100
+#   - name: TEDPolicy
+#     max_history: 2
+#     epochs: 100
+#     constrain_similarities: true
 policies:
-# No configuration for policies was provided. The following default policies were used to train your model.
-# If you'd like to customize them, uncomment and adjust the policies.
-# See https://rasa.com/docs/rasa/policies for more information.
-  - name: MemoizationPolicy
-  - name: RulePolicy
-  - name: UnexpecTEDIntentPolicy
-    max_history: 3
-    epochs: 100
-  - name: TEDPolicy
-    max_history: 3
-    epochs: 100
-    constrain_similarities: true
+- name: MemoizationPolicy
+  max_history: 4
+- name: RulePolicy
+- name: TEDPolicy
+  max_history: 4
+  MAX_NUMBER_OF_PREDICTIONS: 1
+  epochs: 200
+  constrain_similarities: true
