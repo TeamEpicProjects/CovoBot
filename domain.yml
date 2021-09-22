@@ -183,7 +183,7 @@ responses:
     - text: "Was this helpful"
     - text: "Did that help ?"
 
-  utter_ask_location :
+  utter_ask_location:
     - text: "Can you enter the state/district name"
     - text: "Please enter the state/district name"
     - text: "Can you mention the state/district?"
