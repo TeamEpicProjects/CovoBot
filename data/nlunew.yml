@@ -1,0 +1,50 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - Hello
+- intent: corona_vaccine_stats
+  examples: |
+    - Vaccine
+    - can you give me vaaccinated
+    - can i get the details of vaccines done in [Kolkata](RState)
+- intent: get_states
+  examples: |
+    - [Srinagar](RState)
+    - [Pathankot](RState)
+    - [Delhi](RState)
+    - [Howrah](RState)
+    - [Tripura](RState)
+    - [Bhopal](RState)
+    - [Telangana](RState)
+    - [Amritsar](RState)
+    - [Sikkim](RState)
+- intent: corona_recovered_stats
+  examples: |
+    - number of recovered
+    - hello i am looking for recovered cases
+    - can you please give a brief of recovered covid cases in [delhi](RState)
+- intent: corona_tested_stats
+  examples: |
+    - positive cases
+    - umm what about the number of tested cases
+    - total tested cases in [Manipur](RState)
+- intent: corona_delta_stats
+  examples: |
+    - do you know the number of delta cases?
+    - yeah so i am looking for the details of delta cases in [Uttar Pradesh](RState)
+- intent: corona_death_stats
+  examples: |
+    - can you tell me total deaths ?
+    - can i get the details of deaths in [Srinagar](RState)?
+- intent: corona_confirmed_stats
+  examples: |
+    - so i want you to see the total confirmed cases
+    - do you know the number of confirmed cases in [Maharashtra](RState)
+- intent: corona_all_stats
+  examples: |
+    - tell me all stats for covid19
+    - give stats for [Pune](RState)

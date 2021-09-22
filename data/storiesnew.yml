@@ -1,0 +1,293 @@
+
+version: "2.0"
+stories:
+- story: vaccine interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_vaccine_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - GPE: Srinagar
+    - RState: Srinagar
+  - slot_was_set:
+    - RState: Srinagar
+  - slot_was_set:
+    - GPE: Srinagar
+  - action: utter_vaccine
+  - action: action_vaccine_stat
+  - action: utter_did_that_help
+
+- story: recovered interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_recovered_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - RState: Pathankot
+  - slot_was_set:
+    - RState: Pathankot
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+
+- story: tested interactive_story_1
+  steps:
+  - intent: corona_tested_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - GPE: Delhi
+    - RState: Delhi
+  - slot_was_set:
+    - RState: Delhi
+  - slot_was_set:
+    - GPE: Delhi
+  - action: utter_tested
+  - action: action_Tested_stat
+  - action: utter_did_that_help
+
+
+
+
+
+- story: vaccinated_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_vaccine_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - PERSON: Howrah
+    - RState: Howrah
+  - slot_was_set:
+    - RState: Howrah
+  - slot_was_set:
+    - PERSON: Howrah
+  - action: utter_vaccine
+  - action: action_vaccine_stat
+  - action: utter_did_that_help
+
+- story: delta_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_delta_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - PERSON: Tripura
+    - RState: Tripura
+  - slot_was_set:
+    - RState: Tripura
+  - slot_was_set:
+    - PERSON: Tripura
+  - action: utter_delta
+  - action: action_delta_stat
+  - action: utter_did_that_help
+
+- story: tested_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_tested_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - GPE: Bhopal
+    - RState: Bhopal
+  - slot_was_set:
+    - RState: Bhopal
+  - slot_was_set:
+    - GPE: Bhopal
+  - action: utter_tested
+  - action: action_Tested_stat
+  - action: utter_did_that_help
+
+- story: recovered_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_recovered_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - PERSON: Telangana
+    - RState: Telangana
+  - slot_was_set:
+    - RState: Telangana
+  - slot_was_set:
+    - PERSON: Telangana
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+
+- story: death_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_death_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - GPE: Amritsar
+    - RState: Amritsar
+  - slot_was_set:
+    - RState: Amritsar
+  - slot_was_set:
+    - GPE: Amritsar
+  - action: utter_death
+  - action: action_death_stat
+  - action: utter_did_that_help
+
+- story: confirmed_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_confirmed_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - RState: Pathankot
+  - slot_was_set:
+    - RState: Pathankot
+  - action: utter_confirmed
+  - action: action_confirmed_stat
+  - action: utter_did_that_help
+
+- story: allstats_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_all_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - RState: Sikkim
+  - slot_was_set:
+    - RState: Sikkim
+  - action: utter_stat
+  - action: action_corona_stat
+  - action: utter_did_that_help
+
+
+
+
+
+
+
+- story: delta_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_delta_stats
+    entities:
+    - GPE: Uttar Pradesh
+    - RState: Uttar Pradesh
+  - slot_was_set:
+    - RState: Uttar Pradesh
+  - slot_was_set:
+    - GPE: Uttar Pradesh
+  - action: utter_delta
+  - action: action_delta_stat
+  - action: utter_did_that_help
+
+- story: vaccinated_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_vaccine_stats
+    entities:
+    - GPE: Kolkata
+    - RState: Kolkata
+  - slot_was_set:
+    - RState: Kolkata
+  - slot_was_set:
+    - GPE: Kolkata
+  - action: utter_vaccine
+  - action: action_vaccine_stat
+  - action: utter_did_that_help
+
+- story: tested_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_tested_stats
+    entities:
+    - GPE: Manipur
+    - RState: Manipur
+  - slot_was_set:
+    - RState: Manipur
+  - slot_was_set:
+    - GPE: Manipur
+  - action: utter_tested
+  - action: action_Tested_stat
+  - action: utter_did_that_help
+
+- story: recovered_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_recovered_stats
+    entities:
+    - GPE: delhi
+    - RState: delhi
+  - slot_was_set:
+    - RState: delhi
+  - slot_was_set:
+    - GPE: delhi
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+
+- story: death_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_death_stats
+    entities:
+    - GPE: Srinagar
+    - RState: Srinagar
+  - slot_was_set:
+    - RState: Srinagar
+  - slot_was_set:
+    - GPE: Srinagar
+  - action: utter_death
+  - action: action_death_stat
+  - action: utter_did_that_help
+
+- story: confirmed_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_confirmed_stats
+    entities:
+    - GPE: Maharashtra
+    - RState: Maharashtra
+  - slot_was_set:
+    - RState: Maharashtra
+  - slot_was_set:
+    - GPE: Maharashtra
+  - action: utter_confirmed
+  - action: action_confirmed_stat
+  - action: utter_did_that_help
+
+- story: allstats_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_all_stats
+    entities:
+    - GPE: Pune
+    - RState: Pune
+  - slot_was_set:
+    - RState: Pune
+  - slot_was_set:
+    - GPE: Pune
+  - action: utter_stat
+  - action: action_corona_stat
+  - action: utter_did_that_help

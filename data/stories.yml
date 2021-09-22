@@ -2,379 +2,7 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: hello world path
-  steps:
-  - intent: Hello World
-  - action: action_hello_world
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story : Bot Challenge
-  steps:
-  - intent : bot_challenge
-  - action : utter_iamabot
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-# -------------------------------------------------
-# COVID FAQ STORIES :----
-# -------------------------------------------------
-
-- story : Intro Corona faq
-  steps:
-  - intent : corona_intro
-  - action : utter_corona_spread
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona spread faq
-  steps:
-  - intent: corona_spread
-  - action: utter_corona_spread
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona food spread faq
-  steps:
-  - intent: corona_food_spread
-  - action: utter_corona_food_spread
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona warm weather faq
-  steps:
-  - intent: corona_spread_warm
-  - action: utter_corona_spread_warm
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona risk faq
-  steps:
-  - intent: corona_spread_risk
-  - action: utter_corona_spread_risk
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona community spread faq
-  steps:
-  - intent: corona_community
-  - action: utter_corona_community
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story : Symptoms Corona faq
-  steps:
-  - intent : corona_symptoms
-  - action : utter_corona_symptoms
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona mosquito faq
-  steps:
-  - intent: corona_mosq_spread
-  - action: utter_corona_mosq_spread
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona vaccine faq
-  steps:
-  - intent: corona_vaccine
-  - action: utter_corona_vaccine
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story : Preventions of corona faq
-  steps:
-  - intent : corona_prevent
-  - action : utter_corona_prevent
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story: corona infected faq
-  steps:
-  - intent: corona_infected_person
-  - action: utter_corona_infected_person
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story : Help CovoBot faq
-  steps:
-  - intent : covobot_help
-  - action : utter_help
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-- story : Purpose CovoBot
-  steps:
-  - intent : covobot_purpose
-  - action : utter_covobot_purpose
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-
-- story : Who made this Bot faq
-  steps:
-  - intent : covobot_who_made_this
-  - action : utter_who_made_this
-  - action: utter_did_that_help
-  - intent : affirm
-  - action: utter_happy
-  - intent : deny
-  - action: utter_deny
-  - intent : goodbye
-  - action: utter_goodbye
-
-
-# -------------------------------------------------
-# INTERACTIVE STORIES
-# -------------------------------------------------
-# DEmo Interactive Story
-# - story : corona interactive death story
-#   steps :
-#   - intent : greet
-#   - action : utter_greet
-#   - intent : corona_death_stats
-#   - action : utter_location
-#   - intent : corona_death_stats
-#     entities :
-      #  - GPE : "srinagar"
-#   - action : utter_death
-#   - action : action_death_stat
-
-- story: beginning of flow greeting
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - checkpoint: check_for_greeting
-
-# - story : corona interactive all stat story 
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_all_stats
-#   - action : utter_ask_location
-#   - intent : corona_all_stats
-#     entities :
-#     - RState : "Punjab"
-#   - action : utter_stat
-#   - action : action_corona_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story: corona interactive confirmed story 
-#   steps:
-#   - checkpoint: check_for_greeting
-#   - intent : corona_confirmed_stats
-#   - action : utter_ask_location
-#   - intent : corona_confirmed_stats
-#     entities :
-#     - RState : "Punjab"
-#   - action : utter_confirmed
-#   - action: action_confirmed_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story : corona interactive death story 
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_death_stats
-#   - action : utter_ask_location
-#   - intent : corona_death_stats
-#     entities :
-#     - or:
-#       - GPE : "Punjab"
-#       - RState : "Punjab"
-#   - action : utter_death
-#   - action : action_death_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-
-# - story : corona interactive recovered story 
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_recovered_stats
-#   - action : utter_ask_location
-#   - intent : corona_recovered_stats
-#     entities :
-#     - or:
-#     - GPE : "Punjab"
-#     - RState: "Punjab"
-#   - action : utter_recovered
-#   - action : action_recovered_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story : corona interactive tested story 
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_tested_stats
-#   - action : utter_ask_location
-#   - intent : corona_tested_stats
-#     entities :
-#     - or:
-#       - GPE : "Punjab"
-#       - RState: "Punjab"
-#   - action : utter_tested
-#   - action : action_Tested_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story : corona interactive vaccinated story 1
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_vaccine_stats
-#   - action : utter_ask_location
-#   - intent : corona_vaccine_stats
-#     entities :
-#     - GPE : "Punjab"
-#     - RState : "Punjab"
-#   - action : utter_vaccine
-#   - action : action_vaccine_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story : corona interactive vaccinated story 2
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_vaccine_stats
-#   - action : utter_ask_location
-#   - intent : covobot_help
-#     entities :
-#     - GPE : "Punjab"
-#     - RState : "Punjab"
-#   - action : utter_vaccine
-#   - action : action_vaccine_stat
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-# - story : corona interactive delta story
-#   steps :
-#   - checkpoint: check_for_greeting
-#   - intent : corona_delta_stats
-#   - action : utter_ask_location
-#   - intent : corona_delta_stats
-#     entities :
-#     - GPE : "Punjab"
-#     - RState : "Punjab"
-#   - action : utter_delta
-#   - action : action_delta_stat
-#   - action: utter_did_that_help
-#   - intent : affirm
-#   - action: utter_happy
-#   - intent : deny
-#   - action: utter_deny
-#   - intent : goodbye
-#   - action: utter_goodbye
-
-- story: vaccine interactive_story_1
+- story: vaccinated_interactive_story_1_hq
   steps:
   - intent: greet
   - action: utter_greet
@@ -382,15 +10,17 @@ stories:
   - action: utter_ask_location
   - intent: get_states
     entities:
-    - ORG: Punjab
-    - RState: Punjab
+    - PERSON: Howrah
+    - RState: Howrah
   - slot_was_set:
-    - RState: Punjab
-  - action: utter_stat
+    - RState: Howrah
+  - slot_was_set:
+    - PERSON: Howrah
+  - action: utter_vaccine
   - action: action_vaccine_stat
   - action: utter_did_that_help
 
-- story: vaccine interactive_story_2
+- story: delta_interactive_story_1_hq
   steps:
   - intent: greet
   - action: utter_greet
@@ -398,15 +28,53 @@ stories:
   - action: utter_ask_location
   - intent: get_states
     entities:
-    - ORG: Punjab
-    - RState: Punjab
+    - PERSON: Tripura
+    - RState: Tripura
   - slot_was_set:
-    - RState: Punjab
-  - action: utter_stat
+    - RState: Tripura
+  - slot_was_set:
+    - PERSON: Tripura
+  - action: utter_delta
   - action: action_delta_stat
   - action: utter_did_that_help
 
-- story: death interactive_story_1
+- story: tested_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_tested_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - GPE: Bhopal
+    - RState: Bhopal
+  - slot_was_set:
+    - RState: Bhopal
+  - slot_was_set:
+    - GPE: Bhopal
+  - action: utter_tested
+  - action: action_Tested_stat
+  - action: utter_did_that_help
+
+- story: recovered_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_recovered_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - PERSON: Telangana
+    - RState: Telangana
+  - slot_was_set:
+    - RState: Telangana
+  - slot_was_set:
+    - PERSON: Telangana
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+
+- story: death_interactive_story_1_hq
   steps:
   - intent: greet
   - action: utter_greet
@@ -414,34 +82,154 @@ stories:
   - action: utter_ask_location
   - intent: get_states
     entities:
-    - ORG: Punjab
-    - RState: Punjab
+    - GPE: Amritsar
+    - RState: Amritsar
   - slot_was_set:
-    - RState: Punjab
-  - action: utter_stat
+    - RState: Amritsar
+  - slot_was_set:
+    - GPE: Amritsar
+  - action: utter_death
   - action: action_death_stat
   - action: utter_did_that_help
 
-
-- story: death interactive story 2
+- story: confirmed_interactive_story_1_hq
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: corona_death_stats
+  - intent: corona_confirmed_stats
   - action: utter_ask_location
-  - or :
-    - intent: corona_death_stats
-      entities:
-      - GPE: Kolkata
-      - RState: Kolkata
-    - intent: get_states
-      entities:
-      - GPE: Kolkata
-      - RState: Kolkata
+  - intent: get_states
+    entities:
+    - RState: Pathankot
+  - slot_was_set:
+    - RState: Pathankot
+  - action: utter_confirmed
+  - action: action_confirmed_stat
+  - action: utter_did_that_help
+
+- story: allstats_interactive_story_1_hq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_all_stats
+  - action: utter_ask_location
+  - intent: get_states
+    entities:
+    - RState: Sikkim
+  - slot_was_set:
+    - RState: Sikkim
+  - action: utter_stat
+  - action: action_corona_stat
+  - action: utter_did_that_help
+
+- story: delta_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_delta_stats
+    entities:
+    - GPE: Uttar Pradesh
+    - RState: Uttar Pradesh
+  - slot_was_set:
+    - RState: Uttar Pradesh
+  - slot_was_set:
+    - GPE: Uttar Pradesh
+  - action: utter_delta
+  - action: action_delta_stat
+  - action: utter_did_that_help
+
+- story: vaccinated_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_vaccine_stats
+    entities:
+    - GPE: Kolkata
+    - RState: Kolkata
   - slot_was_set:
     - RState: Kolkata
   - slot_was_set:
     - GPE: Kolkata
+  - action: utter_vaccine
+  - action: action_vaccine_stat
+  - action: utter_did_that_help
+
+- story: tested_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_tested_stats
+    entities:
+    - GPE: Manipur
+    - RState: Manipur
+  - slot_was_set:
+    - RState: Manipur
+  - slot_was_set:
+    - GPE: Manipur
+  - action: utter_tested
+  - action: action_Tested_stat
+  - action: utter_did_that_help
+
+- story: recovered_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_recovered_stats
+    entities:
+    - GPE: delhi
+    - RState: delhi
+  - slot_was_set:
+    - RState: delhi
+  - slot_was_set:
+    - GPE: delhi
+  - action: utter_recovered
+  - action: action_recovered_stat
+  - action: utter_did_that_help
+
+- story: death_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_death_stats
+    entities:
+    - GPE: Srinagar
+    - RState: Srinagar
+  - slot_was_set:
+    - RState: Srinagar
+  - slot_was_set:
+    - GPE: Srinagar
   - action: utter_death
   - action: action_death_stat
+  - action: utter_did_that_help
+
+- story: confirmed_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_confirmed_stats
+    entities:
+    - GPE: Maharashtra
+    - RState: Maharashtra
+  - slot_was_set:
+    - RState: Maharashtra
+  - slot_was_set:
+    - GPE: Maharashtra
+  - action: utter_confirmed
+  - action: action_confirmed_stat
+  - action: utter_did_that_help
+
+- story: allstats_interactive_story_1_fq
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_all_stats
+    entities:
+    - GPE: Pune
+    - RState: Pune
+  - slot_was_set:
+    - RState: Pune
+  - slot_was_set:
+    - GPE: Pune
+  - action: utter_stat
+  - action: action_corona_stat
   - action: utter_did_that_help
