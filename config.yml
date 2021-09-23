@@ -7,27 +7,28 @@ pipeline:
 # If you'd like to customize it, uncomment and adjust the pipeline.
 # See https://rasa.com/docs/rasa/tuning-your-model for more information.
 
-  - name: SpacyNLP
+  - name: "SpacyNLP"
     model: "en_core_web_md" 
-  - name: SpacyTokenizer
+    case_sensitive: False
+  - name: "SpacyTokenizer"
   - name: SpacyEntityExtractor
   - name: SpacyFeaturizer
     pooling: mean
 
   ##CountVectorsFeaturizer- Creates features for intent classification and response selection. 
   ##Creates bag-of-words representation of user message, intent, and response
-  - name: CountVectorsFeaturizer
-    analyzer: "char_wb"
-    min_ngram: 1
-    max_ngram: 4
+  # - name: CountVectorsFeaturizer
+  #   analyzer: "char_wb"
+  #   min_ngram: 1
+  #   max_ngram: 4
   # - name: WhitespaceTokenizer
   # - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
+  # - name: LexicalSyntacticFeaturizer
 
     ##Dual Intent Entity Transformer (DIET) used for intent classification and entity extraction
-  - name: DIETClassifier
-    epochs: 100
-    constrain_similarities: true
+  # - name: DIETClassifier
+  #   epochs: 100
+  #   constrain_similarities: true
     ##EntitySynonymMapper-Maps synonymous entity values to the same value.
   - name: EntitySynonymMapper
     ##Selectors predict a bot response from a set of candidate responses.
@@ -71,6 +72,6 @@ policies:
 - name: RulePolicy
 - name: TEDPolicy
   max_history: 4
-  MAX_NUMBER_OF_PREDICTIONS: 1
-  epochs: 200
+  MAX_NUMBER_OF_PREDICTIONS: 2
+  epochs: 100
   constrain_similarities: true

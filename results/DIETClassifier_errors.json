@@ -1,0 +1,232 @@
+[
+  {
+    "text": "I live in Chandigarh",
+    "entities": [
+      {
+        "start": 10,
+        "end": 20,
+        "value": "Chandigarh",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 10,
+        "end": 20,
+        "confidence_entity": 0.9680196046829224,
+        "value": "Chandigarh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in Daman",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "Daman",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.43806344270706177,
+        "value": "Daman",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in India",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "India",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "Rstate",
+        "start": 10,
+        "end": 15,
+        "confidence_entity": 0.4586130678653717,
+        "value": "India",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Assam",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Assam",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I live in Assam",
+    "entities": [
+      {
+        "start": 10,
+        "end": 15,
+        "value": "Assam",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I live in Odisha",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "Odisha",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I live in Puduchery",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "Puduchery",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "moin",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.41969355940818787,
+        "value": "moin",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in Goa",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "Goa",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "Rstate",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.5168682336807251,
+        "value": "Goa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in Bilaspur",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Bilaspur",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 10,
+        "end": 18,
+        "confidence_entity": 0.9819714426994324,
+        "value": "Bilaspur",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "give stats for East Godavari",
+    "entities": [
+      {
+        "start": 15,
+        "end": 28,
+        "value": "East Godavari",
+        "entity": "RState"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 20,
+        "end": 28,
+        "confidence_entity": 0.9589844346046448,
+        "value": "Godavari",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in Goa",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "Goa",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9983327984809875,
+        "value": "Goa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I live in Hyderabad",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "Hyderabad",
+        "entity": "Rstate"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "RState",
+        "start": 10,
+        "end": 19,
+        "confidence_entity": 0.6874266266822815,
+        "value": "Hyderabad",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

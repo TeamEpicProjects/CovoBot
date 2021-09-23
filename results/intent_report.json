@@ -1,0 +1,189 @@
+{
+  "corona_prevent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 11,
+    "confused_with": {}
+  },
+  "corona_spread": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "corona_vaccine_stats": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.2,
+    "recall": 0.14285714285714285,
+    "f1-score": 0.16666666666666666,
+    "support": 7,
+    "confused_with": {
+      "goodbye": 2,
+      "greet": 1,
+      "corona_all_stats": 1
+    }
+  },
+  "covobot_who_made_this": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 0.8,
+    "recall": 0.6153846153846154,
+    "f1-score": 0.6956521739130435,
+    "support": 13,
+    "confused_with": {
+      "goodbye": 2,
+      "get_states": 1
+    }
+  },
+  "corona_tested_stats": {
+    "precision": 0.9333333333333333,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9333333333333333,
+    "support": 15,
+    "confused_with": {
+      "corona_recovered_stats": 1
+    }
+  },
+  "corona_all_stats": {
+    "precision": 0.8709677419354839,
+    "recall": 0.9310344827586207,
+    "f1-score": 0.9,
+    "support": 29,
+    "confused_with": {
+      "get_states": 1,
+      "corona_death_stats": 1
+    }
+  },
+  "corona_confirmed_stats": {
+    "precision": 0.9090909090909091,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.8695652173913043,
+    "support": 12,
+    "confused_with": {
+      "corona_all_stats": 1,
+      "corona_death_stats": 1
+    }
+  },
+  "corona_infected_person": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "corona_recovered_stats": {
+    "precision": 0.8666666666666667,
+    "recall": 0.9285714285714286,
+    "f1-score": 0.896551724137931,
+    "support": 14,
+    "confused_with": {
+      "corona_tested_stats": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.6153846153846154,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.64,
+    "support": 12,
+    "confused_with": {
+      "affirm": 2,
+      "greet": 1
+    }
+  },
+  "corona_intro": {
+    "precision": 0.7142857142857143,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.7692307692307692,
+    "support": 6,
+    "confused_with": {
+      "corona_symptoms": 1
+    }
+  },
+  "deny": {
+    "precision": 0.75,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.7999999999999999,
+    "support": 7,
+    "confused_with": {
+      "affirm": 1
+    }
+  },
+  "covobot_help": {
+    "precision": 1.0,
+    "recall": 0.2,
+    "f1-score": 0.33333333333333337,
+    "support": 5,
+    "confused_with": {
+      "corona_intro": 2,
+      "affirm": 1,
+      "corona_confirmed_stats": 1
+    }
+  },
+  "get_states": {
+    "precision": 0.96,
+    "recall": 0.9863013698630136,
+    "f1-score": 0.9729729729729729,
+    "support": 73,
+    "confused_with": {
+      "corona_all_stats": 1
+    }
+  },
+  "corona_vaccine": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "corona_symptoms": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6,
+    "confused_with": {}
+  },
+  "corona_delta_stats": {
+    "precision": 1.0,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9565217391304348,
+    "support": 12,
+    "confused_with": {
+      "corona_all_stats": 1
+    }
+  },
+  "corona_death_stats": {
+    "precision": 0.9130434782608695,
+    "recall": 0.9545454545454546,
+    "f1-score": 0.9333333333333332,
+    "support": 22,
+    "confused_with": {
+      "goodbye": 1
+    }
+  },
+  "accuracy": 0.8947368421052632,
+  "macro avg": {
+    "precision": 0.8632457658050227,
+    "recall": 0.8399585342228233,
+    "f1-score": 0.836178575992669,
+    "support": 285
+  },
+  "weighted avg": {
+    "precision": 0.8928267792753657,
+    "recall": 0.8947368421052632,
+    "f1-score": 0.8876109440629287,
+    "support": 285
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "text": "goodevening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "corona_vaccine",
+      "confidence": 0.5791561007499695
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.41385912895202637
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "corona_recovered_stats",
+      "confidence": 0.4592607319355011
+    }
+  },
+  {
+    "text": "what is this bot about ?",
+    "intent": "covobot_help",
+    "intent_prediction": {
+      "name": "corona_intro",
+      "confidence": 0.869745135307312
+    }
+  },
+  {
+    "text": "how many are covid +ve",
+    "intent": "corona_tested_stats",
+    "intent_prediction": {
+      "name": "corona_recovered_stats",
+      "confidence": 0.1771031767129898
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6364068388938904
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.49353331327438354
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.7523317337036133
+    }
+  },
+  {
+    "text": "help",
+    "intent": "covobot_help",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.18988263607025146
+    }
+  },
+  {
+    "text": "moin",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "get_states",
+      "confidence": 0.9637004733085632
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2800273597240448
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6191211938858032
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9921327233314514
+    }
+  },
+  {
+    "text": "I am confused",
+    "intent": "covobot_help",
+    "intent_prediction": {
+      "name": "corona_confirmed_stats",
+      "confidence": 0.6808423399925232
+    }
+  },
+  {
+    "text": "tell me what is the stats for latest variant of covid19",
+    "intent": "corona_delta_stats",
+    "intent_prediction": {
+      "name": "corona_all_stats",
+      "confidence": 0.9067549705505371
+    }
+  },
+  {
+    "text": "I live in Jharkhand",
+    "intent": "get_states",
+    "intent_prediction": {
+      "name": "corona_all_stats",
+      "confidence": 0.5628297328948975
+    }
+  },
+  {
+    "text": "good evening",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8619546294212341
+    }
+  },
+  {
+    "text": "see you around",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3352168798446655
+    }
+  },
+  {
+    "text": "thank you",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9941558837890625
+    }
+  },
+  {
+    "text": "what should i do now ?",
+    "intent": "covobot_help",
+    "intent_prediction": {
+      "name": "corona_intro",
+      "confidence": 0.21753636002540588
+    }
+  },
+  {
+    "text": "in {name}",
+    "intent": "corona_confirmed_stats",
+    "intent_prediction": {
+      "name": "corona_all_stats",
+      "confidence": 0.9373247623443604
+    }
+  },
+  {
+    "text": "how many survived covid ?",
+    "intent": "corona_recovered_stats",
+    "intent_prediction": {
+      "name": "corona_tested_stats",
+      "confidence": 0.4247042238712311
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "get_states",
+      "confidence": 0.6485274434089661
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "corona_all_stats",
+      "confidence": 0.4886062741279602
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.21193604171276093
+    }
+  },
+  {
+    "text": "what is novel corona virus?",
+    "intent": "corona_intro",
+    "intent_prediction": {
+      "name": "corona_symptoms",
+      "confidence": 0.9077699780464172
+    }
+  },
+  {
+    "text": "Jharkhand",
+    "intent": "corona_all_stats",
+    "intent_prediction": {
+      "name": "get_states",
+      "confidence": 0.9999690055847168
+    }
+  },
+  {
+    "text": "what are total number of cases, recovered, deaths from covid19 ?",
+    "intent": "corona_all_stats",
+    "intent_prediction": {
+      "name": "corona_death_stats",
+      "confidence": 0.6650550961494446
+    }
+  },
+  {
+    "text": "whole covid data in {name}",
+    "intent": "corona_confirmed_stats",
+    "intent_prediction": {
+      "name": "corona_death_stats",
+      "confidence": 0.34698158502578735
+    }
+  },
+  {
+    "text": "passed away",
+    "intent": "corona_death_stats",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.27166903018951416
+    }
+  }
+]
