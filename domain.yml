@@ -123,7 +123,7 @@ responses:
   - text: Bye and dont forget to Wash your hands frequently.
   - text: Bye! take care.
   - text: Bye-Bye!
-  - text: Adios !
+  - text: Adios!
   - text: GoodBye and Stay Safe
   utter_deny:
   - text: Okay. Please repeat your query

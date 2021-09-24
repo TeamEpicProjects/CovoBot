@@ -34,6 +34,8 @@ nlu:
     - bye bye
     - see you later
     - thank you
+    - no thank you
+    
 - intent: affirm
   examples: |
     - yes

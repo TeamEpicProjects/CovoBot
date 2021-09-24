@@ -250,6 +250,22 @@ stories:
   - intent : goodbye
   - action: utter_goodbye
 
+# - story : Did that help story for affirm
+#   steps:
+#   # - action: utter_did_that_help
+#   - intent : affirm
+#   - action : utter_happy
+#   - intent : goodbye
+#   - action: utter_goodbye
+
+# - story : Did that help story for affirm
+#   steps:
+#   # - action: utter_did_that_help
+#   - intent : deny
+#   - action: utter_deny
+#   - intent : goodbye
+#   - action: utter_goodbye
+
 - story: corona spread faq
   steps:
   - intent: corona_spread
