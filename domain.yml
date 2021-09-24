@@ -181,7 +181,7 @@ responses:
       Be alert for symptoms. Watch for fever, cough, shortness of breath, or other symptoms of COVID-19.
       If possible, stay away from others, especially people who are at higher risk for getting very sick from COVID-19.
   utter_help:
-  - text: I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. Feel free to ask me anything regarding C/R/D
+  - text: I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India.\n Feel free to ask me anything regarding C/R/D
   utter_covobot_purpose:
   - text: We are all together in a fight against the COVID-19 pandemic. Chatbots, if effectively designed and deployed, could help us by sharing up-to-date information quickly, encouraging desired health impacting behaviors, and lessening the psychological damage caused by fear and isolation. Despite this potential, the risk of amplifying misinformation and the lack of prior effectiveness research is cause for concern. Immediate collaborations between healthcare workers, companies, academics and governments are merited and may aid future pandemic preparedness efforts.
   utter_who_made_this:

@@ -446,20 +446,20 @@ class Action_Delta_stat(Action):
         for i in flattedDict.keys ():
 
             if (state == False and len(re.findall(r"(.+?){fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res+= entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if(state == False and len(re.findall(r"(.+?){fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res+=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res+= entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             ##to get the the total values of only states excluding district
             if ( state == True and len(re.findall(r"{fname}_delta_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + " : "  + str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta21_14_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+                res += entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
             if( state == True and len(re.findall(r"{fname}_delta7_confirmed".format(fname=entity_from_chatbot),i)) != 0):
-                res +=""+ entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
-        # if res == "":
-        #     res += "Data is not available"
+                res += entity_from_chatbot + " : " +  str(flattedDict[i]) + "\n"
+        if res == "":
+            res += "This Data is not available for this location"
             
         return res
     def run(self, dispatcher: CollectingDispatcher,tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:

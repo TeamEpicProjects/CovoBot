@@ -26,9 +26,9 @@ pipeline:
   # - name: LexicalSyntacticFeaturizer
 
     ##Dual Intent Entity Transformer (DIET) used for intent classification and entity extraction
-  # - name: DIETClassifier
-  #   epochs: 100
-  #   constrain_similarities: true
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
     ##EntitySynonymMapper-Maps synonymous entity values to the same value.
   - name: EntitySynonymMapper
     ##Selectors predict a bot response from a set of candidate responses.
