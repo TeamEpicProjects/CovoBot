@@ -291,3 +291,20 @@ stories:
   - action: utter_stat
   - action: action_corona_stat
   - action: utter_did_that_help
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_intro
+  - action: utter_corona_spread
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: deny
+  - action: utter_goodbye

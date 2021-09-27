@@ -19,6 +19,8 @@ intents:
     use_entities: []
 - deny:
     use_entities: []
+- deny_thanks:
+    use_entities: []
 - bot_challenge:
     use_entities: []
 - corona_intro:
@@ -117,14 +119,14 @@ responses:
   - text: May I assist you with anything further?
   - text: Be sure to ask if you have any other questions!
   utter_goodbye:
-  - text: GoodBye!
-  - text: Have a good day!
-  - text: Goodbye and Stay Home and Stay Safe
-  - text: Bye and dont forget to Wash your hands frequently.
-  - text: Bye! take care.
-  - text: Bye-Bye!
+  - text: Okay, GoodBye!
+  - text: OK. Have a good day!
+  - text: OK. Goodbye and Stay Home and Stay Safe
+  - text: Okay. Bye and dont forget to Wash your hands frequently.
+  - text: Then, Bye! take care.
+  - text: Okay. Bye-Bye!
   - text: Adios!
-  - text: GoodBye and Stay Safe
+  - text: Then, GoodBye and Stay Safe
   utter_deny:
   - text: Okay. Please repeat your query
   - text: Can you please rephrase your query?
@@ -134,6 +136,13 @@ responses:
   - text: Would you mind repeating your query?
   - text: I’m sorry... I didn’t get that. Could you explain in another way?
   - text: Could you please re-explain your question
+  utter_tellme:
+  - text: Okay. Please tell me your query
+  - text: Can you please ask your next query?
+  - text: Please tell me the query.
+  - text: Could you say the query then?
+  - text: So, What is the question now?
+  - text: Explain your question.
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_corona_spread:

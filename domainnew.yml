@@ -1,0 +1,284 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- corona_intro:
+    use_entities: []
+- affirm:
+    use_entities: []
+- greet:
+    use_entities: []
+- deny:
+    use_entities: []
+- get_states
+- corona_vaccine_stats
+- Hello World:
+    use_entities: []
+- goodbye:
+    use_entities: []
+- bot_challenge:
+    use_entities: []
+- corona_spread:
+    use_entities: []
+- corona_food_spread:
+    use_entities: []
+- corona_spread_warm:
+    use_entities: []
+- corona_spread_risk:
+    use_entities: []
+- corona_community:
+    use_entities: []
+- corona_symptoms:
+    use_entities: []
+- corona_mosq_spread:
+    use_entities: []
+- corona_vaccine:
+    use_entities: []
+- corona_prevent:
+    use_entities: []
+- corona_infected_person:
+    use_entities: []
+- covobot_help:
+    use_entities: []
+- covobot_purpose:
+    use_entities: []
+- covobot_who_made_this:
+    use_entities: []
+- corona_all_stats
+- corona_confirmed_stats
+- corona_death_stats
+- corona_recovered_stats
+- corona_tested_stats
+- corona_delta_stats
+- nlu_fallback
+entities:
+- GPE
+- LOC
+- ORG
+- PERSON
+- RState
+- States
+- or
+slots:
+  States:
+    type: text
+    influence_conversation: true
+  RState:
+    type: text
+    influence_conversation: true
+  LOC:
+    type: text
+    influence_conversation: true
+  GPE:
+    type: text
+    influence_conversation: true
+  PERSON:
+    type: text
+    influence_conversation: true
+  Result:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Namaste 🙏. I am CovoBot. I am here to help you. Ask me anything about covid in India !!
+  - text: Namaste 🙏. I am CovoBot. I am here to assist you. Ask me anything about covid in India !!
+  - text: Namaste 🙏. I am CovoBot. I am a bot programmed to answer only some of the frequent questions related to Covid-19 in India
+  utter_happy:
+  - text: Great! Is there anything else i can help you with?
+  - text: Amazing! Can I help you with anything else?
+  - text: Is there anything else that I can help you with?
+  - text: What else can i do for you
+  - text: What else can i do to help you
+  - text: Is there anything else i can assist you with?
+  - text: May I assist you with anything further?
+  - text: Be sure to ask if you have any other questions!
+  utter_goodbye:
+  - text: GoodBye!
+  - text: Have a good day!
+  - text: Goodbye and Stay Home and Stay Safe
+  - text: Bye and dont forget to Wash your hands frequently.
+  - text: Bye! take care.
+  - text: Bye-Bye!
+  - text: Adios!
+  - text: GoodBye and Stay Safe
+  utter_deny:
+  - text: Okay. Please repeat your query
+  - text: Can you please rephrase your query?
+  - text: Please try rephrasing the query.
+  - text: Could you say that again? I didn’t understand.
+  - text: I’m sorry. Could you please repeat your question
+  - text: Would you mind repeating your query?
+  - text: I’m sorry... I didn’t get that. Could you explain in another way?
+  - text: Could you please re-explain your question
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_corona_spread:
+  - text: |-
+      This virus was first detected in Wuhan City, Hubei Province, China. 
+      The first infections were linked to a live animal market, but the virus is now spreading from person-to-person. 
+      It’s important to note that person-to-person spread can happen on a continuum. Some viruses are highly contagious (like measles), while other viruses are less so.
+              
+      The virus spread due to following reasons:
+      1. Droplets or aerosols: When an infected person coughs, sneezes, or talks, droplets or tiny particles called aerosols carry the virus into the air from their nose or mouth. Anyone who is within 6 feet of that person can breathe it into their lungs.
+      2. Airborne transmission: Research shows that the virus can live in the air for up to 3 hours. It can get into your lungs if someone who has it breathes out and you breathe that air in.
+      3. Surface transmission: You may touch a countertop or doorknob that's contaminated and then touch your nose, mouth, or eyes. The virus can live on surfaces like plastic and stainless steel for 2 to 3 days
+      4. Fecal-oral, etc.
+  utter_corona_food_spread:
+  - text: It is highly unlikely that people can contract COVID-19 from food or food packaging. COVID-19 is a respiratory illness and the primary transmission route is through person-to- person contact and through direct contact with respiratory droplets generated when an infected person coughs or sneezes.
+  utter_corona_spread_warm:
+  - text: With the start of summer coming soon, many are hopeful that the warmer weather will slow the spread of SARS-CoV-2, the novel coronavirus that causes COVID-19. There have been hints from lab experiments that increased temperature and humidity may reduce the viability of SARS-CoV-2. Meanwhile, other coronaviruses that cause less severe diseases, such as the common cold, do spread more slowly among people during the summer.
+  utter_corona_spread_risk:
+  - text: |-
+      "COVID-19 is often more severe in people who are older than 60 years or who have health conditions like lung or heart disease, diabetes or conditions that affect their immune system.​
+      If you’re at high risk, know what to do, and take the right actions now to protect yourself.If you’re not at high risk, do your part to prevent the spread of coronavirus to those who are.
+      There is increasing evidence that people with existing chronic conditions or compromised immune systems due to disability are at higher risk of death due to COVID-19. "
+  utter_corona_community:
+  - text: Community spread means people have been infected with the virus in an area, including some who are not sure how or where they became infected. Each health department determines community spread differently based on local conditions. For information on community spread in your area, please visit your health department’s website.​
+  utter_corona_symptoms:
+  - text: |-
+      COVID-19 symptoms include:
+
+      Cough
+      Fatigue
+      Diarrhea
+      Headache
+      Sore throat
+      Fever or chills
+      Nausea or vomiting
+      Muscle or body aches
+      Difficulty breathing
+      Shortness of breath or
+      loss of taste or smell
+      Pneumonia: It has caused kidney failure and death in some cases. 
+  utter_corona_mosq_spread:
+  - text: At this time, CDC has no data to suggest that this new coronavirus or other similar coronaviruses are spread by mosquitoes or ticks. The main way that COVID-19 spreads is from person to person. See How Coronavirus Spreads for more information.
+  utter_corona_vaccine:
+  - text: |-
+      Human clinical trials for Covid-19 vaccine initiated in India: ICMR. 
+      Human clinical trials for a vaccine for Covid-19 have been initiated with approximately 1,000 volunteers participating in the exercise for each of the two indigenously developed vaccine candidates
+      While some western, traditional or home remedies may provide comfort and alleviate symptoms of mild COVID-19, there are no medicines that have been shown to prevent or cure the disease. WHO does not recommend self-medication with any medicines, including antibiotics, as a prevention or cure for COVID-19. 
+      However, there are several ongoing clinical trials of both western and traditional medicines. 
+      WHO is coordinating efforts to develop vaccines and medicines to prevent and treat COVID-19 and will continue to provide updated information
+      At this time there is no vaccine to prevent coronavirus disease 2019 (COVID-19). 
+      The FDA is working with vaccine developers and other researchers and manufacturers to help expedite the development and availability of medical products such as vaccines, antibodies, and drugs to prevent COVID-19
+  utter_corona_prevent:
+  - text: |-
+      The best way to prevent illness is to avoid being exposed to the virus.
+      1. Wash your hands frequently and carefully,
+      2. Avoid touching your face,
+      3. Stop shaking hands and hugging people — for now,
+      4. Don’t share personal items,
+      5. Cover your mouth and nose when you cough and sneeze,
+      6. Do not gather in groups,
+      7. Wash fresh groceries
+  utter_corona_infected_person:
+  - text: |-
+      Stay home for 14 days after your last contact with a person who has COVID-19.
+      Be alert for symptoms. Watch for fever, cough, shortness of breath, or other symptoms of COVID-19.
+      If possible, stay away from others, especially people who are at higher risk for getting very sick from COVID-19.
+  utter_help:
+  - text: I am a Covid Chatbot, to help you solve any queries related to COVID-19 in India. \n Feel free to ask me anything regarding C/R/D
+  utter_covobot_purpose:
+  - text: We are all together in a fight against the COVID-19 pandemic. Chatbots, if effectively designed and deployed, could help us by sharing up-to-date information quickly, encouraging desired health impacting behaviors, and lessening the psychological damage caused by fear and isolation. Despite this potential, the risk of amplifying misinformation and the lack of prior effectiveness research is cause for concern. Immediate collaborations between healthcare workers, companies, academics and governments are merited and may aid future pandemic preparedness efforts.
+  utter_who_made_this:
+  - text: |-
+      Vedansh Kumar
+      Umrah Zargar
+      Udit Sinha
+      Pratyayee Chatterjee
+  utter_data:
+  - text: Here you go!
+  - text: 'Here is your answer:'
+  - text: Here you have it.
+  - text: Here is your data
+  - text: Here are your details
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: Was that helpful enough?
+  - text: Is it helpful enough
+  - text: Was this helpful
+  - text: Did that help ?
+  utter_ask_location:
+  - text: Can you enter the state/district name
+  - text: Please enter the state/district name
+  - text: Can you mention the state/district?
+  - text: Please mention the location
+  - text: Please specify the location for which you need the details
+  - text: Location ?
+  - text: Please provide the location
+  - text: May I know the state/district?
+  - text: Please tell me the state/district name
+  - text: can you please tell me your location?
+  - text: Mention your location please
+  - text: The location ?
+  utter_stat:
+  - text: 'Here are the stats:'
+  - text: Here are your details
+  - text: 'The stats are as follows:'
+  - text: 'Here are the details:'
+  - text: These are your details
+  - text: 'Here are the all the stats:'
+  utter_confirmed:
+  - text: 'Here are the stats for confirmed cases:'
+  - text: 'Number of confirmed COVID-19 cases are:'
+  - text: 'Confirmed Cases:'
+  - text: Number of confirmed cases
+  - text: Here are the number of confirmed cases
+  utter_death:
+  - text: 'Here are the stats for death cases :'
+  - text: 'Number of people passed away due to COVID-19 are:'
+  - text: Here are the number of deceased
+  - text: 'Deaths:'
+  - text: 'Number of peopled died :'
+  - text: 'Deceased: '
+  - text: 'Number of people died due to covid :'
+  - text: 'Confirmed Deaths :'
+  utter_recovered:
+  - text: 'Here are the stats for recovered cases:'
+  - text: 'People recovered from COVID-19 are:'
+  - text: 'Recovered :'
+  - text: 'Recovered people :'
+  - text: Recovered cases
+  - text: 'Number of recovered cases:'
+  - text: 'Confirmed Recovered Cases:'
+  utter_tested:
+  - text: 'Here are the stats for tested cases:'
+  - text: 'Number of tested COVID-19 cases are:'
+  - text: 'Tested Cases:'
+  - text: Number of tested cases
+  - text: Here are the number of tested cases
+  utter_vaccine:
+  - text: 'Here are the stats for vaccine:'
+  - text: 'Here are the vaccination stats:'
+  - text: 'The number of vaccinations done are:'
+  - text: 'Number of people vaccinated are:'
+  - text: 'People vaccinated are: '
+  - text: 'Vaccinated people :'
+  - text: 'Confirmed Vaccinated people are: '
+  utter_delta:
+  - text: 'Here are the stats for delta cases:'
+  - text: 'The stats for delta cases are as follows:'
+  - text: 'The number of delta variant cases are:'
+  - text: 'People in contact with delta variant are:'
+  - text: 'Detal cases:'
+  - text: 'The number of delta cases are:'
+  - text: 'Number of people affected by delta variant are:'
+  - text: 'Number of people confirmed with delta variant are:'
+  - text: 'Here you the details of delta variant cases:'
+actions:
+- action_Tested_stat
+- action_confirmed_stat
+- action_corona_stat
+- action_death_stat
+- action_delta_stat
+- action_hello_world
+- action_recovered_stat
+- action_vaccine_stat
+- utter_ask_location
+- utter_corona_spread
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_stat
